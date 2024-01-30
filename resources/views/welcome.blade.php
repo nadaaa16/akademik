@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Legalcare - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Rekap Akademik SMK Wikrama Bogor</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -24,7 +24,7 @@
     
 	  <nav class="navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Legalcare <span>A Law Firm Agency</span></a>
+	      <a class="navbar-brand" href="index.html">Rekap Akademik <span>SMK Wikrama Bogor</span></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -50,7 +50,7 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-6 ftco-animate">
-          	<h2 class="subheading">Welcome To Legalcare</h2>
+          	<h2 class="subheading">Welcome</h2>
           	<h1>Attorneys Fighting For Your 
 						  <span
 						     class="txt-rotate"
@@ -124,7 +124,7 @@
     	<div class="container">
     		<div class="row d-flex">
     			<div class="col-md-6 d-flex">
-    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end" style="background-image:url(images/about.jpg);">
+                    <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end" style="background-image:url({{ asset('images/about.jpg') }});">
     					<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
     						<span class="icon-play"></span>
     					</a>
@@ -193,7 +193,16 @@
 		        		</div>
               </div>
               <div class="item">
-		        		<div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/case-2.jpg);">
+                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('images/case-2.jpg') }});">
+                    <div class="text text-center">
+		        				<h3><a href="#">Legal Seperation</a></h3>
+		        				<span>Corporate</span>
+		        			</div>
+		        		</div>
+              </div>
+              <div class="item">
+                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('images/case-3.jpg') }});">
+		        		{{-- <div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/case-3.jpg);"> --}}
 		        			<div class="text text-center">
 		        				<h3><a href="#">Legal Seperation</a></h3>
 		        				<span>Corporate</span>
@@ -201,15 +210,8 @@
 		        		</div>
               </div>
               <div class="item">
-		        		<div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/case-3.jpg);">
-		        			<div class="text text-center">
-		        				<h3><a href="#">Legal Seperation</a></h3>
-		        				<span>Corporate</span>
-		        			</div>
-		        		</div>
-              </div>
-              <div class="item">
-		        		<div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/case-4.jpg);">
+                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('images/case-4.jpg') }});">
+		        		{{-- <div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/case-4.jpg);"> --}}
 		        			<div class="text text-center">
 		        				<h3><a href="#">Legal Seperation</a></h3>
 		        				<span>Corporate</span>
@@ -470,8 +472,8 @@
           		<div class="text px-4 py-4">
           			<h3 class="heading mb-0"><a href="#">All you want to know about industrial laws</a></h3>
           		</div>
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
+                  <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/image_1.jpg') }}');">
+                  </a>
               <div class="text p-4 float-right d-block">
               	<div class="topper d-flex align-items-center">
               		<div class="one py-2 pl-3 pr-1 align-self-stretch">
