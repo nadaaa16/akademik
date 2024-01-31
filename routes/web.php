@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/halaman-login','halaman-login');
+Route::view('/halaman-dashboard','halaman-dashboard');
+
