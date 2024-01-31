@@ -782,7 +782,7 @@
 					</div>
 				</div>
 
-				<div class="row pb-10">
+				{{-- <div class="row pb-10">
 					<div class="col-md-8 mb-20">
 						<div class="card-box height-100-p pd-20">
 							<div
@@ -1055,7 +1055,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 
 				<div class="card-box pb-10">
 					<div class="h5 pd-20 mb-0">Recent Patient</div>
@@ -1396,7 +1396,7 @@
 					</table>
 				</div>
 
-				<div class="title pb-20 pt-20">
+				{{-- <div class="title pb-20 pt-20">
 					<h2 class="h3 mb-0">Quick Start</h2>
 				</div>
 
@@ -1440,7 +1440,7 @@
 							</div>
 						</a>
 					</div>
-				</div>
+				</div> --}}
 
 			</div>
 		</div>

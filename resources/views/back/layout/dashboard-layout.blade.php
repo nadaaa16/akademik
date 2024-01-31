@@ -57,9 +57,9 @@
 	<body>
 		<div class="pre-loader">
 			<div class="pre-loader-box">
-				<div class="loader-logo">
+				{{-- <div class="loader-logo">
 					<img src="/back/vendors/images/deskapp-logo.svg" alt="" />
-				</div>
+				</div> --}}
 				<div class="loader-progress" id="progress_div">
 					<div class="bar" id="bar1"></div>
 				</div>
@@ -465,18 +465,18 @@
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-textarea-resize"></span
-								><span class="mtext">Forms</span>
+								><span class="mtext">Siswa</span>
 							</a>
 							<ul class="submenu">
-								<li><a href="form-basic.html">Form Basic</a></li>
+								<li><a href="form-basic.html">Siswa</a></li>
 								<li>
-									<a href="advanced-components.html">Advanced Components</a>
+									<a href="advanced-components.html">Tambah Catatan Siswa</a>
 								</li>
-								<li><a href="form-wizard.html">Form Wizard</a></li>
+								{{-- <li><a href="form-wizard.html">Form Wizard</a></li>
 								<li><a href="html5-editor.html">HTML5 Editor</a></li>
 								<li><a href="form-pickers.html">Form Pickers</a></li>
 								<li><a href="image-cropper.html">Image Cropper</a></li>
-								<li><a href="image-dropzone.html">Image Dropzone</a></li>
+								<li><a href="image-dropzone.html">Image Dropzone</a></li> --}}
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -873,16 +873,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="footer-wrap pd-20 mb-20 card-box">
-					DeskApp - Bootstrap 4 Admin Template By
-					<a href="https://github.com/dropways" target="_blank"
-						>Ankit Hingarajiya</a
-					>
-				</div>
 			</div>
 		</div>
 		<!-- welcome modal start -->
-		<div class="welcome-modal">
+		{{-- <div class="welcome-modal">
 			<button class="welcome-modal-close">
 				<i class="bi bi-x-lg"></i>
 			</button>
@@ -953,7 +947,7 @@
 		</div>
 		<button class="welcome-modal-btn">
 			<i class="fa fa-download"></i> Download
-		</button>
+		</button> --}}
 		<!-- welcome modal end -->
 		<!-- js -->
 		<script src="/back/vendors/scripts/core.js"></script>

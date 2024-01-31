@@ -21,3 +21,5 @@ Route::view('/halaman-login','halaman-login');
 Route::view('/halaman-dashboard','halaman-dashboard');
 Route::view('/halaman-dashboard2','halaman-dashboard2');
 
+//admin
+Route::view('/catatan-siswa','catatan-siswa');
