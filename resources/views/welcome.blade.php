@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     
-
     <link rel="stylesheet" href="{{ asset('assets/css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
@@ -32,37 +32,38 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	          {{-- <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="attorneys.html" class="nav-link">Attorneys</a></li>
 	          <li class="nav-item"><a href="practice-areas.html" class="nav-link">Practice Areas</a></li>
 	          <li class="nav-item"><a href="case.html" class="nav-link">Case Studies</a></li>
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta"><a href="#" class="nav-link">Free Consultation</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> --}}
+	          <li class="nav-item cta"><a href="#" class="nav-link">Login</a></li>
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
     
-    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
+    <div class="hero-wrap js-fullheight" style="background-image: url({{ asset('assets/images/bg_1.jpg') }});" data-stellar-background-ratio="0.5">
+		{{-- <div class="hero-wrap js-fullheight" style="background-image: url({{ asset('assets/images/bg3.png') }});" data-stellar-background-ratio="0.5"> --}}
+      {{-- <div class="overlay"></div> --}}
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-6 ftco-animate">
           	<h2 class="subheading">Welcome</h2>
-          	<h1>Attorneys Fighting For Your 
+          	<h1>Making your day more  
 						  <span
 						     class="txt-rotate"
 						     data-period="2000"
-						     data-rotate='[ "Freedom.", "Rights.", "Case.", "Custody." ]'></span>
+						     data-rotate='[ "Enjoyable.", "Enjoyable", "Enjoyable.", "Enjoyable." ]'></span>
 						</h1>
             <!-- <h1 class="mb-4">Attorneys Fighting For Your Freedom</h1> -->
-            <p class="mb-4">We have help thousands of people to get relief from national wide fights wrongfull denials. Now they trusted legalcare attorneys</p>
-            <p><a href="#" class="btn btn-primary mr-md-4 py-2 px-4">Get Legal Advice <span class="ion-ios-arrow-forward"></span></a></p>
+            <p class="mb-4">You can monitor your activities at school through this website. please use it well!!!</p>
+            <p><a href="#" class="btn btn-primary mr-md-4 py-2 px-4">Login <span class="ion-ios-arrow-forward"></span></a></p>
           </div>
         </div>
-      </div>
+      {{-- </div> --}}
     </div>
 
     <section class="ftco-section ftco-no-pt">
@@ -71,9 +72,9 @@
     			<div class="col-lg-3 py-5">
 	          <div class="heading-section ftco-animate">
 	          	<span class="subheading">Services</span>
-	            <h2 class="mb-4">Why Select Us?</h2>
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your.</p>
-	            <p><a href="#" class="btn btn-primary py-3 px-4">Free Consultation</a></p>
+	            {{-- <h2 class="mb-4">Why Select Us?</h2> --}}
+	            <p>Through analytics tools we enable the monitoring of student achievement trends over time, thus enabling the timely identification of solutions to ensure every student reaches their maximum potential in an inclusive and supportive learning environment.</p>
+	            <p><a href="#" class="btn btn-primary py-3 px-4">Login</a></p>
 	          </div>
     			</div>
     			<div class="col-lg-9 services-wrap px-4 pt-5">
@@ -81,11 +82,11 @@
     					<div class="col-md-4 d-flex align-items-stretch">
 		    				<div class="services text-center">
 		    					<div class="icon d-flex justify-content-center align-items-center">
-		    						<span class="flaticon-lawyer"></span>
-		    					</div>
+									<i class="bi bi-list-columns text-primary"></i>
+								</div>
 		    					<div class="text">
-		    						<h3>Fight for Justice</h3>
-		    						<p>Seeking justice in the world is a sed significant emotional and investment when we follow this call.</p>
+		    						<h3>Attendance</h3>
+		    						<p>Efficiently monitor attendance per subject and have a fun experience.</p>
 		    					</div>
 		    					<a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="ion-ios-arrow-round-forward"></span></a>
 		    				</div>
@@ -93,11 +94,11 @@
 		    			<div class="col-md-4 d-flex align-items-stretch">
 		    				<div class="services text-center">
 		    					<div class="icon d-flex justify-content-center align-items-center">
-		    						<span class="flaticon-lawyer"></span>
-		    					</div>
+									<i class="bi bi-card-list text-primary"></i>
+								</div>
 		    					<div class="text">
-		    						<h3>Best Case Strategy</h3>
-		    						<p>Seeking justice in the world is a sed significant emotional and investment when we follow this call.</p>
+		    						<h3>Note</h3>
+		    						<p>Provide student notes efficiently and more easily</p>
 		    					</div>
 		    					<a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="ion-ios-arrow-round-forward"></span></a>
 		    				</div>
@@ -105,11 +106,11 @@
 		    			<div class="col-md-4 d-flex align-items-stretch">
 		    				<div class="services text-center">
 		    					<div class="icon d-flex justify-content-center align-items-center">
-		    						<span class="flaticon-lawyer"></span>
-		    					</div>
+									<i class="bi bi-trophy text-primary"></i>
+								</div>
 		    					<div class="text">
-		    						<h3>Experienced Attorney</h3>
-		    						<p>Seeking justice in the world is a sed significant emotional and investment when we follow this call.</p>
+		    						<h3>Achievements</h3>
+		    						<p>Add and view student achievements more easily.</p>
 		    					</div>
 		    					<a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="ion-ios-arrow-round-forward"></span></a>
 		    				</div>
@@ -120,11 +121,11 @@
     	</div>
     </section>
    	
-    <section class="ftco-section ftco-no-pt ftco-no-pb">
+    {{-- <section class="ftco-section ftco-no-pt ftco-no-pb">
     	<div class="container">
     		<div class="row d-flex">
     			<div class="col-md-6 d-flex">
-                    <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end" style="background-image:url({{ asset('images/about.jpg') }});">
+                    <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end" style="background-image:url({{ asset('assets/images/about.jpg') }});">
     					<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
     						<span class="icon-play"></span>
     					</a>
@@ -171,58 +172,52 @@
 	        </div>
         </div>
     	</div>
-    </section>
+    </section> --}}
 
     <section class="ftco-section">
     	<div class="container">
     		<div class="row justify-content-center mb-5">
           <div class="col-md-10 text-center heading-section ftco-animate">
-          	<span class="subheading">Explore Case Studies</span>
-            <h2 class="mb-4">1000+ Completed Cases Successfully</h2>
+          	<span class="subheading">Achievements</span>
+            <h2 class="mb-4">SMK Wikrama Bogor</h2>
           </div>
         </div>
         <div class="row">
         	<div class="col-md-12">
         		<div class="carousel-case owl-carousel ftco-owl">
               <div class="item">
-                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('images/case-1.jpg') }});">
+                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{asset('assets/images/wik1.png')}});">
                     <div class="text text-center">
-		        				<h3><a href="#">Legal Seperation</a></h3>
-		        				<span>Corporate</span>
+		        				<h3><a href="#">SMK Wikrama Bogor</a></h3>
 		        			</div>
 		        		</div>
               </div>
               <div class="item">
-                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('images/case-2.jpg') }});">
+                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('assets/images/wik2.png') }});">
                     <div class="text text-center">
-		        				<h3><a href="#">Legal Seperation</a></h3>
-		        				<span>Corporate</span>
+		        				<h3><a href="#">SMK Wikrama Bogor</a></h3>
 		        			</div>
 		        		</div>
               </div>
               <div class="item">
-                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('images/case-3.jpg') }});">
-		        		{{-- <div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/case-3.jpg);"> --}}
+                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('assets/images/wik3.png') }});">
 		        			<div class="text text-center">
-		        				<h3><a href="#">Legal Seperation</a></h3>
-		        				<span>Corporate</span>
+		        				<h3><a href="#">SMK Wikrama Bogor</a></h3>
 		        			</div>
 		        		</div>
               </div>
               <div class="item">
-                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('images/case-4.jpg') }});">
-		        		{{-- <div class="case img d-flex align-items-center justify-content-center" style="background-image: url(images/case-4.jpg);"> --}}
+                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('assets/images/wik4.png') }});">
 		        			<div class="text text-center">
-		        				<h3><a href="#">Legal Seperation</a></h3>
-		        				<span>Corporate</span>
+		        				<h3><a href="#">SMK Wikrama Bogor</a></h3>
 		        			</div>
 		        		</div>
               </div>
             </div>
         	</div>
-        	<div class="col-md-12 text-center mt-4">
+        	{{-- <div class="col-md-12 text-center mt-4">
         		<a href="case.html" class="btn btn-primary px-5">See All Successful Cases</a>
-        	</div>
+        	</div> --}}
         </div>
     	</div>
     </section>
@@ -231,8 +226,8 @@
     	<div class="container-fluid px-md-5">
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section ftco-animate">
-          	<span class="subheading">Our Attorney</span>
-            <h2 class="mb-4">Our Legal Attorneys</h2>
+          	<span class="subheading">Message</span>
+            <h2 class="mb-4">From SMK Wkrama Bogor graduates</h2>
           </div>
         </div>
         <div class="row">
@@ -241,20 +236,17 @@
 	            <div class="flipper">
 	              <div class="front" style="background-image: url(/images/person_1.jpg);">
 	                <div class="box">
-	                  <h2>Ryan Anderson</h2>
-	                  <p>Civil Lawyer</p>
+	                  <h2>Kemal Virlanda </h2>
+	                  <p> Harris Sentul Bogor </p>
 	                </div>
 	              </div>
 	              <div class="back">
 	                <!-- back content -->
 	                <blockquote>
-	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
+	                  <p>&ldquo;Good joob SMK Wikrama Bogor for support Harris Sentul city Bogor i hope we always cooperatioan &rdquo;</p>
 	                </blockquote>
 	                <div class="author d-flex">
-	                  <div class="image align-self-center">
-	                    <img src="{{ asset('assets/images/person_1.jpg') }}" alt="">
-	                  </div>
-	                  <div class="name align-self-center ml-3">Ryan Anderson <span class="position">Civil Lawyer</span></div>
+	                  <div class="name align-self-center ml-3">Kemal Virlanda <span class="position">Harris Sentul Bogor</span></div>
 	                </div>
 	              </div>
 	            </div>
@@ -265,21 +257,17 @@
 	            <div class="flipper">
 	              <div class="front" style="background-image: url(/images/person_2.jpg);">
 	                <div class="box">
-	                  <h2>Greg Washer</h2>
-	                  <p>Business Lawyer</p>
+	                  <h2>Lita </h2>
+	                  <p>IHATEC</p>
 	                </div>
 	              </div>
 	              <div class="back">
 	                <!-- back content -->
 	                <blockquote>
-	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
+	                  <p>&ldquo;Semoga IHATEC akan selalu bisa kerjasama dengan SMK WIKRAMA untuk sarannya sejauh ini sudah cukup sesuai antara sekolah yang memberikan ilmu kepada siswa/siswi sehingga bisa di implementasikan di dunia industri &rdquo;</p>
 	                </blockquote>
 	                <div class="author d-flex">
-	                  <div class="image align-self-center">
-                        <img src="{{ asset('assets/images/person_2.jpg') }}" alt="">
-	                    {{-- <img src="images/person_2.jpg" alt=""> --}}
-	                  </div>
-	                  <div class="name align-self-center ml-3">Greg Washer<span class="position">Business Lawyer</span></div>
+	                  <div class="name align-self-center ml-3">Lita <span class="position">IHATEC</span></div>
 	                </div>
 	              </div>
 	            </div>
@@ -290,21 +278,17 @@
 	            <div class="flipper">
 	              <div class="front" style="background-image: url(/images/person_3.jpg);">
 	                <div class="box">
-	                  <h2>Tony Henderson</h2>
-	                  <p>Criminal Defense</p>
+	                  <h2>M.lukman Hakim </h2>
+	                  <p>PT. AMA Salam Indonesia</p>
 	                </div>
 	              </div>
 	              <div class="back">
 	                <!-- back content -->
 	                <blockquote>
-	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
+	                  <p>&ldquo;Review :semoga smk wikrama akan selalu menjadi yang terbaik dan jauh lebih baik kedepan dan semoga akan menjadi sekolah pelopor untuk perusahaan IT terbaik &rdquo;</p>
 	                </blockquote>
 	                <div class="author d-flex">
-	                  <div class="image align-self-center">
-                        <img src="{{ asset('assets/images/person_3.jpg') }}" alt="">
-	                    {{-- <img src="images/person_3.jpg" alt=""> --}}
-	                  </div>
-	                  <div class="name align-self-center ml-3">Tony Henderson <span class="position">Criminal Defense</span></div>
+	                  <div class="name align-self-center ml-3">M.lukman Hakim  <span class="position">PT. AMA Salam Indonesia</span></div>
 	                </div>
 	              </div>
 	            </div>
@@ -315,21 +299,17 @@
 	            <div class="flipper">
 	              <div class="front" style="background-image: url(/images/person_4.jpg);">
 	                <div class="box">
-	                  <h2>Jack Smith</h2>
-	                  <p>Insurance Lawyer</p>
+	                  <h2>Rizal ahmad Gozali</h2>
+	                  <p>Royal Safari Garden </p>
 	                </div>
 	              </div>
 	              <div class="back">
 	                <!-- back content -->
 	                <blockquote>
-	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
+	                  <p>&ldquo;Wikrama luar biasa  maju terus dan ciptakan anak didik berkualitas, berintegrasi, dan berwawasan luas serta penuh talenta &rdquo;</p>
 	                </blockquote>
 	                <div class="author d-flex">
-	                  <div class="image align-self-center">
-                        <img src="{{ asset('assets/images/person_4.jpg') }}" alt="">
-	                    {{-- <img src="images/person_4.jpg" alt=""> --}}
-	                  </div>
-	                  <div class="name align-self-center ml-3">Jack Smith <span class="position">Insurance Lawyer</span></div>
+	                  <div class="name align-self-center ml-3">Rizal ahmad Gozali <span class="position">Royal Safari Garden </span></div>
 	                </div>
 	              </div>
 	            </div>
@@ -340,37 +320,8 @@
     </section>
 		
 
-		<section class="ftco-consultation ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url(images/bg_2.jpg);">
-			<div class="overlay"></div>
-    	<div class="container">
-    		<div class="row d-md-flex justify-content-end">
-    			<div class="col-md-6 half p-3 py-5 pl-md-5 ftco-animate heading-section heading-section-white">
-    				<span class="subheading">Booking an Appointment</span>
-    				<h2 class="mb-4">Free Consultation</h2>
-    				<form action="#" class="consultation">
-	            <div class="form-group">
-	              <input type="text" class="form-control" placeholder="Your Name">
-	            </div>
-	            <div class="form-group">
-	              <input type="text" class="form-control" placeholder="Your Email">
-	            </div>
-	            <div class="form-group">
-	              <input type="text" class="form-control" placeholder="Subject">
-	            </div>
-	            <div class="form-group">
-	              <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-	            </div>
-	            <div class="form-group">
-	              <input type="submit" value="Send message" class="btn btn-dark py-3 px-4">
-	            </div>
-	          </form>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-
-    <section class="ftco-section testimony-section">
+		
+    {{-- <section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -387,7 +338,6 @@
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                     <div class="d-flex align-items-center">
                         <img src="{{ asset('assets/images/person_1.jpg') }}" alt="">
-                    	{{-- <div class="user-img" style="background-image: url(images/person_1.jpg)"></div> --}}
                     	<div class="pl-3">
 		                    <p class="name">Roger Scott</p>
 		                    <span class="position">Marketing Manager</span>
@@ -401,7 +351,7 @@
                   <div class="text">
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                    	<div class="user-img" style="background-image: url{{ asset('assets/images/person_2.jpg') }})"></div>
                     	<div class="pl-3">
 		                    <p class="name">Roger Scott</p>
 		                    <span class="position">Marketing Manager</span>
@@ -415,7 +365,7 @@
                   <div class="text">
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                    	<div class="user-img" style="background-image: url({{ asset('assets/images/person_3.jpg') }})"></div>
                     	<div class="pl-3">
 		                    <p class="name">Roger Scott</p>
 		                    <span class="position">Marketing Manager</span>
@@ -429,7 +379,7 @@
                   <div class="text">
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                    	<div class="user-img" style="background-image: url({{ asset('assets/images/person_3.jpg') }})"></div>
                     	<div class="pl-3">
 		                    <p class="name">Roger Scott</p>
 		                    <span class="position">Marketing Manager</span>
@@ -443,7 +393,7 @@
                   <div class="text">
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                    	<div class="user-img" style="background-image: url({{ asset('assets/images/person_2.jpg') }})"></div>
                     	<div class="pl-3">
 		                    <p class="name">Roger Scott</p>
 		                    <span class="position">Marketing Manager</span>
@@ -456,80 +406,80 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
     <section class="ftco-section bg-light">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Our Blog</span>
-            <h2>Recent Blog</h2>
+          	{{-- <span class="subheading">Achievements</span> --}}
+            <h2>Achievements</h2>
           </div>
         </div>
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
           		<div class="text px-4 py-4">
-          			<h3 class="heading mb-0"><a href="#">All you want to know about industrial laws</a></h3>
+          			<h3 class="heading mb-0"><a href="#">Juara 3 Futsal Championship 2023</a></h3>
           		</div>
-                  <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/image_1.jpg') }}');">
+                  <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('assets/images/juara3.png') }}');">
                   </a>
               <div class="text p-4 float-right d-block">
               	<div class="topper d-flex align-items-center">
               		<div class="one py-2 pl-3 pr-1 align-self-stretch">
-              			<span class="day">18</span>
+              			<span class="day">15</span>
               		</div>
               		<div class="two pl-0 pr-3 py-2 align-self-stretch">
-              			<span class="yr">2019</span>
-              			<span class="mos">October</span>
+              			<span class="yr">2023</span>
+              			<span class="mos">November</span>
               		</div>
               	</div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#" class="btn btn-primary">Read more</a></p>
+                {{-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <p><a href="#" class="btn btn-primary">Read more</a></p> --}}
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
           		<div class="text px-4 py-4">
-          			<h3 class="heading mb-0"><a href="#">All you want to know about industrial laws</a></h3>
+          			<h3 class="heading mb-0"><a href="#">Juara 1 Lomba Business Simulation Club Tahun 2023</a></h3>
           		</div>
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url({{ asset('assets/images/juara1.png') }});">
               </a>
               <div class="text p-4 float-right d-block">
               	<div class="topper d-flex align-items-center">
               		<div class="one py-2 pl-3 pr-1 align-self-stretch">
-              			<span class="day">18</span>
+              			<span class="day">28</span>
               		</div>
               		<div class="two pl-0 pr-3 py-2 align-self-stretch">
-              			<span class="yr">2019</span>
-              			<span class="mos">October</span>
+              			<span class="yr">2023</span>
+              			<span class="mos">August</span>
               		</div>
               	</div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#" class="btn btn-primary">Read more</a></p>
+                {{-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <p><a href="#" class="btn btn-primary">Read more</a></p> --}}
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
           		<div class="text px-4 py-4">
-          			<h3 class="heading mb-0"><a href="#">All you want to know about industrial laws</a></h3>
+          			<h3 class="heading mb-0"><a href="#"> Juara 2 dalam lomba Bisnis Plan tingkat SMA/K Kota Bogor</a></h3>
           		</div>
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
+				  <a href="blog-single.html" class="block-20" style="background-image: url({{ asset('assets/images/juara2.png') }});">
+				  </a>
               <div class="text p-4 float-right d-block">
               	<div class="topper d-flex align-items-center">
               		<div class="one py-2 pl-3 pr-1 align-self-stretch">
-              			<span class="day">18</span>
+              			<span class="day">21</span>
               		</div>
               		<div class="two pl-0 pr-3 py-2 align-self-stretch">
-              			<span class="yr">2019</span>
-              			<span class="mos">October</span>
+              			<span class="yr">2023</span>
+              			<span class="mos">November</span>
               		</div>
               	</div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#" class="btn btn-primary">Read more</a></p>
+                {{-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <p><a href="#" class="btn btn-primary">Read more</a></p> --}}
               </div>
             </div>
           </div>
@@ -538,7 +488,7 @@
     </section>
 		
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb bg-light">
+    {{-- <section class="ftco-section ftco-no-pt ftco-no-pb bg-light">
       <div class="container">
         <div class="row d-flex justify-content-end">
         	<div class="col-md-8 py-4 px-md-4 bg-primary">
@@ -558,7 +508,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
@@ -566,7 +516,7 @@
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="logo"><a href="#">Legalcare <span>A Law Firm Agency</span></a></h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>find more information here</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -574,7 +524,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md">
+          {{-- <div class="col-md">
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Practice Areas</h2>
               <ul class="list-unstyled">
@@ -589,45 +539,38 @@
 
               </ul>
             </div>
-          </div>
+          </div> --}}
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Jl. Raya Wangun Kelurahan Sindangsari Bogor Timur 16720</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">0251-8242411  /  082221718035</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">prohumasi@smkwikrama.sch.id</span></a></li>
 	              </ul>
 	            </div>
             </div>
           </div>
           <div class="col-md">
              <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Business Hours</h2>
+              <h2 class="ftco-heading-2">Working Hours</h2>
               <div class="opening-hours">
               	<h4>Opening Days:</h4>
               	<p class="pl-3">
-              		<span>Monday - Friday : 9am to 20 pm</span>
-              		<span>Saturday : 9am to 17 pm</span>
+              		<span>Monday - Saturday : 7am to 17 pm</span>
+              		{{-- <span>Saturday : 9am to 17 pm</span> --}}
               	</p>
-              	<h4>Vacations:</h4>
+              	{{-- <h4>Vacations:</h4>
               	<p class="pl-3">
               		<span>All Sunday Days</span>
               		<span>All Official Holidays</span>
-              	</p>
+              	</p> --}}
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
+       
       </div>
     </footer>
     
@@ -653,4 +596,7 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
     
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </html>
