@@ -19,4 +19,5 @@ Route::get('/', function () {
 
 Route::view('/halaman-login','halaman-login');
 Route::view('/halaman-dashboard','halaman-dashboard');
+Route::view('/halaman-dashboard2','halaman-dashboard2');
 
