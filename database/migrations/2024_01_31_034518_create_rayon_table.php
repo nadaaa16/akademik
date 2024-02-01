@@ -13,7 +13,7 @@ class CreateRayonTable extends Migration
      */
     public function up()
     {
-        Schema::create('rayon', function (Blueprint $table) {
+        Schema::create('rayons', function (Blueprint $table) {
             $table->id();
             $table->string('nama_siswa');
             $table->integer('angkatan');
