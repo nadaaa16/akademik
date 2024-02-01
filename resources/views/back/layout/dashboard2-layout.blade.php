@@ -535,7 +535,7 @@
 								><span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="ui-buttons.html">Data Siswa</a></li>
+								<li><a href="siswa">Data Siswa</a></li>
 								<li><a href="/catatan-siswa">Catatan Siswa</a></li>
 								<li><a href="ui-cards-hover.html">Prestasi Siswa</a></li>
 								<li><a href="ui-modals.html">Absensi Siswa</a></li>

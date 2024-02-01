@@ -45,7 +45,7 @@ public function regis(Request $request) {
 
         Session::flash('status', 'success');
         Session::flash('message', 'Regist Success! wait admin to approve');
-        return redirect('register');
+        return redirect('login');
 }
     
 
