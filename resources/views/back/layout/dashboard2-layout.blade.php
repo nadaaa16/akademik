@@ -3,7 +3,7 @@
 	<head>
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
-		<title>Rekam Akademik - Admin</title>
+		<title>@yield ('title') Admin</title>
 
 		<!-- Site favicon -->
 		<link
@@ -524,31 +524,42 @@
 							</ul>
 						</li> --}}
 						<li>
-							<a href="calendar.html" class="dropdown-toggle no-arrow">
+							<a href="/dashboard" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-house"></span
 								><span class="mtext">Home</span>
 							</a>
 						</li>
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-archive"></span
-								><span class="mtext"> Siswa </span>
+								<span class="micon bi bi-person"></span>
+								<span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="ui-buttons.html">Data Siswa</a></li>
-								<li><a href="/catatan-siswa">Catatan Siswa</a></li>
-								<li><a href="ui-cards-hover.html">Prestasi Siswa</a></li>
+								<li><a href="/data-siswa">Data Siswa</a></li>
+								<li class="dropdown">
+									<a href="javascript:;" class="dropdown-toggle">
+										<span class="micon fa fa-plug"></span>
+										<span class="mtext">Catatan Siswa</span>
+									</a>
+									<ul class="submenu child">
+										<li><a href="/catatan-siswa">Catatan Siswa</a></li>
+										<li><a href="/add-catatan">Tambah Catatan Siswa</a></li>
+										<li><a href="/view-code">Code Pelangaran</a></li>
+										<li><a href="/add-code">Tambah Code Pelangaran</a></li>
+									</ul>
+								</li>
+								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
 								<li><a href="ui-modals.html">Absensi Siswa</a></li>
 							</ul>
-						</li>
+						</li>						
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-command"></span
-								><span class="mtext"> Guru </span>
+								<span class="micon bi bi-person-check"></span>
+								<span class="mtext"> Guru </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="ui-buttons.html">Data Guru</a></li>
-								<li><a href="ui-modals.html">Absensi Guru</a></li>
+								<li><a href="/data-guru">Data Guru</a></li>
+								{{-- <li><a href="ui-modals.html">Absensi Guru</a></li> --}}
 							</ul>
 						</li>
 						{{-- <li class="dropdown">
@@ -687,13 +698,13 @@
 			</div>
 		</div>
 		<div class="mobile-menu-overlay"></div>
+			@yield('content')
 
-		<div class="main-container">
+		{{-- <div class="main-container">
 			<div class="xs-pd-20-10 pd-ltr-20">
 				<div class="title pb-20">
 					<h2 class="h3 mb-0">Hospital Overview</h2>
 				</div>
-
 				<div class="row pb-10">
 					<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
 						<div class="card-box height-100-p widget-style3">
@@ -1427,7 +1438,9 @@
 				</div>
 
 			</div>
-		</div>
+		</div> --}}
+
+
 		<!-- welcome modal start -->
 		{{-- <div class="welcome-modal">
 			<button class="welcome-modal-close">

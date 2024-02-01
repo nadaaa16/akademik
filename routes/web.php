@@ -33,11 +33,15 @@ Route::view('/halaman-dashboard2','halaman-dashboard2');
 
 
 //admin
-// Route::view('/admin/catatan-siswa','catatan-siswa');
 Route::get('/catatan-siswa', [adminController::class, "catatanSiswa"]);
-
+Route::get('/add-catatan', [adminController::class, "addCatatan"]);
 Route::get('/add-code', [adminController::class, "addCode"]);
 Route::get('/view-code', [adminController::class, "viewCode"]);
-
-Route::get('/add-catatan', [adminController::class, "addCatatan"]);
-Route::view('/catatan-siswa','catatan-siswa');
+Route::get('/prestasi-siswa', [adminController::class, "prestasiSiswa"]);
+Route::get('/add-prestasi', [adminController::class, "addPrestasiSiswa"]);
+Route::get('/data-siswa', [adminController::class, "dataSiswa"]);
+Route::get('/add-siswa', [adminController::class, "addSiswa"]);
+Route::get('/data-guru', [adminController::class, "dataGuru"]);
+Route::get('/add-guru', [adminController::class, "addGuru"]);
+//dashboard admin (ini klo pake yang dashboad2 menampilkan semua yang ada di dashboad2)
+Route::get('/dashboard', [adminController::class, "dashboard"]);
