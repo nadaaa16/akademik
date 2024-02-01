@@ -7,22 +7,30 @@
     <h2><i class="bi bi-trophy"></i>Tambah Code Pelangaran Siswa</h2>
 </div>
 
+@if (Session::get('errors'))
+<p style="color: red">{{Session::get('errors')}}</p>
+@endif
+
 <div class="mobile-menu-overlay"></div>
 	<div class="main-container">
         <h2 style="margin-top: 20px;">Tambahkan Code Yang Sesuai Dengan BKP</h2>
+		<form action="/add-code" method="post">
+			@csrf
 			<div class="row">
 				<div class="col">
-					<label for="kode" class="form-label mt-4">Kode</label>
-					<input type="text" name="kode" id="kode" class="form-control" placeholder="Kode" aria-label="First name">
+					<label for="name" class="form-label mt-4">Kode</label>
+					<input type="text" name="code" id="code" class="form-control" placeholder="Kode" aria-label="First name">
 				</div>
 				<div class="col">
-					<label for="deskripsi" class="form-label mt-4">Deskripsi</label>
+					<label for="name" class="form-label mt-4">Deskripsi</label>
 					<input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsi" aria-label="Last name">
 				</div>
 			</div>
-            <div class="xs-pd-20-10 pd-ltr-20">
-                <button class="btn btn-primary float-right" type="button">Tambah</button>
-            </div>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+				<a href="/" class="btn btn-danger me-md-2 fw-bold"><i class="bi bi-x"></i> Back</a>
+				<button href = "/index"class="btn btn-primary me-md-2" type="submit"><i class="bi bi-check"></i> Save</button>
+			  </div>
+		</form>
         </div>
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>

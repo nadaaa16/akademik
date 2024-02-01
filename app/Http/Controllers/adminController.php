@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\CodePelanggaran;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -20,6 +20,8 @@ class adminController extends Controller
     //code
     public function viewCode()
     {
+        // $data=CodePelanggaran::All();
+        // dd($data);
         return view('admin.view-code');
     }
 

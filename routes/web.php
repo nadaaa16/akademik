@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\CodePelanggaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::get('/', function () {
 
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
-Route::post('/register', [AuthController::class, 'regis'])->name('register');
+Route::post('/register', [AuthController::class, 'regis']);
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login-proses', [AuthController::class, 'login_proses'])->name('login-proses');
@@ -35,7 +36,8 @@ Route::view('/halaman-dashboard2','halaman-dashboard2');
 //admin
 Route::get('/catatan-siswa', [adminController::class, "catatanSiswa"]);
 Route::get('/add-catatan', [adminController::class, "addCatatan"]);
-Route::get('/add-code', [adminController::class, "addCode"]);
+Route::get('/code', [CodePelanggaranController::class, "code"]);
+Route::post('/add-code', [CodePelanggaranController::class, "storeCodePelanggaran"]);
 Route::get('/view-code', [adminController::class, "viewCode"]);
 Route::get('/prestasi-siswa', [adminController::class, "prestasiSiswa"]);
 Route::get('/add-prestasi', [adminController::class, "addPrestasiSiswa"]);

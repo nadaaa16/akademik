@@ -1,6 +1,7 @@
 @extends('back.layout.dashboard2-layout')
 @section('title', isset($pageTitle) ? $pageTitle : 'Data Code Pelangaran')
 @section('content')
+
     
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="mt-3 d-flex justify-content-center">
@@ -25,15 +26,17 @@
                     </tr>
                 </thead>
                 <tbody>
+					{{-- @if($data)
+        			@foreach ($data as $value) --}}
                     <tr>
                         <td class="table-plus">
                             <div class="name-avatar d-flex align-items-center">
                                 <div class="txt">
-                                    <div class="weight-600">K 1.1</div>
+                                    <div class="weight-600">Code</div>
                                 </div>
                             </div>
                         </td>
-                        <td>Nongkrong</td>
+                        <td>Deskripsi</td>
                         <td>
                             <div class="table-actions">
                                 <a href="#" data-color="#265ed7"
@@ -45,6 +48,8 @@
                             </div>
                         </td>
                     </tr>
+					{{-- @endforeach
+        			@endif --}}
                 </tbody>
             </table>
         </div>
