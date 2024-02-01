@@ -485,7 +485,7 @@
 			<div class="menu-block customscroll">
 				<div class="sidebar-menu">
 					<ul id="accordion-menu">
-						<li class="dropdown">
+						{{-- <li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-house"></span
 								><span class="mtext">Home</span>
@@ -522,52 +522,36 @@
 								<li><a href="basic-table.html">Basic Tables</a></li>
 								<li><a href="datatable.html">DataTables</a></li>
 							</ul>
-						</li>
+						</li> --}}
 						<li>
 							<a href="calendar.html" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-calendar4-week"></span
-								><span class="mtext">Calendar</span>
+								<span class="micon bi bi-house"></span
+								><span class="mtext">Home</span>
 							</a>
 						</li>
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-archive"></span
-								><span class="mtext"> UI Elements </span>
+								><span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="ui-buttons.html">Buttons</a></li>
-								<li><a href="ui-cards.html">Cards</a></li>
-								<li><a href="ui-cards-hover.html">Cards Hover</a></li>
-								<li><a href="ui-modals.html">Modals</a></li>
-								<li><a href="ui-tabs.html">Tabs</a></li>
-								<li>
-									<a href="ui-tooltip-popover.html">Tooltip &amp; Popover</a>
-								</li>
-								<li><a href="ui-sweet-alert.html">Sweet Alert</a></li>
-								<li><a href="ui-notification.html">Notification</a></li>
-								<li><a href="ui-timeline.html">Timeline</a></li>
-								<li><a href="ui-progressbar.html">Progressbar</a></li>
-								<li><a href="ui-typography.html">Typography</a></li>
-								<li><a href="ui-list-group.html">List group</a></li>
-								<li><a href="ui-range-slider.html">Range slider</a></li>
-								<li><a href="ui-carousel.html">Carousel</a></li>
+								<li><a href="ui-buttons.html">Data Siswa</a></li>
+								<li><a href="/catatan-siswa">Catatan Siswa</a></li>
+								<li><a href="ui-cards-hover.html">Prestasi Siswa</a></li>
+								<li><a href="ui-modals.html">Absensi Siswa</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-command"></span
-								><span class="mtext">Icons</span>
+								><span class="mtext"> Guru </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="bootstrap-icon.html">Bootstrap Icons</a></li>
-								<li><a href="font-awesome.html">FontAwesome Icons</a></li>
-								<li><a href="foundation.html">Foundation Icons</a></li>
-								<li><a href="ionicons.html">Ionicons Icons</a></li>
-								<li><a href="themify.html">Themify Icons</a></li>
-								<li><a href="custom-icon.html">Custom Icons</a></li>
+								<li><a href="ui-buttons.html">Data Guru</a></li>
+								<li><a href="ui-modals.html">Absensi Guru</a></li>
 							</ul>
 						</li>
-						<li class="dropdown">
+						{{-- <li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-pie-chart"></span
 								><span class="mtext">Charts</span>
@@ -603,9 +587,9 @@
 								<li><a href="500.html">500</a></li>
 								<li><a href="503.html">503</a></li>
 							</ul>
-						</li>
+						</li> --}}
 
-						<li class="dropdown">
+						{{-- <li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-back"></span
 								><span class="mtext">Extra Pages</span>
@@ -697,7 +681,7 @@
 									<img src="/back/vendors/images/coming-soon.png" alt="" width="25"
 								/></span>
 							</a>
-						</li>
+						</li> --}}
 					</ul>
 				</div>
 			</div>
