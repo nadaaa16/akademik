@@ -409,11 +409,11 @@
 					</table>
 				</div>
 
-				<div class="title pb-20 pt-20">
+				{{-- <div class="title pb-20 pt-20">
 					<h2 class="h3 mb-0">Quick Start</h2>
-				</div>
+				</div> --}}
 
-				<div class="row">
+				{{-- <div class="row">
 					<div class="col-md-4 mb-20">
 						<a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
 							<div class="img pb-30">
@@ -453,7 +453,7 @@
 							</div>
 						</a>
 					</div>
-				</div>
+				</div> --}}
 
 			</div>
 		</div>
