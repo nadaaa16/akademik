@@ -58,3 +58,10 @@ Route::get('/add-guru', [adminController::class, "addGuru"]);
 Route::get('/dashboard', [adminController::class, "dashboard"]);
 Route::get('/absensi', [adminController::class, "absensi"]);
 Route::get('/add-absensi', [adminController::class, "addAbsensi"]);
+
+//siswaAsli controller masi pake yang admin
+Route::get('/dashboard-siswa', [adminController::class, "dashboardSiswa"]);
+Route::get('/catatan', [adminController::class, "catatan"]);
+//pelanggaran itu catatan belom di ganti
+Route::get('/view-pelanggaran', [adminController::class, "detailPelanggaran"]);
+Route::get('/prestasi', [adminController::class, "prestasi"]);

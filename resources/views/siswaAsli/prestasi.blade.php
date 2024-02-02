@@ -1,17 +1,17 @@
-@extends('back.layout.dashboard2-layout')
-@section('title', isset($pageTitle) ? $pageTitle : 'Data Siswa')
+@extends('back.layout.dashboard-layout')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Prestasi Siswa')
 @section('content')
     
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="mt-3 d-flex justify-content-center">
-    <h2><i class="bi bi-trophy"></i>Absensi Siswa Yang Tidak Hadir</h2>
+    <h2><i class="bi bi-trophy"></i>Prestasi yang Diraih Syahid</h2>
 </div>
 
-<div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='add-absensi'">
-        <i class="bi bi-plus-lg"></i>Tambah Absensi Siswa
+{{-- <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
+    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='add-prestasi'">
+        <i class="bi bi-plus-lg"></i>Tambah Prestasi Siswa
     </button>
-</div>
+</div> --}}
 
 <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20">
@@ -20,11 +20,10 @@
                 <thead>
                     <tr>
                         <th class="table-plus">Nama</th>
-                        <th>NIS</th>
-                        <th>Rayon</th>
-                        <th>Tingkat</th>
-                        <th>Keterangan</th>
-                        <th>Bukti</th>
+                        <th>Jenis EksKul</th>
+                        <th>Nama Lomba</th>
+                        <th>Pecapaian</th>
+                        <th>Tanggal</th>
                         <th class="datatable-nosort">Actions</th>
                     </tr>
                 </thead>
@@ -37,11 +36,10 @@
                                 </div>
                             </div>
                         </td>
-                        <td>12108633</td>
-                        <td>Cicurug 1</td>
-                        <td>XII</td>
-                        <td>Alpha</td>
-                        <td>Foto</td>
+                        <td>Futsal</td>
+                        <td>Futsal Championship 2023</td>
+                        <td>Juara 3</td>
+                        <td>2 Januari 2024</td>
                         <td>
                             <div class="table-actions">
                                 <a href="#" data-color="#265ed7"
