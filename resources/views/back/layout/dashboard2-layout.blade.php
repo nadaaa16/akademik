@@ -89,7 +89,7 @@
 		<!-- End Google Tag Manager -->
 	</head>
 	<body>
-		<div class="pre-loader">
+		{{-- <div class="pre-loader">
 			<div class="pre-loader-box">
 				<div class="loader-logo">
 					<img src="/back/vendors/images/deskapp-logo.svg" alt="" />
@@ -100,7 +100,7 @@
 				<div class="percent" id="percent1">0%</div>
 				<div class="loading-text">Loading...</div>
 			</div>
-		</div>
+		</div> --}}
 
 		<div class="header">
 			<div class="header-left">
@@ -535,6 +535,11 @@
 								<span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
+<<<<<<< HEAD
+								<li><a href="siswa">Data Siswa</a></li>
+								<li><a href="/catatan-siswa">Catatan Siswa</a></li>
+								<li><a href="ui-cards-hover.html">Prestasi Siswa</a></li>
+=======
 								<li><a href="/data-siswa">Data Siswa</a></li>
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">
