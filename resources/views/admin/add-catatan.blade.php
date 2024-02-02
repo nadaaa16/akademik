@@ -33,7 +33,7 @@
             <input type="text" name="Rayon" id="Rayon" class="form-control" placeholder="Rayon" aria-label="First name">
         </div>
         <div class="col">
-            <label for="tingkat" class="form-label mt-4">Tingkat</label>
+            <label for="tingkat" class="form-label mt-4">Kelas / Rombel</label>
             <input type="text" name="tingkat" id="tingkat" class="form-control" placeholder="Tingkat" aria-label="Last name">
         </div>
     </div>

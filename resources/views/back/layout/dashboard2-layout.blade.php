@@ -89,18 +89,7 @@
 		<!-- End Google Tag Manager -->
 	</head>
 	<body>
-		{{-- <div class="pre-loader">
-			<div class="pre-loader-box">
-				<div class="loader-logo">
-					<img src="/back/vendors/images/deskapp-logo.svg" alt="" />
-				</div>
-				<div class="loader-progress" id="progress_div">
-					<div class="bar" id="bar1"></div>
-				</div>
-				<div class="percent" id="percent1">0%</div>
-				<div class="loading-text">Loading...</div>
-			</div>
-		</div> --}}
+		
 
 		<div class="header">
 			<div class="header-left">
@@ -471,9 +460,9 @@
 		<div class="left-side-bar">
 			<div class="brand-logo">
 				<a href="index.html">
-					<img src="/back/vendors/images/deskapp-logo.svg" alt="" class="dark-logo" />
+					<img src="/back/vendors/images/logo-rekapp.png" alt="" class="dark-logo" />
 					<img
-						src="/back/vendors/images/deskapp-logo-white.svg"
+						src="/back/vendors/images/logo-rekapp-white.png"
 						alt=""
 						class="light-logo"
 					/>
