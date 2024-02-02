@@ -31,21 +31,14 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-	          {{-- <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="attorneys.html" class="nav-link">Attorneys</a></li>
-	          <li class="nav-item"><a href="practice-areas.html" class="nav-link">Practice Areas</a></li>
-	          <li class="nav-item"><a href="case.html" class="nav-link">Case Studies</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> --}}
-	          <li class="nav-item cta"><a href="#" class="nav-link">Login</a></li>
+	         
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
     
-    <div class="hero-wrap js-fullheight" style="background-image: url({{ asset('assets/images/bg_1.jpg') }});" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap js-fullheight" style="background-image: url({{ asset('assets/images/weka.jpg') }});" data-stellar-background-ratio="0.5">
 		{{-- <div class="hero-wrap js-fullheight" style="background-image: url({{ asset('assets/images/bg3.png') }});" data-stellar-background-ratio="0.5"> --}}
       {{-- <div class="overlay"></div> --}}
       <div class="container">

@@ -28,7 +28,7 @@
                   <input type="text" name="rayon" id="rayon" class="form-control" placeholder="Rayon" aria-label="First name">
                 </div>
                 <div class="col">
-                    <label for="codePelangaran" class="form-label mt-4">Tingkat</label>
+                    <label for="codePelangaran" class="form-label mt-4">Kelas / Rombel</label>
                         <select name="codePelangaran" id="codePelangaran" class="form-control" aria-label="Code Pelangaran">
                             <option value="">Tingkat</option>
                             <option value="option1">X</option>
