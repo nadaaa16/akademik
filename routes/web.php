@@ -47,3 +47,5 @@ Route::get('/data-guru', [adminController::class, "dataGuru"]);
 Route::get('/add-guru', [adminController::class, "addGuru"]);
 //dashboard admin (ini klo pake yang dashboad2 menampilkan semua yang ada di dashboad2)
 Route::get('/dashboard', [adminController::class, "dashboard"]);
+Route::get('/absensi', [adminController::class, "absensi"]);
+Route::get('/add-absensi', [adminController::class, "addAbsensi"]);

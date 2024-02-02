@@ -72,4 +72,15 @@ class adminController extends Controller
     {
         return view('admin.add-guru');
     }
+
+    //data absensi
+    public function absensi()
+    {
+        return view('admin.absensi.absensi');
+    }
+
+    public function addAbsensi()
+    {
+        return view('admin.absensi.add-absensi');
+    }
 }
