@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\CodePelanggaranController;
 
 /*
@@ -31,11 +32,19 @@ Route::post('/login-proses', [AuthController::class, 'login_proses'])->name('log
 Route::view('/halaman-login','halaman-login');
 Route::view('/halaman-dashboard','halaman-dashboard');
 Route::view('/halaman-dashboard2','halaman-dashboard2');
-
+    
 
 //admin
 Route::get('/catatan-siswa', [adminController::class, "catatanSiswa"]);
 Route::get('/add-catatan', [adminController::class, "addCatatan"]);
+Route::view('/catatan-siswa','catatan-siswa');
+
+
+//siswa
+Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
+Route::get('/tambah-siswa', [SiswaController::class, "tambahSiswa"]);
+Route::post('/siswa/store', [SiswaController::class, 'store']);
+
 Route::get('/code', [CodePelanggaranController::class, "code"]);
 Route::post('/add-code', [CodePelanggaranController::class, "storeCodePelanggaran"]);
 Route::get('/view-code', [adminController::class, "viewCode"]);

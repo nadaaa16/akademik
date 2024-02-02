@@ -89,7 +89,7 @@
 		<!-- End Google Tag Manager -->
 	</head>
 	<body>
-		{{-- <div class="pre-loader">
+		<div class="pre-loader">
 			<div class="pre-loader-box">
 				<div class="loader-logo">
 					<img src="/back/vendors/images/deskapp-logo.svg" alt="" />
@@ -100,7 +100,7 @@
 				<div class="percent" id="percent1">0%</div>
 				<div class="loading-text">Loading...</div>
 			</div>
-		</div> --}}
+		</div>
 
 		<div class="header">
 			<div class="header-left">
@@ -549,7 +549,7 @@
 									</ul>
 								</li>
 								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
-								<li><a href="/absensi">Absensi Siswa</a></li>
+								<li><a href="ui-modals.html">Absensi Siswa</a></li>
 							</ul>
 						</li>						
 						<li class="dropdown">
