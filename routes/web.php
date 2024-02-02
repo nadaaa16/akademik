@@ -29,27 +29,23 @@ Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login-proses', [AuthController::class, 'login_proses'])->name('login-proses');
 // Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::view('/halaman-login','halaman-login');
-Route::view('/halaman-dashboard','halaman-dashboard');
-Route::view('/halaman-dashboard2','halaman-dashboard2');
+// Route::view('/halaman-login','halaman-login');
+// Route::view('/halaman-dashboard','halaman-dashboard');
+// Route::view('/halaman-dashboard2','halaman-dashboard2');
     
 
 //admin
-Route::get('/catatan-siswa', [adminController::class, "catatanSiswa"]);
-Route::get('/add-catatan', [adminController::class, "addCatatan"]);
-Route::view('/catatan-siswa','catatan-siswa');
-
-
-//siswa
-Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
-Route::get('/tambah-siswa', [SiswaController::class, "tambahSiswa"]);
-Route::post('/siswa/store', [SiswaController::class, 'store']);
-
+Route::get('/pelanggaran-siswa', [adminController::class, "pelanggaranSiswa"]);
+Route::get('/add-pelanggaran', [adminController::class, "addPelanggaran"]);
+Route::get('/detail-pelanggaran', [adminController::class, "detailPelanggaran"]);
+// Route::view('/catatan-siswa','catatan-siswa');
 Route::get('/code', [CodePelanggaranController::class, "code"]);
 Route::post('/add-code', [CodePelanggaranController::class, "storeCodePelanggaran"]);
 Route::get('/view-code', [adminController::class, "viewCode"]);
+
 Route::get('/prestasi-siswa', [adminController::class, "prestasiSiswa"]);
 Route::get('/add-prestasi', [adminController::class, "addPrestasiSiswa"]);
+
 Route::get('/data-siswa', [adminController::class, "dataSiswa"]);
 Route::get('/add-siswa', [adminController::class, "addSiswa"]);
 Route::get('/data-guru', [adminController::class, "dataGuru"]);
@@ -58,6 +54,11 @@ Route::get('/add-guru', [adminController::class, "addGuru"]);
 Route::get('/dashboard', [adminController::class, "dashboard"]);
 Route::get('/absensi', [adminController::class, "absensi"]);
 Route::get('/add-absensi', [adminController::class, "addAbsensi"]);
+
+//siswa
+Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
+Route::get('/tambah-siswa', [SiswaController::class, "tambahSiswa"]);
+Route::post('/siswa/store', [SiswaController::class, 'store']);
 
 //siswaAsli controller masi pake yang admin
 Route::get('/dashboard-siswa', [adminController::class, "dashboardSiswa"]);

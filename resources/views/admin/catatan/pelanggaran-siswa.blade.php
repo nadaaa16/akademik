@@ -1,15 +1,15 @@
 @extends('back.layout.dashboard2-layout')
-@section('title', isset($pageTitle) ? $pageTitle : 'Catatan Siswa')
+@section('title', isset($pageTitle) ? $pageTitle : 'Pelangaran Siswa')
 @section('content')
     
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="mt-3 d-flex justify-content-center">
-    <h2><i class="bi bi-trophy"></i>Catatan Siswa</h2>
+    <h2><i class="bi bi-trophy"></i>Pelangaran Siswa</h2>
 </div>
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='add-catatan'">
-        <i class="bi bi-plus-lg"></i>Catatan Siswa
+    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='detail-pelanggaran'">
+        <i class="bi bi-plus-lg"></i>Pelangaran Siswa
     </button>
 </div>
 
@@ -41,7 +41,7 @@
                         <td>XII</td>
                         <td>
                             <div class="table-actions">
-                                <a href="#" data-color="#265ed7">
+                                <a href="/detail-pelanggaran" data-color="#265ed7">
                                     <i class="icon-copy dw dw-edit2"></i>
                                 </a>
                                 <a href="#" data-color="#e95959">

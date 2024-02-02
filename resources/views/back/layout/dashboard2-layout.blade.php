@@ -488,17 +488,17 @@
 							</a>
 							<ul class="submenu">
 								<li><a href="/data-siswa">Data Siswa</a></li>
-								<li><a href="/catatan-siswa">Catatan Siswa</a></li>
+								<li><a href="/pelanggaran-siswa">Pelanggaran Siswa</a></li>
 								<li><a href="ui-cards-hover.html">Prestasi Siswa</a></li>
 								<li><a href="/data-siswa">Data Siswa</a></li>
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">
 										<span class="micon fa fa-plug"></span>
-										<span class="mtext">Catatan Siswa</span>
+										<span class="mtext">Code Siswa</span>
 									</a>
 									<ul class="submenu child">
-										<li><a href="/catatan-siswa">Catatan Siswa</a></li>
-										<li><a href="/add-catatan">Tambah Catatan Siswa</a></li>
+										{{-- <li><a href="/catatan-siswa">Catatan Siswa</a></li>
+										<li><a href="/add-catatan">Tambah Catatan Siswa</a></li> --}}
 										<li><a href="/view-code">Code Pelangaran</a></li>
 										<li><a href="/add-code">Tambah Code Pelangaran</a></li>
 									</ul>

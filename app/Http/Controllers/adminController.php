@@ -12,11 +12,6 @@ class adminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function catatanSiswa()
-    {
-        return view('admin.catatan-siswa');
-    }
-
     //code
     public function viewCode()
     {
@@ -30,15 +25,18 @@ class adminController extends Controller
         return view('admin.add-code');
     }
 
-    //catatan
-    public function viewCatatan()
+    //pelanggaran
+    public function pelanggaranSiswa()
     {
-        return view('admin.view-catatan');
+        return view('admin.catatan.pelanggaran-siswa');
     }
-
-    public function addCatatan()
+    public function addPelanggaran()
     {
-        return view('admin.add-catatan');
+        return view('admin.catatan.add-pelanggaran');
+    }
+    public function viewPelanggaran()
+    {
+        return view('admin.catatan.view-pelanggaran');
     }
 
     //prestasi
