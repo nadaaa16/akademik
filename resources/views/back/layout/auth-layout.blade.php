@@ -4,7 +4,7 @@
 	<head>
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
-		<title>@yield('pageTitle')</title>
+		<title>Login </title>
 
 		<!-- Site favicon -->
 		<link
@@ -54,8 +54,9 @@
 				class="container-fluid d-flex justify-content-between align-items-center"
 			>
 				<div class="brand-logo">
-					<a href="login.html">
-						<img src="/back/vendors/images/deskapp-logo.svg" alt="" />
+					<a href="landing">
+					
+						<img src="/back/vendors/images/logo-rekapp.png" alt="" />
 					</a>
 				</div>
 				{{-- <div class="login-menu">

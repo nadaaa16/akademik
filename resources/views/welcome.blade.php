@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
     <div class="container">
       <div class="navbar-brand-wrapper d-flex w-100">
-        <img src="back/vendors/images/Group2.svg" alt="">
+        <img src="/back/vendors/images/logo-landing.png" alt="dashboard" class="dark-logo" />
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="mdi mdi-menu navbar-toggler-icon"></span>
         </button> 
@@ -25,27 +25,27 @@
         <ul class="navbar-nav align-items-lg-center align-items-start ml-auto">
           <li class="d-flex align-items-center justify-content-between pl-4 pl-lg-0">
             <div class="navbar-collapse-logo">
-              <img src="back/vendors/images/Group2.svg" alt="">
+              <img src="/back/vendors/images/logo-landing.png" alt="dashboard" class="dark-logo" />
             </div>
             <button class="navbar-toggler close-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
             </button>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="#header-section">Home <span class="sr-only">(current)</span></a>
-          </li>
+          </li> --}}
           <li class="nav-item">
-            <a class="nav-link" href="#features-section">About</a>
+            <a class="nav-link" href="dashboard">About</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="#digital-marketing-section">Blog</a>  
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#feedback-section">Testimonials</a>
-          </li>
-          <li class="nav-item btn-contact-us pl-4 pl-lg-0">
+          </li> --}}
+          {{-- <li class="nav-item btn-contact-us pl-4 pl-lg-0">
             <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Contact Us</button>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div> 
@@ -53,12 +53,14 @@
   </header>
   <div class="banner" >
     <div class="container">
-      <h1 class="font-weight-semibold">Search engine optimisation &<br>Marketing.</h1>
-      <h6 class="font-weight-normal text-muted pb-3">Simple is a simple template with a creative design that solves all your marketing and SEO queries.</h6>
+      <h1 class="font-weight-semibold">Rekap Akademik <br>SMK Wikrama </h1>
+      <h6 class="font-weight-normal text-muted pb-3">Web-based Data Recap Information System which functions to <br> manage academic data summarized from the academic system
+      </h6>
       <div>
-        <button class="btn btn-opacity-light mr-1">Get started</button>
-        <button class="btn btn-opacity-success ml-1">Learn more</button>
+        {{-- <button class="btn btn-opacity-light mr-1">Get started</button> --}}
+       <a href="halaman-login"> <button class="btn btn-opacity-success ml-1"><b>Login</b></button></a>
       </div>
+      <br>
       <img src="back/vendors/images/Group171.svg" alt="" class="img-fluid">
     </div>
   </div>
@@ -221,43 +223,46 @@
       <section class="contact-details" id="contact-details-section">
         <div class="row text-center text-md-left">
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
-            <img src="back/vendors/images/Group2.svg" alt="" class="pb-2">
+            <img src="/back/vendors/images/logo-landing.png" alt="dashboard" class="dark-logo" /> 
             <div class="pt-2">
-              <p class="text-muted m-0">mikayla_beer@feil.name</p>
-              <p class="text-muted m-0">906-179-8309</p>
+              <p class="text-muted m-0"></p>
+              
+              <p class="text-muted m-0"><b>@smkwikrama.sch.id </b></p>
+
             </div>         
           </div>
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
-            <h5 class="pb-2">Get in Touch</h5>
-            <p class="text-muted">Don’t miss any updates of our new templates and extensions.!</p>
-            <form>
-              <input type="text" class="form-control" id="Email" placeholder="Email id">
-            </form>
+            <h5 class="pb-2">Developer</h5>
+            <a href="ig"><p class="m-0 pt-1 pb-2">Nadalia Putri</p></a> 
+            <a href="ig"><p class="m-0 pt-1 pb-2">Juan Prasetya</p></a> 
+            <a href="ig"><p class="m-0 pt-1 pb-2">Malik Akbar</p></a> 
+            <a href="ig"><p class="m-0 pt-1 pb-2">Syahid Muhammad</p></a> 
+            <a href="ig"><p class="m-0 pt-1 pb-2">Fiqratullael</p></a> 
+ 
+            
             <div class="pt-3">
               <button class="btn btn-dark">Subscribe</button>
             </div>   
           </div>
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
-            <h5 class="pb-2">Our Guidelines</h5>
-            <a href="#"><p class="m-0 pb-2">Terms</p></a>   
-            <a href="#" ><p class="m-0 pt-1 pb-2">Privacy policy</p></a> 
-            <a href="#"><p class="m-0 pt-1 pb-2">Cookie Policy</p></a> 
-            <a href="#"><p class="m-0 pt-1">Discover</p></a> 
+            <h5 class="pb-2">Our Site</h5>
+           <a href="https://smkwikrama.sch.id/"><p class="m-0 pt-1 pb-2">SMK Wikrama</p></a> 
+            <a href="https://ppdb.smkwikrama.sch.id/"><p class="m-0 pb-2">PPDB</p></a>   
+            <a href="https://smkwikrama.sch.id/major-competency" ><p class="m-0 pt-1 pb-2">Major Competency</p></a> 
           </div>
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
               <h5 class="pb-2">Our address</h5>
-              <p class="text-muted">518 Schmeler Neck<br>Bartlett. Illinois</p>
+              <p class="text-muted">Jl. Raya Wangun, RT.01/RW.06, Sindangsari<br>Kec. Bogor Tim., Kota Bogor, Jawa Barat 16146</p>
               <div class="d-flex justify-content-center justify-content-md-start">
-                <a href="#"><span class="mdi mdi-facebook"></span></a>
-                <a href="#"><span class="mdi mdi-twitter"></span></a>
-                <a href="#"><span class="mdi mdi-instagram"></span></a>
-                <a href="#"><span class="mdi mdi-linkedin"></span></a>
+                <a href="https://www.facebook.com/smkwikrama/?locale=id_ID"><span class="mdi mdi-facebook"></span></a>
+                <a href="https://twitter.com/smkwikrama"><span class="mdi mdi-twitter"></span></a>
+                <a href="https://www.instagram.com/smkwikrama/"><span class="mdi mdi-instagram"></span></a>
+                <a href="https://id.linkedin.com/company/smk-wikrama-bogor"><span class="mdi mdi-linkedin"></span></a>
               </div>
           </div>
         </div>  
       </section>
       <footer class="border-top">
-        <p class="text-center text-muted pt-4">Copyright © 2019<a href="https://www.bootstrapdash.com/" class="px-1">Bootstrapdash.</a>All rights reserved.</p>
       </footer>
       <!-- Modal for Contact - us Button -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

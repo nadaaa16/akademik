@@ -250,7 +250,7 @@
 							<a class="dropdown-item" href="faq.html"
 								><i class="dw dw-help"></i> Help</a
 							> --}}
-							<a class="dropdown-item" href="login.html"
+							<a class="dropdown-item" href="landing"
 								><i class="dw dw-logout"></i> Log Out</a
 							>
 						</div>
@@ -436,10 +436,10 @@
 
 		<div class="left-side-bar">
 			<div class="brand-logo">
-				<a href="index.html">
-					<img src="/back/vendors/images/deskapp-logo.svg" alt="" class="dark-logo" />
+				<a href="dashboard-siswa">
+					<img src="/back/vendors/images/logo-rekapp.png" alt="dashboard" class="dark-logo" />
 					<img
-						src="/back/vendors/images/deskapp-logo-white.svg"
+					src="/back/vendors/images/logo-rekapp-white.png"
 						alt=""
 						class="light-logo"
 					/>
