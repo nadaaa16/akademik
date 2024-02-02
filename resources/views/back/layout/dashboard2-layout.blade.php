@@ -169,7 +169,7 @@
 				</div>
 			</div>
 			<div class="header-right">
-				<div class="dashboard-setting user-notification">
+				{{-- <div class="dashboard-setting user-notification">
 					<div class="dropdown">
 						<a
 							class="dropdown-toggle no-arrow"
@@ -179,8 +179,8 @@
 							<i class="dw dw-settings2"></i>
 						</a>
 					</div>
-				</div>
-				<div class="user-notification">
+				</div> --}}
+				{{-- <div class="user-notification">
 					<div class="dropdown">
 						<a
 							class="dropdown-toggle no-arrow"
@@ -258,7 +258,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<div class="user-info-dropdown">
 					<div class="dropdown">
 						<a
@@ -278,23 +278,23 @@
 							<a class="dropdown-item" href="profile.html"
 								><i class="dw dw-user1"></i> Profile</a
 							>
-							<a class="dropdown-item" href="profile.html"
+							{{-- <a class="dropdown-item" href="profile.html"
 								><i class="dw dw-settings2"></i> Setting</a
 							>
 							<a class="dropdown-item" href="faq.html"
 								><i class="dw dw-help"></i> Help</a
-							>
+							> --}}
 							<a class="dropdown-item" href="login.html"
 								><i class="dw dw-logout"></i> Log Out</a
 							>
 						</div>
 					</div>
 				</div>
-				<div class="github-link">
+				{{-- <div class="github-link">
 					<a href="https://github.com/dropways/deskapp" target="_blank"
 						><img src="/back/vendors/images/github.svg" alt=""
 					/></a>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 
@@ -535,11 +535,9 @@
 								<span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-<<<<<<< HEAD
-								<li><a href="siswa">Data Siswa</a></li>
+								<li><a href="/data-siswa">Data Siswa</a></li>
 								<li><a href="/catatan-siswa">Catatan Siswa</a></li>
 								<li><a href="ui-cards-hover.html">Prestasi Siswa</a></li>
-=======
 								<li><a href="/data-siswa">Data Siswa</a></li>
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">

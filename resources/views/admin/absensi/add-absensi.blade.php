@@ -37,6 +37,10 @@
                         </select>
                     </div>
             </div>
+            <div class="mb-3">
+                <label for="formFileMultiple" class="form-label">Tambahkan Foto</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple>
+              </div>
             <div class="xs-pd-20-10 pd-ltr-20">
                 <button class="btn btn-primary float-right" type="button">Tambah</button>
             </div>

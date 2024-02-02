@@ -83,4 +83,23 @@ class adminController extends Controller
     {
         return view('admin.absensi.add-absensi');
     }
+
+
+    //SISWA
+    public function dashboardSiswa()
+    {
+        return view('siswaAsli.dashboard-siswa');
+    }
+    public function catatan()
+    {
+        return view('siswaAsli.catatan');
+    }
+    public function detailPelanggaran()
+    {
+        return view('siswaAsli.view-pelanggaran');
+    }
+    public function prestasi()
+    {
+        return view('siswaAsli.prestasi');
+    }
 }
