@@ -17,9 +17,11 @@ class adminController extends Controller
     {
         // $data=CodePelanggaran::All();
         // dd($data);
-        return view('admin.view-code');
+        $codePelanggaran = CodePelanggaran::all();
+        return view('admin.catatan.view-code', compact('codePelanggaran'));
     }
 
+    
     public function addCode()
     {
         return view('admin.add-code');

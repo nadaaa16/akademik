@@ -25,8 +25,8 @@ Route::get('landing', function () {
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'regis']);
 
-Route::get('/login', [AuthController::class, 'index'])->name('login');
-Route::post('/login-proses', [AuthController::class, 'login_proses'])->name('login-proses');
+Route::get('/halaman-login', [AuthController::class, 'index'])->name('login');
+Route::post('/halaman-login/auth', [AuthController::class, 'auth'])->name('login.auth');
 // Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Route::view('/halaman-login','halaman-login');
@@ -40,8 +40,10 @@ Route::get('/add-pelanggaran', [adminController::class, "addPelanggaran"]);
 Route::get('/detail-pelanggaran', [adminController::class, "detailPelanggaran"]);
 // Route::view('/catatan-siswa','catatan-siswa');
 Route::get('/code', [CodePelanggaranController::class, "code"]);
-Route::post('/add-code', [CodePelanggaranController::class, "storeCodePelanggaran"]);
-Route::get('/view-code', [adminController::class, "viewCode"]);
+Route::post('/add-code', [CodePelanggaranController::class, "storeCodePelanggaran"])->name('pelanggaran.store');
+Route::get('/view-code', [adminController::class, "viewCode"])->name('view-code');
+Route::get('/code/{id}/delete', [CodePelanggaranController::class, "delete"])->name('delete-code');
+Route::delete('/code/{id}', [CodePelanggaranController::class, "confirmDelete"])->name('confirm-delete-code');
 
 Route::get('/prestasi-siswa', [adminController::class, "prestasiSiswa"]);
 Route::get('/add-prestasi', [adminController::class, "addPrestasiSiswa"]);

@@ -56,7 +56,7 @@
 				<div class="brand-logo">
 					<a href="landing">
 					
-						<img src="/back/vendors/images/logo-rekapp.png" alt="" />
+						{{-- <img src="/back/vendors/images/logo-rekapp.png" alt="" /> --}}
 					</a>
 				</div>
 				{{-- <div class="login-menu">

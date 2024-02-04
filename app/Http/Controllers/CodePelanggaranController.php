@@ -13,16 +13,40 @@ class CodePelanggaranController extends Controller
     // }
     
     public function storeCodePelanggaran(Request $request)
+    {
+        $request->validate([
+            'code' => 'required',
+            'deskripsi' => 'required',
+
+        ]);
+
+        CodePelanggaran::create([
+            'code' => $request->code,
+            'deskripsi'=> $request->deskripsi,
+        ]);
+        // $data = [
+        //     'code' => $request->code, // Memastikan bahwa 'code' tidak boleh kosong
+        //     'deskripsi' => $request->deskripsi,
+        // ];
+        // CodePelanggaran::create($data);
+        return redirect()->route('view-code');
+        
+    }
+
+    public function delete($id)
 {
-    $data = [
-        'code' => $request->code, // Memastikan bahwa 'code' tidak boleh kosong
-        'deskripsi' => $request->deskripsi,
-    ];
-    CodePelanggaran::create($data);
-    return back();
-    
+    $codePelanggaran = CodePelanggaran::findOrFail($id);
+    return view('admin.catatan.delete', compact('codePelanggaran'));
 }
-public function code(){
-    return view('admin.add-code');
+
+public function confirmDelete(Request $request, $id)
+{
+    $codePelanggaran = CodePelanggaran::findOrFail($id);
+    $codePelanggaran->delete();
+    return redirect()->route('view-code')->with('success', 'Data berhasil dihapus');
 }
+
+    public function code(){
+        return view('admin.catatan.add-code');
+    }
 }
