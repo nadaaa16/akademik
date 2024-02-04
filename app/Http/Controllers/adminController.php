@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\CodePelanggaran;
+use App\Models\Prestasi;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -9,7 +10,8 @@ class adminController extends Controller
     //dashboard
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $totalPrestasi = Prestasi::count();
+        return view('admin.dashboard', compact('totalPrestasi'));
     }
 
     //code
@@ -44,11 +46,24 @@ class adminController extends Controller
     //prestasi
     public function prestasiSiswa()
     {
-        return view('admin.prestasi-siswa');
+        $prestasi = Prestasi::all();
+        return view('admin.catatan.prestasi-siswa', compact('prestasi'));
     }
+
+    // public function viewPrestasi()
+    // {
+    //     return view('admin.catatan.view-prestasi');
+    // }
+
+    public function detail_prestasi($id)
+    {
+        $pem = Prestasi::findOrFail($id);
+        return view('admin.catatan.view-prestasi', compact('pem'));
+    }
+
     public function addPrestasiSiswa()
     {
-        return view('admin.add-prestasi');
+        return view('admin.catatan.add-prestasi');
     }
 
     //data siswa (user)

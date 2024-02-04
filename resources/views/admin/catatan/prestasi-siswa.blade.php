@@ -22,35 +22,41 @@
                         <th class="table-plus">Nama</th>
                         <th>Jenis EksKul</th>
                         <th>Nama Lomba</th>
-                        <th>Pecapaian</th>
-                        <th>Tanggal</th>
+                        <th>Tingkat</th>
+                        {{-- <th>Tanggal</th> --}}
                         <th class="datatable-nosort">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($prestasi as $value)
                     <tr>
                         <td class="table-plus">
                             <div class="name-avatar d-flex align-items-center">
                                 <div class="txt">
-                                    <div class="weight-600">Syahid</div>
+                                    <div class="weight-600">{{$value->nama}}</div>
                                 </div>
                             </div>
                         </td>
-                        <td>Futsal</td>
-                        <td>Futsal Championship 2023</td>
-                        <td>Juara 3</td>
-                        <td>2 Januari 2024</td>
+                        <td>{{$value->namaEkskul}}</td>
+                        <td>{{$value->namaLomba}}</td>
+                        <td>{{$value->tingkat}}</td>
+                        {{-- <td>{{$value->code}}</td> --}}
                         <td>
                             <div class="table-actions">
-                                <a href="#" data-color="#265ed7"
+                                <a href="/view-prestasi/{{$value->id}}" data-color="#265ed7"
                                     ><i class="icon-copy dw dw-edit2"></i
                                 ></a>
-                                <a href="#" data-color="#e95959"
-                                    ><i class="icon-copy dw dw-delete-3"></i
-                                ></a>
+                                <form method="POST" action="/prestasi/{{$value->id}}" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-delete">
+                                        <i class="icon-copy dw dw-delete-3"></i>
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

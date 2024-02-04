@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\CodePelanggaranController;
+use App\Http\Controllers\PrestasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,8 +46,12 @@ Route::get('/view-code', [adminController::class, "viewCode"])->name('view-code'
 Route::get('/code/{id}/delete', [CodePelanggaranController::class, "delete"])->name('delete-code');
 Route::delete('/code/{id}', [CodePelanggaranController::class, "confirmDelete"])->name('confirm-delete-code');
 
-Route::get('/prestasi-siswa', [adminController::class, "prestasiSiswa"]);
+Route::get('/prestasi-siswa', [adminController::class, "prestasiSiswa"])->name('prestasi-siswa');
 Route::get('/add-prestasi', [adminController::class, "addPrestasiSiswa"]);
+Route::post('/prestasi/store', [PrestasiController::class, 'store'])->name('prestasi.store');
+Route::get('/prestasi', [adminController::class, 'viewPrestasi']);
+Route::delete('/prestasi/{id}', [PrestasiController::class, "confirmDelete"])->name('confirm-delete');
+Route::get('/view-prestasi/{id}', [adminController::class, "detail_prestasi"]);
 
 Route::get('/data-siswa', [adminController::class, "dataSiswa"]);
 Route::get('/add-siswa', [adminController::class, "addSiswa"]);

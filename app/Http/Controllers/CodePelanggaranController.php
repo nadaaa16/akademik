@@ -34,17 +34,17 @@ class CodePelanggaranController extends Controller
     }
 
     public function delete($id)
-{
-    $codePelanggaran = CodePelanggaran::findOrFail($id);
-    return view('admin.catatan.delete', compact('codePelanggaran'));
-}
+    {
+        $codePelanggaran = CodePelanggaran::findOrFail($id);
+        return view('admin.catatan.delete', compact('codePelanggaran'));
+    }
 
-public function confirmDelete(Request $request, $id)
-{
-    $codePelanggaran = CodePelanggaran::findOrFail($id);
-    $codePelanggaran->delete();
-    return redirect()->route('view-code')->with('success', 'Data berhasil dihapus');
-}
+    public function confirmDelete(Request $request, $id)
+    {
+        $codePelanggaran = CodePelanggaran::findOrFail($id);
+        $codePelanggaran->delete();
+        return redirect()->route('view-code')->with('success', 'Data berhasil dihapus');
+    }
 
     public function code(){
         return view('admin.catatan.add-code');
