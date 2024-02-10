@@ -489,12 +489,12 @@
 							<ul class="submenu">
 								<li><a href="/data-siswa">Data Siswa</a></li>
 								<li><a href="/pelanggaran-siswa">Pelanggaran Siswa</a></li>
-								<li><a href="ui-cards-hover.html">Prestasi Siswa</a></li>
-								<li><a href="/data-siswa">Data Siswa</a></li>
+								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
+								{{-- <li><a href="/data-siswa">Data Siswa</a></li> --}}
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">
 										<span class="micon fa fa-plug"></span>
-										<span class="mtext">Code Siswa</span>
+										<span class="mtext">Asset</span>
 									</a>
 									<ul class="submenu child">
 										{{-- <li><a href="/catatan-siswa">Catatan Siswa</a></li>
@@ -503,8 +503,8 @@
 										<li><a href="/add-code">Tambah Code Pelangaran</a></li>
 									</ul>
 								</li>
-								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
-								<li><a href="ui-modals.html">Absensi Siswa</a></li>
+								{{-- <li><a href="/prestasi-siswa">Prestasi Siswa</a></li> --}}
+								<li><a href="/absensi">Absensi Siswa</a></li>
 							</ul>
 						</li>						
 						<li class="dropdown">

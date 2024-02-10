@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Simple landing page</title>
+  <title>Rekap Akademik</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -54,7 +54,7 @@
   <div class="banner" >
     <div class="container">
       <h1 class="font-weight-semibold">Rekap Akademik <br>SMK Wikrama </h1>
-      <h6 class="font-weight-normal text-muted pb-3">Web-based Data Recap Information System which functions to <br> manage academic data summarized from the academic system
+      <h6 class="font-weight-normal text-muted pb-3">Mencakup informasi seperti mata pelajaran, nilai, absensi, dan prestasi lainnya. <br> Rekam ini penting untuk evaluasi kemajuan siswa dan digunakan oleh lembaga pendidikan, penerima beasiswa, dan lainnya
       </h6>
       <div>
         {{-- <button class="btn btn-opacity-light mr-1">Get started</button> --}}
@@ -240,9 +240,9 @@
             <a href="ig"><p class="m-0 pt-1 pb-2">Fiqratullael</p></a> 
  
             
-            <div class="pt-3">
+            {{-- <div class="pt-3">
               <button class="btn btn-dark">Subscribe</button>
-            </div>   
+            </div>    --}}
           </div>
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
             <h5 class="pb-2">Our Site</h5>

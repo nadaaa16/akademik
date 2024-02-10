@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Prestasi;
+use App\Models\Absensi;
 use Illuminate\Http\Request;
 
-class PrestasiController extends Controller
+class AbsensiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,61 +35,56 @@ class PrestasiController extends Controller
      */
     public function store(Request $request)
     {
-        $prestasi = $request->validate([
+        $absensi = $request->validate([
             'nama' => 'required',
-            'namaEkskul' => 'required',
-            'namaLomba' => 'required',
-            'tingkat' => 'required',
-            'foto' => 'required',
-            'deskripsi' => 'required',
+            'rayon' => 'required',
+            'rombel' => 'required',
+            'keterangan' => 'required',
+            'img' => 'required',
         ]);
-        
-        $image = $request->file('foto');
+        // dd($absensi, $request->all());
+        $image = $request->file('img');
         $imgName = time().rand().'.'.$image->extension();
-        if(!file_exists(public_path('/fotoPrestasi'.$image->getClientOriginalName()))){
-            $destinationPath = public_path('/fotoPrestasi');
+        if(!file_exists(public_path('/fotoAbsensi'.$image->getClientOriginalName()))){
+            $destinationPath = public_path('/fotoAbsensi');
             $image->move($destinationPath, $imgName);
             $uploaded = $imgName;
         }else{
             $uploaded = $image->getClientOriginalName();
         }
 
-        // $prestasi['bukti'] = request()->file('bukti')->store('bukti-img');
-
-         Prestasi::create([
+         Absensi::create([
             'nama'=> $request->nama,
-            'namaEkskul' => $request->namaEkskul,
-            'namaLomba' => $request->namaLomba,
-            'tingkat' => $request->tingkat,
-            'foto' => $uploaded,
-            'deskripsi' => $request->deskripsi,
-            // 'user_id' => Auth::user()->id,
+            'rayon' => $request->rayon,
+            'rombel' => $request->rombel,
+            'keterangan' => $request->keterangan,
+            'img' => $uploaded,
 
         ]);
 
-        return redirect()->route('prestasi-siswa')->with('success', 'Berhasil menambahakan prestasi');
+        return redirect()->route('absensi')->with('success', 'Berhasil menambahakan absensi');
     }
 
     public function delete($id)
     {
-        $prestasi = Prestasi::findOrFail($id);
-        return view('admin.catatan.delete', compact('prestasi'));
+        $absensi = Absensi::findOrFail($id);
+        return view('admin.absensi.delete', compact('absensi'));
     }
 
     public function confirmDelete(Request $request, $id)
     {
-        $prestasi = Prestasi::findOrFail($id);
-        $prestasi->delete();
-        return redirect()->route('prestasi-siswa')->with('success', 'Data berhasil dihapus');
+        $absensi = Absensi::findOrFail($id);
+        $absensi->delete();
+        return redirect()->route('absensi')->with('success', 'Data berhasil dihapus');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Prestasi  $prestasi
+     * @param  \App\Models\Absensi  $absensi
      * @return \Illuminate\Http\Response
      */
-    public function show(Prestasi $prestasi)
+    public function show(Absensi $absensi)
     {
         //
     }
@@ -97,10 +92,10 @@ class PrestasiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Prestasi  $prestasi
+     * @param  \App\Models\Absensi  $absensi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Prestasi $prestasi)
+    public function edit(Absensi $absensi)
     {
         //
     }
@@ -109,10 +104,10 @@ class PrestasiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Prestasi  $prestasi
+     * @param  \App\Models\Absensi  $absensi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prestasi $prestasi)
+    public function update(Request $request, Absensi $absensi)
     {
         //
     }
@@ -120,10 +115,10 @@ class PrestasiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Prestasi  $prestasi
+     * @param  \App\Models\Absensi  $absensi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prestasi $prestasi)
+    public function destroy(Absensi $absensi)
     {
         //
     }

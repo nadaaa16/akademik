@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\CodePelanggaran;
 use App\Models\Prestasi;
+use App\Models\PelanggaranAdmin;
+use App\Models\Absensi;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -32,16 +34,32 @@ class adminController extends Controller
     //pelanggaran
     public function pelanggaranSiswa()
     {
-        return view('admin.catatan.pelanggaran-siswa');
+        $pelanggaran = PelanggaranAdmin::all();
+        return view('admin.catatan.pelanggaran-siswa', compact('pelanggaran'));
     }
-    public function addPelanggaran()
+
+    public function detail_pelanggaran($id)
+    {
+        $pel = PelanggaranAdmin::findOrFail($id);
+        return view('admin.catatan.view-pelanggaran', compact('pel'));
+    }
+
+    public function addPelanggaranSiswa()
     {
         return view('admin.catatan.add-pelanggaran');
     }
-    public function viewPelanggaran()
-    {
-        return view('admin.catatan.view-pelanggaran');
-    }
+    // public function pelanggaranSiswa()
+    // {
+    //     return view('admin.catatan.pelanggaran-siswa');
+    // }
+    // public function addPelanggaran()
+    // {
+    //     return view('admin.catatan.add-pelanggaran');
+    // }
+    // public function viewPelanggaran()
+    // {
+    //     return view('admin.catatan.view-pelanggaran');
+    // }
 
     //prestasi
     public function prestasiSiswa()
@@ -49,11 +67,6 @@ class adminController extends Controller
         $prestasi = Prestasi::all();
         return view('admin.catatan.prestasi-siswa', compact('prestasi'));
     }
-
-    // public function viewPrestasi()
-    // {
-    //     return view('admin.catatan.view-prestasi');
-    // }
 
     public function detail_prestasi($id)
     {
@@ -91,13 +104,30 @@ class adminController extends Controller
     //data absensi
     public function absensi()
     {
-        return view('admin.absensi.absensi');
+        $absensi = Absensi::all();
+        return view('admin.absensi.absensi', compact('absensi'));
+    }
+
+    public function detail_absensi($id)
+    {
+        $absen = Absensi::findOrFail($id);
+        return view('admin.absensi.view-absensi', compact('absen'));
     }
 
     public function addAbsensi()
     {
         return view('admin.absensi.add-absensi');
     }
+
+    // public function absensi()
+    // {
+    //     return view('admin.absensi.absensi');
+    // }
+
+    // public function addAbsensi()
+    // {
+    //     return view('admin.absensi.add-absensi');
+    // }
 
 
     //SISWA

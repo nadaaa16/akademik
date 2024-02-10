@@ -8,14 +8,13 @@
 </div>
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='detail-pelanggaran'">
+    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='add-pelanggaran'">
         <i class="bi bi-plus-lg"></i>Pelangaran Siswa
     </button>
 </div>
 
 <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20">
-        {{-- isi --}}
         <div class="card-box pb-10">
             <table class="data-table table nowrap">
                 <thead>
@@ -28,28 +27,34 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($pelanggaran as $value)
                     <tr>
                         <td class="table-plus">
                             <div class="name-avatar d-flex align-items-center">
                                 <div class="txt">
-                                    <div class="weight-600">Syahid</div>
+                                    <div class="weight-600">{{$value->nama}}</div>
                                 </div>
                             </div>
                         </td>
-                        <td>K 1.5 - Nongkrong</td>
-                        <td>Cicurug 1</td>
-                        <td>XII</td>
+                        <td>{{$value->codePelanggaran}}</td>
+                        <td>{{$value->rayon}}</td>
+                        <td>{{$value->rombel}}</td>
                         <td>
                             <div class="table-actions">
-                                <a href="/detail-pelanggaran" data-color="#265ed7">
-                                    <i class="icon-copy dw dw-edit2"></i>
-                                </a>
-                                <a href="#" data-color="#e95959">
-                                    <i class="icon-copy dw dw-delete-3"></i>
-                                </a>
+                                <a href="/view-pelanggaran/{{$value->id}}" data-color="#265ed7"
+                                    ><i class="icon-copy dw dw-edit2"></i
+                                ></a>
+                                <form method="POST" action="/pelanggaran/{{$value->id}}" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-delete">
+                                        <i class="icon-copy dw dw-delete-3"></i>
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
