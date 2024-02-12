@@ -487,7 +487,7 @@
 								<span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="/data-siswa">Data Siswa</a></li>
+								<li><a href="siswa">Data Siswa</a></li>
 								<li><a href="/pelanggaran-siswa">Pelanggaran Siswa</a></li>
 								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
 								{{-- <li><a href="/data-siswa">Data Siswa</a></li> --}}
