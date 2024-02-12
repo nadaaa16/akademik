@@ -24,35 +24,44 @@
                         <th>Rayon</th>
                         <th>Rombel</th>
                         <th>Keterangan</th>
-                        <th>Bukti</th>
+                        {{-- <th>Bukti</th> --}}
                         <th class="datatable-nosort">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($absensi as $value)
                     <tr>
                         <td class="table-plus">
                             <div class="name-avatar d-flex align-items-center">
                                 <div class="txt">
-                                    <div class="weight-600">Syahid</div>
+                                    <div class="weight-600">{{$value->nama}}</div>
                                 </div>
                             </div>
                         </td>
                         {{-- <td>12108633</td> --}}
-                        <td>Cicurug 1</td>
-                        <td>XII-4</td>
-                        <td>Alpha</td>
-                        <td>Bukti</td>
+                        <td>{{$value->rayon}}</td>
+                        <td>{{$value->rombel}}4</td>
+                        <td>{{$value->keterangan}}</td>
+                        {{-- <td>{{asset('fotoPrestasi/'.$pem->foto)}}</td> --}}
                         <td>
                             <div class="table-actions">
                                 <a href="#" data-color="#265ed7"
                                     ><i class="icon-copy dw dw-edit2"></i
                                 ></a>
-                                <a href="#" data-color="#e95959"
+                                <form method="POST" action="/absensi/{{$value->id}}" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-delete">
+                                        <i class="icon-copy dw dw-delete-3"></i>
+                                    </button>
+                                </form>
+                                {{-- <a href="#" data-color="#e95959"
                                     ><i class="icon-copy dw dw-delete-3"></i
-                                ></a>
+                                ></a> --}}
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

@@ -32,17 +32,22 @@ class adminController extends Controller
     }
 
     //pelanggaran
-    // public function pelanggaranSiswa()
-    // {
-    //     $pelanggaran = PelanggaranAdmin::all();
-    //     return view('admin.catatan.pelanggaran-siswa', compact('pelanggaran'));
-    // }
+    public function pelanggaranSiswa()
+    {
+        $pelanggaran = PelanggaranAdmin::all();
+        return view('admin.catatan.pelanggaran-siswa', compact('pelanggaran'));
+    }
 
-    // public function detail_pelanggaran($id)
-    // {
-    //     $pel = PelanggaranAdmin::findOrFail($id);
-    //     return view('admin.catatan.view-pelanggaran', compact('pel'));
-    // }
+    public function detail_pelanggaran($id)
+    {
+        $pel = PelanggaranAdmin::findOrFail($id);
+        return view('admin.catatan.view-pelanggaran', compact('pel'));
+    }
+
+    public function addPelanggaranSiswa()
+    {
+        return view('admin.catatan.pelanggaran-siswa-create');
+    }
 
     // public function addPelanggaranSiswa()
     // {
@@ -108,11 +113,11 @@ class adminController extends Controller
         return view('admin.absensi.absensi', compact('absensi'));
     }
 
-    public function detail_absensi($id)
-    {
-        $absen = Absensi::findOrFail($id);
-        return view('admin.absensi.view-absensi', compact('absen'));
-    }
+    // public function detail_absensi($id)
+    // {
+    //     $absen = Absensi::findOrFail($id);
+    //     return view('admin.absensi.view-absensi', compact('absen'));
+    // }
 
     public function addAbsensi()
     {

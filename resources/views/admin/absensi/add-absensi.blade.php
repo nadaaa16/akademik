@@ -28,14 +28,14 @@
                   <input type="text" name="rombel" id="rombel" class="form-control" placeholder="Rombel" aria-label="First name">
                 </div>
                 <div class="col">
-                    <label for="codePelangaran" class="form-label mt-4">Keterangan</label>
+                    <label for="keterangan" class="form-label mt-4">Keterangan</label>
                     <br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="sakit" id="sakit" value="option1">
+                        <input class="form-check-input" type="radio" name="keterangan" id="sakit" value="sakit">
                         <label class="form-check-label" for="sakit">Sakit</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="izin" id="izin" value="option2">
+                        <input class="form-check-input" type="radio" name="keterangan" id="izin" value="izin">
                         <label class="form-check-label" for="izin">Izin</label>
                       </div>
                     </div>

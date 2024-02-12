@@ -57,12 +57,12 @@ Route::get('/pelanggaran-siswa-create', [PelanggaranAdminController::class, 'cre
 Route::post('/pelanggaran-siswa-store', [PelanggaranAdminController::class, 'store'])->name('pelanggaran-siswa-store');
 Route::get('/pelanggaran-siswa/{id}/show', [PelanggaranAdminController::class, 'show'])->name('pelanggaran-siswa-show');
 Route::put('/pelanggaran-siswa/{id}', [PelanggaranAdminController::class, "update"])->name('pelanggaran-siswa-update');
-Route::delete('/pelanggaran-siswa/{id}/delete', [PelanggaranAdminController::class, "delete"])->name('pelanggaran-siswa-delete');
+Route::delete('/pelanggaran/{id}', [PelanggaranAdminController::class, "confirmDelete"])->name('confirm-delete');
 
 Route::get('/absensi', [adminController::class, "absensi"])->name('absensi');
 Route::get('/add-absensi', [adminController::class, "addAbsensi"]);
 Route::post('/absensi/store', [AbsensiController::class, 'store'])->name('absensi.store');
-Route::get('/absensi', [adminController::class, 'viewabsensi']);
+// Route::get('/absensi', [adminController::class, 'viewabsensi']);
 Route::delete('/absensi/{id}', [AbsensiController::class, "confirmDelete"])->name('confirm-delete');
 Route::get('/view-absensi/{id}', [adminController::class, "detail_absensi"]);
 

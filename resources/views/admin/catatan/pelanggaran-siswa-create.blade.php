@@ -18,8 +18,8 @@
             <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama" aria-label="First name">
         </div>
         <div class="col">
-            <label for="codePelangaran" class="form-label mt-4">Code Pelangaran</label>
-            <select name="codePelangaran" id="codePelangaran" class="form-control" aria-label="Code Pelangaran">
+            <label for="codePelanggaran" class="form-label mt-4">Code Pelangaran</label>
+            <select name="codePelanggaran" id="codePelanggaran" class="form-control" aria-label="Code Pelangaran">
                 <option value="">Pilih Code Pelangaran</option>
                 <option value="option1">Option 1</option>
                 <option value="option2">Option 2</option>
@@ -48,11 +48,11 @@
     </div>
 	<div class="mb-3">
 		<label for="formFileMultiple" class="form-label">Tambahkan Foto</label>
-		<input class="form-control" name= "img" type="file">
-	  </div>
+		<input class="form-control" name= "img" type="file" id="formFileMultiple" multiple>
+	</div>
     <div class="mb-3">
-        <label for="deskripsi" class="form-label">Catatan</label>
-        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+        <label for="catatan" class="form-label">Catatan</label>
+        <textarea class="form-control" id="catatan" name="catatan" rows="3"></textarea>
     </div>
     <div class="xs-pd-20-10 pd-ltr-20">
         <button class="btn btn-primary float-right" type="submit">Tambah</button>

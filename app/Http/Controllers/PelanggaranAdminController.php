@@ -36,38 +36,39 @@ class PelanggaranAdminController extends Controller
      */
     public function store(Request $request)
     {
-         dd($request->all());
-        $request->validate([
+        $pelanggaran = $request->validate([
             'nama' => 'required',
             'codePelanggaran' => 'required',
             'rayon' => 'required',
             'rombel' => 'required',
-            'img' => 'nullable',
+            'img' => 'required',
             'catatan' => 'required',
-
         ]);
-
-        if ($request->hash('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-
-            $filename = time().'.'.$extension;
-
-            $path = 'public/fotoPelanggaran';
-            $file->move($path, $filename);
+        
+        $image = $request->file('img');
+        $imgName = time().rand().'.'.$image->extension();
+        if(!file_exists(public_path('/fotoPelanggaran'.$image->getClientOriginalName()))){
+            $destinationPath = public_path('/fotoPelanggaran');
+            $image->move($destinationPath, $imgName);
+            $uploaded = $imgName;
+        }else{
+            $uploaded = $image->getClientOriginalName();
         }
+
+        // $pelanggaran['bukti'] = request()->file('bukti')->store('bukti-img');
 
         PelanggaranAdmin::create([
             'nama'=> $request->nama,
             'codePelanggaran' => $request->codePelanggaran,
             'rayon' => $request->rayon,
             'rombel' => $request->rombel,
-            'img' => $path,$filename,
+            'img' => $uploaded,
             'catatan' => $request->catatan,
+            // 'user_id' => Auth::user()->id,
+
         ]);
 
-       
-        return redirect()->route('pelanggaran-siswa')->with('success', 'Berhasil menambahakan Pelanggaran');
+        return redirect()->route('pelanggaran-siswa')->with('success', 'Berhasil menambahakan pelanggaran');
     }
 
     public function delete($id)
