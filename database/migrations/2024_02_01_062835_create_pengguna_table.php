@@ -19,7 +19,7 @@ class CreatePenggunaTable extends Migration
             $table->integer('nis');
             $table->string('tingkat');
             $table->string('rayon');
-            $table->enum('jk', ['laki-laki', 'peremupan']);
+            $table->enum('jk', ['laki-laki', 'perempuan']);
             $table->timestamps();
         });
     }
