@@ -259,7 +259,7 @@
 							<span class="user-icon">
 								<img src="/back/vendors/images/photo1.jpg" alt="" />
 							</span>
-							<span class="user-name">Name</span>
+							<span class="user-name">[Nama]</span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
@@ -487,24 +487,25 @@
 								<span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="/data-siswa">Data Siswa</a></li>
+								<li><a href="siswa">Data Siswa</a></li>
 								<li><a href="/pelanggaran-siswa">Pelanggaran Siswa</a></li>
 								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
 								{{-- <li><a href="/data-siswa">Data Siswa</a></li> --}}
+								
+								{{-- <li><a href="/prestasi-siswa">Prestasi Siswa</a></li> --}}
+								<li><a href="/absensi">Absensi Siswa</a></li>
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">
 										<span class="micon fa fa-plug"></span>
-										<span class="mtext">Asset</span>
+										<span class="mtext">Code </span>
 									</a>
 									<ul class="submenu child">
 										{{-- <li><a href="/catatan-siswa">Catatan Siswa</a></li>
 										<li><a href="/add-catatan">Tambah Catatan Siswa</a></li> --}}
 										<li><a href="/view-code">Code Pelangaran</a></li>
-										<li><a href="/add-code">Tambah Code Pelangaran</a></li>
+										
 									</ul>
 								</li>
-								{{-- <li><a href="/prestasi-siswa">Prestasi Siswa</a></li> --}}
-								<li><a href="/absensi">Absensi Siswa</a></li>
 							</ul>
 						</li>						
 						<li class="dropdown">

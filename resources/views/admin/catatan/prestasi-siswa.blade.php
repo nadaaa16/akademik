@@ -22,7 +22,7 @@
                         <th class="table-plus">Nama</th>
                         <th>Jenis EksKul</th>
                         <th>Nama Lomba</th>
-                        <th>Tingkat</th>
+                        <th>Kelas</th>
                         {{-- <th>Tanggal</th> --}}
                         <th class="datatable-nosort">Actions</th>
                     </tr>
@@ -49,7 +49,7 @@
                                 <form method="POST" action="/prestasi/{{$value->id}}" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn-delete">
+                                    <button type="submit" class="btn-delete" data-color="red">
                                         <i class="icon-copy dw dw-delete-3"></i>
                                     </button>
                                 </form>

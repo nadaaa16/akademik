@@ -39,6 +39,14 @@ Route::post('/halaman-login/auth', [AuthController::class, 'auth'])->name('login
     
 
 //admin
+Route::get('/catatan-siswa', [adminController::class, "catatanSiswa"]);
+Route::get('/add-catatan', [adminController::class, "addCatatan"]);
+Route::view('/catatan-siswa','catatan-siswa');
+//siswa
+Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
+Route::get('/tambah-siswa', [SiswaController::class, "tambahSiswa"]);
+Route::post('/siswa/store', [SiswaController::class, 'store']);
+
 Route::get('/code', [CodePelanggaranController::class, "code"]);
 Route::post('/add-code', [CodePelanggaranController::class, "storeCodePelanggaran"])->name('pelanggaran.store');
 Route::get('/view-code', [adminController::class, "viewCode"])->name('view-code');

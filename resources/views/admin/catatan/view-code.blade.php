@@ -21,6 +21,7 @@
                     <tr>
                         <th class="table-plus">Kode</th>
                         <th>Deskripsi Pelangaran</th>
+                        <th>Sumber</th>
                         <th class="datatable-nosort">Actions</th>
                     </tr>
                 </thead>
