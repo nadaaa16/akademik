@@ -23,7 +23,7 @@
 									</div>
 								</div>
 								<div class="widget-icon">
-									<div class="icon" data-color="#00eccf">
+									<div class="icon" data-color="white">
 										<i class="bi bi-person"></i>
 									</div>
 								</div>
@@ -40,7 +40,7 @@
 									</div>
 								</div>
 								<div class="widget-icon">
-									<div class="icon" data-color="#ff5b5b">
+									<div class="icon" data-color="white">
 										<i class="bi bi-person-check"></i>
 									</div>
 								</div>
@@ -57,7 +57,7 @@
 									</div>
 								</div>
 								<div class="widget-icon">
-									<div class="icon">
+									<div class="icon" data-color="#09cc06">
 										<i
 											class="bi bi-trophy"
 											aria-hidden="true"
@@ -75,7 +75,7 @@
 									<div class="font-14 text-secondary weight-500">Catatan</div>
 								</div>
 								<div class="widget-icon">
-									<div class="icon" data-color="#09cc06">
+									<div class="icon" data-color="white">
 										<i class="bi bi-journal-check" aria-hidden="true"></i>
 									</div>
 								</div>
@@ -367,7 +367,7 @@
 								<th class="table-plus">Nama</th>
 								<th>NIS</th>
 								<th>Rayon</th>
-								<th>Tingkat</th>
+								<th>Kelas</th>
 								<th>Jenis Kelamin</th>
 								<th class="datatable-nosort">Actions</th>
 							</tr>

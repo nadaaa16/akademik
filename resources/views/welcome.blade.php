@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="back/vendors/aos/css/aos.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
-<body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">  
   <header id="header-section">
     <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
     <div class="container">
