@@ -1,5 +1,5 @@
 @extends('back.layout.dashboard2-layout')
-@section('title', isset($pageTitle) ? $pageTitle : 'Data Siswa')
+@section('title', isset($pageTitle) ? $pageTitle : 'Absensi Siswa')
 @section('content')
     
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -20,9 +20,9 @@
                 <thead>
                     <tr>
                         <th class="table-plus">Nama</th>
-                        <th>NIS</th>
+                        {{-- <th>NIS</th> --}}
                         <th>Rayon</th>
-                        <th>Tingkat</th>
+                        <th>Rombel</th>
                         <th>Keterangan</th>
                         <th>Bukti</th>
                         <th class="datatable-nosort">Actions</th>
@@ -37,11 +37,11 @@
                                 </div>
                             </div>
                         </td>
-                        <td>12108633</td>
+                        {{-- <td>12108633</td> --}}
                         <td>Cicurug 1</td>
-                        <td>XII</td>
+                        <td>XII-4</td>
                         <td>Alpha</td>
-                        <td>Foto</td>
+                        <td>Bukti</td>
                         <td>
                             <div class="table-actions">
                                 <a href="#" data-color="#265ed7"

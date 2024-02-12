@@ -22,7 +22,7 @@
                     <div class="login-title">
                         <h2 class="text-center text-primary">Login</h2>
                     </div>
-                    <form  action="{{ route('login-proses') }}" method="POST" style="width:350px">
+                    <form action="{{ route('login.auth') }}" method="POST">
                         @csrf
                         {{-- <div class="select-role">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -56,9 +56,9 @@
                             <input
                                 type="text"
                                 class="form-control form-control-lg"
-                                placeholder="Username"
-                                name="username"
-                                id="username" 
+                                placeholder="Name"
+                                name="nama"
+                                id="nama" 
                             />
                             <div class="input-group-append custom">
                                 <span class="input-group-text"
@@ -68,11 +68,11 @@
                         </div>
                         <div class="input-group custom">
                             <input
-                                type="password"
+                                type="NIS"
                                 class="form-control form-control-lg"
-                                placeholder="**********"
-                                name="password"
-                                id="password" 
+                                placeholder="NIS"
+                                name="nis"
+                                id="nis" 
                             />
                             <div class="input-group-append custom">
                                 <span class="input-group-text"
@@ -91,19 +91,10 @@
                                     
                                 </div>
                             </div>
-                            {{-- <div class="col-0">
-                                <div class="forgot-password">
-                                    <a href="forgot-password.html"> * Must use an account from the school</a>
-                                </div>
-                            </div> --}}
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group mb-0">
-                                    <!--
-                                    use code for form submit
-                                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
-                                -->
                                 <button type="submit" class="btn btn-primary w-100">Submit</button>
                                 </div>                                
                                 </div>

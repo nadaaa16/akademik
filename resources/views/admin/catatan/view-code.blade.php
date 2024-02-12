@@ -2,14 +2,13 @@
 @section('title', isset($pageTitle) ? $pageTitle : 'Data Code Pelangaran')
 @section('content')
 
-    
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="mt-3 d-flex justify-content-center">
     <h2><i class="bi bi-trophy"></i>Data Code Pelangaran</h2>
 </div>
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='add-code'">
+    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='code'">
         <i class="bi bi-plus-lg"></i>Tambah Code Pelangaran
     </button>
 </div>
@@ -26,30 +25,23 @@
                     </tr>
                 </thead>
                 <tbody>
-					{{-- @if($data)
-        			@foreach ($data as $value) --}}
+                    @foreach ($codePelanggaran as $value)
                     <tr>
-                        <td class="table-plus">
-                            <div class="name-avatar d-flex align-items-center">
-                                <div class="txt">
-                                    <div class="weight-600">Code</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Deskripsi</td>
+                        <td>{{$value->code}}</td>
+                        <td>{{$value->deskripsi}}</td>
                         <td>
                             <div class="table-actions">
-                                <a href="#" data-color="#265ed7"
-                                    ><i class="icon-copy dw dw-edit2"></i
-                                ></a>
-                                <a href="#" data-color="#e95959"
-                                    ><i class="icon-copy dw dw-delete-3"></i
-                                ></a>
+                                <form method="POST" action="/code/{{$value->id}}" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-delete">
+                                        <i class="icon-copy dw dw-delete-3"></i>
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
-					{{-- @endforeach
-        			@endif --}}
+                    @endforeach
                 </tbody>
             </table>
         </div>
