@@ -17,7 +17,7 @@ use App\Http\Controllers\CodePelanggaranController;
 |
 */
 
-Route::get('landing', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
