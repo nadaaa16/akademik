@@ -8,7 +8,7 @@
 </div>
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='add-pelanggaran'">
+    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='pelanggaran-siswa-create'">
         <i class="bi bi-plus-lg"></i>Pelangaran Siswa
     </button>
 </div>

@@ -24,6 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/token', [AbsensiController::class, 'createtoken']);
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'regis']);
@@ -51,12 +52,12 @@ Route::get('/prestasi', [adminController::class, 'viewPrestasi']);
 Route::delete('/prestasi/{id}', [PrestasiController::class, "confirmDelete"])->name('confirm-delete');
 Route::get('/view-prestasi/{id}', [adminController::class, "detail_prestasi"]);
 
-Route::get('/pelanggaran-siswa', [adminController::class, "pelanggaranSiswa"])->name('pelanggaran-siswa');
-Route::get('/add-pelanggaran', [adminController::class, "addPelanggaranSiswa"]);
-Route::post('/pelanggaran/store', [PelanggaranAdminController::class, 'store'])->name('pelanggaran.store');
-Route::get('/pelanggaran', [adminController::class, 'viewPelanggaran']);
-Route::delete('/pelanggaran/{id}', [PelanggaranAdminController::class, "confirmDelete"])->name('confirm-delete');
-Route::get('/view-pelanggaran/{id}', [adminController::class, "detail_pelanggaran"]);
+Route::get('/pelanggaran-siswa', [PelanggaranAdminController::class, 'index'])->name('pelanggaran-siswa');
+Route::get('/pelanggaran-siswa-create', [PelanggaranAdminController::class, 'create'])->name('pelanggaran-siswa-create');
+Route::post('/pelanggaran-siswa-store', [PelanggaranAdminController::class, 'store'])->name('pelanggaran-siswa-store');
+Route::get('/pelanggaran-siswa/{id}/show', [PelanggaranAdminController::class, 'show'])->name('pelanggaran-siswa-show');
+Route::put('/pelanggaran-siswa/{id}', [PelanggaranAdminController::class, "update"])->name('pelanggaran-siswa-update');
+Route::delete('/pelanggaran-siswa/{id}/delete', [PelanggaranAdminController::class, "delete"])->name('pelanggaran-siswa-delete');
 
 Route::get('/absensi', [adminController::class, "absensi"])->name('absensi');
 Route::get('/add-absensi', [adminController::class, "addAbsensi"]);

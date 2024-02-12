@@ -1,16 +1,16 @@
 @extends('back.layout.dashboard2-layout')
-@section('title', isset($pageTitle) ? $pageTitle : 'Tambah Code Pelangaran Siswa')
+@section('title', isset($pageTitle) ? $pageTitle : 'Detail')
 @section('content')
     
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="mt-3 d-flex justify-content-center">
-    <h2><i class="bi bi-trophy"></i>Tambah Pelangaran Siswa</h2>
+    <h2><i class="bi bi-trophy"></i>Tambah Catatan Siswa</h2>
 </div>
 
 <div class="mobile-menu-overlay"></div>
 <div class="main-container">
     <h2 style="margin-top: 20px;">Tambahkan Catatan Kepada Siswa</h2>
-    <form action="{{ route('pelanggaran.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('pelanggaran-siswa-store') }}" method="post" enctype="multipart/form-data">
         @csrf
     <div class="row">
         <div class="col">
@@ -48,7 +48,7 @@
     </div>
 	<div class="mb-3">
 		<label for="formFileMultiple" class="form-label">Tambahkan Foto</label>
-		<input class="form-control" name= "img" type="file" id="formFileMultiple" multiple>
+		<input class="form-control" name= "img" type="file">
 	  </div>
     <div class="mb-3">
         <label for="deskripsi" class="form-label">Catatan</label>

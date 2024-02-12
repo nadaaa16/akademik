@@ -17,6 +17,10 @@ class AbsensiController extends Controller
         //
     }
 
+    public function createtoken(){
+        return csrf_token();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

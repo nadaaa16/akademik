@@ -14,7 +14,8 @@ class PelanggaranAdminController extends Controller
      */
     public function index()
     {
-        //
+        $pelanggaran = PelanggaranAdmin::all();
+        return view('admin.catatan.pelanggaran-siswa', compact('pelanggaran'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PelanggaranAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.catatan.pelanggaran-siswa-create');
     }
 
     /**
@@ -35,38 +36,37 @@ class PelanggaranAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $pelanggaran = $request->validate([
+         dd($request->all());
+        $request->validate([
             'nama' => 'required',
             'codePelanggaran' => 'required',
             'rayon' => 'required',
             'rombel' => 'required',
-            'img' => 'required',
-            'deskripsi' => 'required',
+            'img' => 'nullable',
+            'catatan' => 'required',
 
         ]);
-        $image = $request->file('img');
-        $imgName = time().rand().'.'.$image->extension();
-        if(!file_exists(public_path('/fotoPelanggaran'.$image->getClientOriginalName()))){
-            $destinationPath = public_path('/fotoPelanggaran');
-            $image->move($destinationPath, $imgName);
-            $uploaded = $imgName;
-        }else{
-            $uploaded = $image->getClientOriginalName();
-        }
 
-        // $prestasi['bukti'] = request()->file('bukti')->store('bukti-img');
+        if ($request->hash('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+
+            $filename = time().'.'.$extension;
+
+            $path = 'public/fotoPelanggaran';
+            $file->move($path, $filename);
+        }
 
         PelanggaranAdmin::create([
             'nama'=> $request->nama,
             'codePelanggaran' => $request->codePelanggaran,
             'rayon' => $request->rayon,
             'rombel' => $request->rombel,
-            'img' => $uploaded,
-            'deskripsi' => $request->deskripsi,
-            // 'user_id' => Auth::user()->id,
-
+            'img' => $path,$filename,
+            'catatan' => $request->catatan,
         ]);
 
+       
         return redirect()->route('pelanggaran-siswa')->with('success', 'Berhasil menambahakan Pelanggaran');
     }
 
