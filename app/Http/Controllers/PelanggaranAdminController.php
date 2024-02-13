@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\PelanggaranAdmin;
+use App\Models\CodePelanggaran;
+use App\Models\Pengguna;
 use Illuminate\Http\Request;
 
 class PelanggaranAdminController extends Controller
@@ -25,7 +27,9 @@ class PelanggaranAdminController extends Controller
      */
     public function create()
     {
-        return view('admin.catatan.pelanggaran-siswa-create');
+        $dataSiswa = Pengguna::all();
+        $codePelanggaran = CodePelanggaran::all();
+        return view('admin.catatan.pelanggaran-siswa-create', compact('codePelanggaran', 'dataSiswa'));
     }
 
     /**
@@ -83,7 +87,6 @@ class PelanggaranAdminController extends Controller
         $pelanggaran->delete();
         return redirect()->route('pelanggaran-siswa')->with('success', 'Data berhasil dihapus');
     }
-
     /**
      * Display the specified resource.
      *

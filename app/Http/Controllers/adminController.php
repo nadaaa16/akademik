@@ -5,6 +5,7 @@ use App\Models\CodePelanggaran;
 use App\Models\Prestasi;
 use App\Models\PelanggaranAdmin;
 use App\Models\Absensi;
+use App\Models\Pengguna;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -13,7 +14,8 @@ class adminController extends Controller
     public function dashboard()
     {
         $totalPrestasi = Prestasi::count();
-        return view('admin.dashboard', compact('totalPrestasi'));
+        $totalPelanggaran = PelanggaranAdmin::count();
+        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran'));
     }
 
     //code
@@ -84,16 +86,34 @@ class adminController extends Controller
         return view('admin.catatan.add-prestasi');
     }
 
-    //data siswa (user)
+    //data siswa
     public function dataSiswa()
     {
-        return view('admin.data-siswa');
+        $dataSiswa = Pengguna::all();
+        return view('admin.data-siswa', compact('dataSiswa'));
     }
+
+    // public function detail_siswa($id)
+    // {
+    //     $pel = Pengguna::findOrFail($id);
+    //     return view('admin.catatan.view-pelanggaran', compact('pel'));
+    // }
 
     public function addSiswa()
     {
         return view('admin.add-siswa');
     }
+
+    // //data siswa (user)
+    // public function dataSiswa()
+    // {
+    //     return view('admin.data-siswa');
+    // }
+
+    // public function addSiswa()
+    // {
+    //     return view('admin.add-siswa');
+    // }
 
     //data guru (user)
     public function dataGuru()
