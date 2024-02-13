@@ -3,7 +3,7 @@
 	<head>
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
-		<title>@yield ('title') Admin</title>
+		<title>@yield ('title') - Guru</title>
 
 		<!-- Site favicon -->
 		<link
@@ -89,18 +89,7 @@
 		<!-- End Google Tag Manager -->
 	</head>
 	<body>
-		<div class="pre-loader">
-			<div class="pre-loader-box">
-				<div class="loader-logo">
-					<img src="/back/vendors/images/deskapp-logo.svg" alt="" />
-				</div>
-				<div class="loader-progress" id="progress_div">
-					<div class="bar" id="bar1"></div>
-				</div>
-				<div class="percent" id="percent1">0%</div>
-				<div class="loading-text">Loading...</div>
-			</div>
-		</div>
+		
 
 		<div class="header">
 			<div class="header-left">
@@ -169,7 +158,7 @@
 				</div>
 			</div>
 			<div class="header-right">
-				<div class="dashboard-setting user-notification">
+				{{-- <div class="dashboard-setting user-notification">
 					<div class="dropdown">
 						<a
 							class="dropdown-toggle no-arrow"
@@ -179,8 +168,8 @@
 							<i class="dw dw-settings2"></i>
 						</a>
 					</div>
-				</div>
-				<div class="user-notification">
+				</div> --}}
+				{{-- <div class="user-notification">
 					<div class="dropdown">
 						<a
 							class="dropdown-toggle no-arrow"
@@ -258,7 +247,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<div class="user-info-dropdown">
 					<div class="dropdown">
 						<a
@@ -270,7 +259,7 @@
 							<span class="user-icon">
 								<img src="/back/vendors/images/photo1.jpg" alt="" />
 							</span>
-							<span class="user-name">Ross C. Lopez</span>
+							<span class="user-name">[Nama]</span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
@@ -278,23 +267,23 @@
 							<a class="dropdown-item" href="profile.html"
 								><i class="dw dw-user1"></i> Profile</a
 							>
-							<a class="dropdown-item" href="profile.html"
+							{{-- <a class="dropdown-item" href="profile.html"
 								><i class="dw dw-settings2"></i> Setting</a
 							>
 							<a class="dropdown-item" href="faq.html"
 								><i class="dw dw-help"></i> Help</a
-							>
-							<a class="dropdown-item" href="login.html"
+							> --}}
+							<a class="dropdown-item" href="landing"
 								><i class="dw dw-logout"></i> Log Out</a
 							>
 						</div>
 					</div>
 				</div>
-				<div class="github-link">
+				{{-- <div class="github-link">
 					<a href="https://github.com/dropways/deskapp" target="_blank"
 						><img src="/back/vendors/images/github.svg" alt=""
 					/></a>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 
@@ -470,10 +459,10 @@
 
 		<div class="left-side-bar">
 			<div class="brand-logo">
-				<a href="index.html">
-					<img src="/back/vendors/images/deskapp-logo.svg" alt="" class="dark-logo" />
+				<a href="dashboard">
+					<img src="/back/vendors/images/logo-rekapp.png" alt="dashboard" class="dark-logo" />
 					<img
-						src="/back/vendors/images/deskapp-logo-white.svg"
+						src="/back/vendors/images/logo-rekapp-white.png"
 						alt=""
 						class="light-logo"
 					/>
@@ -485,44 +474,7 @@
 			<div class="menu-block customscroll">
 				<div class="sidebar-menu">
 					<ul id="accordion-menu">
-						{{-- <li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-house"></span
-								><span class="mtext">Home</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="index.html">Dashboard style 1</a></li>
-								<li><a href="index2.html">Dashboard style 2</a></li>
-								<li><a href="index3.html">Dashboard style 3</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-textarea-resize"></span
-								><span class="mtext">Forms</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="form-basic.html">Form Basic</a></li>
-								<li>
-									<a href="advanced-components.html">Advanced Components</a>
-								</li>
-								<li><a href="form-wizard.html">Form Wizard</a></li>
-								<li><a href="html5-editor.html">HTML5 Editor</a></li>
-								<li><a href="form-pickers.html">Form Pickers</a></li>
-								<li><a href="image-cropper.html">Image Cropper</a></li>
-								<li><a href="image-dropzone.html">Image Dropzone</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-table"></span
-								><span class="mtext">Tables</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="basic-table.html">Basic Tables</a></li>
-								<li><a href="datatable.html">DataTables</a></li>
-							</ul>
-						</li> --}}
+						
 						<li>
 							<a href="/dashboard" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-house"></span
@@ -535,21 +487,25 @@
 								<span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="/data-siswa">Data Siswa</a></li>
+								<li><a href="siswa">Data Siswa</a></li>
+								<li><a href="/pelanggaran-siswa">Pelanggaran Siswa</a></li>
+								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
+								{{-- <li><a href="/data-siswa">Data Siswa</a></li> --}}
+								
+								{{-- <li><a href="/prestasi-siswa">Prestasi Siswa</a></li> --}}
+								<li><a href="/absensi">Absensi Siswa</a></li>
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">
 										<span class="micon fa fa-plug"></span>
-										<span class="mtext">Catatan Siswa</span>
+										<span class="mtext">Code </span>
 									</a>
 									<ul class="submenu child">
-										<li><a href="/catatan-siswa">Catatan Siswa</a></li>
-										<li><a href="/add-catatan">Tambah Catatan Siswa</a></li>
+										{{-- <li><a href="/catatan-siswa">Catatan Siswa</a></li>
+										<li><a href="/add-catatan">Tambah Catatan Siswa</a></li> --}}
 										<li><a href="/view-code">Code Pelangaran</a></li>
-										<li><a href="/add-code">Tambah Code Pelangaran</a></li>
+										
 									</ul>
 								</li>
-								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
-								<li><a href="ui-modals.html">Absensi Siswa</a></li>
 							</ul>
 						</li>						
 						<li class="dropdown">

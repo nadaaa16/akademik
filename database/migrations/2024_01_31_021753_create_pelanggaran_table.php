@@ -13,7 +13,7 @@ class CreatePelanggaranTable extends Migration
      */
     public function up()
     {
-        Schema::create('pelanggaran', function (Blueprint $table) {
+        Schema::create('pelanggarans', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->string('pelanggaran');

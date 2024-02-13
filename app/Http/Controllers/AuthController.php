@@ -2,51 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-
 
 class AuthController extends Controller
 {
-    public function index() {
-        return view('auth.login');
+    public function index(){
+        return view('halaman-login');
     }
 
-    public function login_proses(Request $request)
-    {
-       
-        $credentials = $request ->validate([
-                // dd($request->all());
-            'username' => ['required'],
-            'password' => ['required'],
-        ]); 
-        return redirect ('/');
-}
-
-public function register() {
-
-    return view('auth.register');
-}
-
-public function regis(Request $request) {
-      //validated data masuk atau tidak
-        $validated = $request->validate([
-            'username' => 'required|unique:users',
-            'password' => 'required|min:5',
-            'phone' => 'required|max:13',
-            'address' => 'required|max:255',
+    public function auth(Request $request){
+        $request->validate([
+            'nama' => 'required',
+            'nis' => 'required',
+        ], [
+            // 'nama.exists' => 'nama ini belum tersedia',
+            'nama' => 'nama harus diisi',
+            'nis' => 'nis harus diisi'
         ]);
-        
-        $request['password'] = Hash::make($request->password);
-        $user = User::create($request->all());
 
-        Session::flash('status', 'success');
-        Session::flash('message', 'Regist Success! wait admin to approve');
-        return redirect('register');
-}
-    
+        $user = $request->only('nama','nis');
+        if(Auth::attempt($user)){
+            if(Auth::user()->role == 'siswa'){
+                return redirect('/dashboard-siswa')->with('successLogin', 'Anda berhasil login!!!');
+            } else if (Auth::user()->role == 'guru'){
+                return redirect('/dashboard');
+            }
+        }
+    }
 
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
+    }
+
+    // public function register(){
+    //     return view('component.registrasi');
+    // }
 }

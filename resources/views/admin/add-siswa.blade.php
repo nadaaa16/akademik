@@ -8,38 +8,43 @@
 </div>
 
 <div class="mobile-menu-overlay"></div>
-
-        <!--isi form-->
 		<div class="main-container">
             <h2 style="margin-top: 20px;">Tambahkan Siswa</h2>
+            <form action="{{ route('siswa.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="row">
-                <div class="col">
-                    <label for="nis" class="form-label mt-4">NIS</label>
-                  <input type="text" name="nis" id="nis" class="form-control" placeholder="NIS" aria-label="First name">
-                </div>
                 <div class="col">
                     <label for="nama" class="form-label mt-4">Nama</label>
                   <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama" aria-label="First name">
                 </div>
+                <div class="col">
+                    <label for="nis" class="form-label mt-4">NIS</label>
+                  <input type="text" name="nis" id="nis" class="form-control" placeholder="NIS" aria-label="First name">
+                </div>
             </div>
             <div class="row">
+                <div class="col">
+                    <label for="tingkat" class="form-label mt-4">Tingkat</label>
+                    <select name="tingkat" id="tingkat" class="form-control" aria-label="Tingkat">
+                        <option value="X">X</option>
+                        <option value="XI">XI</option>
+                        <option value="XII">XII</option>
+                    </select>
+                </div>
                 <div class="col">
                     <label for="rayon" class="form-label mt-4">Rayon</label>
                   <input type="text" name="rayon" id="rayon" class="form-control" placeholder="Rayon" aria-label="First name">
                 </div>
                 <div class="col">
-                    <label for="codePelangaran" class="form-label mt-4">Tingkat</label>
-                        <select name="codePelangaran" id="codePelangaran" class="form-control" aria-label="Code Pelangaran">
-                            <option value="">Tingkat</option>
-                            <option value="option1">X</option>
-                            <option value="option2">XI</option>
-                            <option value="option3">XII</option>
-                            <!-- Tambahkan opsi lain sesuai kebutuhan -->
-                        </select>
-                    </div>
+                    <label for="jk" class="form-label mt-4">Jenis Kelamin</label>
+                    <select name="jk" id="jk" class="form-control" aria-label="Jenis Kelamin">
+                        <option value="laki-laki">Laki-laki</option>
+                        <option value="perempuan">Perempuan</option>
+                    </select>
+                </div>
             </div>
             <div class="xs-pd-20-10 pd-ltr-20">
-                <button class="btn btn-primary float-right" type="button">Tambah</button>
+                <button class="btn btn-primary float-right" type="submit">Tambah</button>
             </div>
         </div>
 
