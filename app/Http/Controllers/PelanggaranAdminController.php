@@ -68,8 +68,6 @@ class PelanggaranAdminController extends Controller
             'rombel' => $request->rombel,
             'img' => $uploaded,
             'catatan' => $request->catatan,
-            // 'user_id' => Auth::user()->id,
-
         ]);
 
         return redirect()->route('pelanggaran-siswa')->with('success', 'Berhasil menambahakan pelanggaran');

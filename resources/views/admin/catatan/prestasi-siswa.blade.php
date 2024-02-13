@@ -9,7 +9,7 @@
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
     <button class="btn btn-primary float-right" type="button" onclick="window.location.href='add-prestasi'">
-        <i class="bi bi-plus-lg"></i>Tambah Prestasi Siswa
+        <i class="bi bi-plus-lg">Tambah Prestasi Siswa</i>
     </button>
 </div>
 
@@ -43,7 +43,7 @@
                         {{-- <td>{{$value->code}}</td> --}}
                         <td>
                             <div class="table-actions">
-                                <a href="/view-prestasi/{{$value->id}}" data-color="#265ed7"
+                                <a href="/prestasi-edit/{{$value->id}}" data-color="#265ed7"
                                     ><i class="icon-copy dw dw-edit2"></i
                                 ></a>
                                 <form method="POST" action="/prestasi/{{$value->id}}" style="display: inline;">
