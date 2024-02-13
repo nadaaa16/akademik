@@ -52,10 +52,10 @@
                 <td>{{$siswa->tingkat}}</td>
                 <td>{{$siswa->rayon}}</td>
                 <td>{{$siswa->jk}}</td>
-                <td>
+                {{-- <td>
                     <a href="{{ route('edit-data',  $siswa->id) }}" data-bs-toggle="modal" data-bs-target="#exampleModal{{$siswa->}}"class="btn btn-primary">Edit</a>
                     <a href="{{ route('user-delete',  $siswa->id) }}" class="btn btn-danger">Del</a>
-                </td>
+                </td> --}}
             </tr>
             <div class="modal fade" id="exampleModal{{$siswa->id}}" tabindex="-1" aria-labelledby="exampleModalLabel{{$siswa->id}}" aria-hidden="true">
                 <div class="modal-dialog">

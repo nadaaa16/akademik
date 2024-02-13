@@ -8,7 +8,7 @@
 </div>
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='siswa'">
+    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='add-siswa'">
         <i class="bi bi-plus-lg"></i>Tambah Siswa
     </button>
 </div>
@@ -28,18 +28,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($dataSiswa as $value)
                     <tr>
                         <td class="table-plus">
                             <div class="name-avatar d-flex align-items-center">
                                 <div class="txt">
-                                    <div class="weight-600">Syahid</div>
+                                    <div class="weight-600">{{$value->nama}}</div>
                                 </div>
                             </div>
                         </td>
-                        <td>12108633</td>
-                        <td>Cicurug 1</td>
-                        <td>XII</td>
-                        <td>Laki-laki</td>
+                        <td>{{$value->nis}}</td>
+                        <td>{{$value->rayon}}</td>
+                        <td>{{$value->tingkat}}</td>
+                        <td>{{$value->jk}}</td>
                         <td>
                             <div class="table-actions">
                                 <a href="#" data-color="#265ed7"
@@ -51,6 +52,7 @@
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
