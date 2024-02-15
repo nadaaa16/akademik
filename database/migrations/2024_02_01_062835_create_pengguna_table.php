@@ -16,7 +16,7 @@ class CreatePenggunaTable extends Migration
         Schema::create('penggunas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('nis');
+            $table->bigInteger('nis');
             $table->string('tingkat');
             $table->string('rayon');
             $table->enum('jk', ['laki-laki', 'perempuan']);

@@ -40,7 +40,7 @@
 	<div class="mb-3">
 		<label for="formFileMultiple" class="form-label">Tambahkan Foto</label>
 		<input class="form-control" name= "foto" type="file" id="formFileMultiple" multiple>
-	  </div>
+	</div>
     <div class="mb-3">
         <label for="deskripsi" class="form-label">Catatan</label>
         <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>

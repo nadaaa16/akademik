@@ -27,7 +27,7 @@
 				</div>
 			</div>
 			<div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-				<a href="/view-code" class="btn btn-danger me-md-2 fw-bold"><i class="bi bi-x"></i> Back</a>
+				{{-- <a href="/view-code" class="btn btn-danger me-md-2 fw-bold"><i class="bi bi-x"></i> Back</a> --}}
 				<button href = "/index"class="btn btn-primary me-md-2" type="submit"><i class="bi bi-check"></i> Save</button>
 			  </div>
 		</form>

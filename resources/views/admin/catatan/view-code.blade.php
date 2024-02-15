@@ -21,7 +21,6 @@
                     <tr>
                         <th class="table-plus">Kode</th>
                         <th>Deskripsi Pelangaran</th>
-                        <th>Sumber</th>
                         <th class="datatable-nosort">Actions</th>
                     </tr>
                 </thead>
@@ -35,8 +34,8 @@
                                 <form method="POST" action="/code/{{$value->id}}" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn-delete">
-                                        <i class="icon-copy dw dw-delete-3"></i>
+                                    <button type="submit" class="btn-delete" style="background: none; border: none;">
+                                        <i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
                                     </button>
                                 </form>
                             </div>

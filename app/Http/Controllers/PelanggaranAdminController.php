@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\PelanggaranAdmin;
+use App\Models\CodePelanggaran;
+use App\Models\Pengguna;
 use Illuminate\Http\Request;
 
 class PelanggaranAdminController extends Controller
@@ -14,7 +16,8 @@ class PelanggaranAdminController extends Controller
      */
     public function index()
     {
-        //
+        $pelanggaran = PelanggaranAdmin::all();
+        return view('admin.catatan.pelanggaran-siswa', compact('pelanggaran'));
     }
 
     /**
@@ -24,7 +27,9 @@ class PelanggaranAdminController extends Controller
      */
     public function create()
     {
-        //
+        $dataSiswa = Pengguna::all();
+        $codePelanggaran = CodePelanggaran::all();
+        return view('admin.catatan.pelanggaran-siswa-create', compact('codePelanggaran', 'dataSiswa'));
     }
 
     /**
@@ -41,9 +46,9 @@ class PelanggaranAdminController extends Controller
             'rayon' => 'required',
             'rombel' => 'required',
             'img' => 'required',
-            'deskripsi' => 'required',
-
+            'catatan' => 'required',
         ]);
+        
         $image = $request->file('img');
         $imgName = time().rand().'.'.$image->extension();
         if(!file_exists(public_path('/fotoPelanggaran'.$image->getClientOriginalName()))){
@@ -54,7 +59,7 @@ class PelanggaranAdminController extends Controller
             $uploaded = $image->getClientOriginalName();
         }
 
-        // $prestasi['bukti'] = request()->file('bukti')->store('bukti-img');
+        // $pelanggaran['bukti'] = request()->file('bukti')->store('bukti-img');
 
         PelanggaranAdmin::create([
             'nama'=> $request->nama,
@@ -62,12 +67,12 @@ class PelanggaranAdminController extends Controller
             'rayon' => $request->rayon,
             'rombel' => $request->rombel,
             'img' => $uploaded,
-            'deskripsi' => $request->deskripsi,
+            'catatan' => $request->catatan,
             // 'user_id' => Auth::user()->id,
 
         ]);
 
-        return redirect()->route('pelanggaran-siswa')->with('success', 'Berhasil menambahakan Pelanggaran');
+        return redirect()->route('pelanggaran-siswa')->with('success', 'Berhasil menambahakan pelanggaran');
     }
 
     public function delete($id)
@@ -82,7 +87,6 @@ class PelanggaranAdminController extends Controller
         $pelanggaran->delete();
         return redirect()->route('pelanggaran-siswa')->with('success', 'Data berhasil dihapus');
     }
-
     /**
      * Display the specified resource.
      *

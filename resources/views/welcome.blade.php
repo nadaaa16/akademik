@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>REKAPP Landing</title>
+  <title>REKAPP SMK Wikrama</title>
+  <link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/back/vendors/images/apple-touch-icon.png"
+/>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -53,7 +58,7 @@
   </header>
   <div class="banner" >
     <div class="container">
-      <h1 class="font-weight-semibold">Rekap Akademik <br>SMK Wikrama </h1>
+      <h1 class="font-weight-semibold">RekApp <br>SMK Wikrama </h1>
       <h6 class="font-weight-normal text-muted pb-3">Mencakup informasi seperti mata pelajaran, nilai, absensi, dan prestasi lainnya. <br> Rekam ini penting untuk evaluasi kemajuan siswa dan digunakan oleh lembaga pendidikan, penerima beasiswa, dan lainnya
       </h6>
       <div>
@@ -69,49 +74,42 @@
       <section class="features-overview" id="features-section" >
         <div class="content-header">
           <h2>How does it works</h2>
-          <h6 class="section-subtitle text-muted">One theme that serves as an easy-to-use operational toolkit<br>that meets customer's needs.</h6>
+          <h6 class="section-subtitle text-muted">Merekap Kegiatan siswa selama di Sekolah<br>(Prestasi, Pelanggaran dan Absensi)</h6>
         </div>
         <div class="d-md-flex justify-content-between">
           <div class="grid-margin d-flex justify-content-start">
             <div class="features-width">
               <img src="back/vendors/images/Group12.svg" alt="" class="img-icons">
-              <h5 class="py-3">Speed<br>Optimisation</h5>
-              <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-              <a href="#"><p class="readmore-link">Readmore</p></a>  
+              <h5 class="py-3">Prestasi<br>siswa</h5>
+              <p class="text-muted">Catatan Prestasi-prestasi Siswa Selama di Sekolah</p>
+              <a href="#"><p class="readmore-link"></p></a>  
             </div>
           </div>
           <div class="grid-margin d-flex justify-content-center">
             <div class="features-width">
               <img src="back/vendors/images/Group7.svg" alt="" class="img-icons">
-              <h5 class="py-3">SEO and<br>Backlinks</h5>
-              <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-              <a href="#"><p class="readmore-link">Readmore</p></a>
+              <h5 class="py-3">Pelanggaran<br>Siswa</h5>
+              <p class="text-muted">Rekap Pelanggaran yang di lakukan Siswa Selama Di Sekolah</p>
+              <a href="#"><p class="readmore-link"></p></a>
             </div>
           </div>
           <div class="grid-margin d-flex justify-content-end">
             <div class="features-width">
               <img src="back/vendors/images/Group5.svg" alt="" class="img-icons">
-              <h5 class="py-3">Content<br>Marketing</h5>
-              <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-              <a href="#"><p class="readmore-link">Readmore</p></a>
+              <h5 class="py-3">Absensi<br>Siswa</h5>
+              <p class="text-muted">Laporan Absensi Siswa Selama Sekolah</p>
+              <a href="#"><p class="readmore-link"></p></a>
             </div>
           </div>
         </div>
       </section>     
           
-        
+       
+      
      
-      <section class="contact-us" id="contact-section">
-        <div class="contact-us-bgimage grid-margin" >
-          <div class="pb-4">
-            <h4 class="px-3 px-md-0 m-0" data-aos="fade-down">Do you have any projects?</h4>
-            <h4 class="pt-1" data-aos="fade-down">Contact us</h4>
-          </div>
-          <div data-aos="fade-up">
-            <button class="btn btn-rounded btn-outline-danger">Contact us</button>
-          </div>          
-        </div>
-      </section>
+
+      <br> <br> <br> <br> <br> <center><h2>Contact More</h2></center> <br><br> <br>
+      
       <section class="contact-details" id="contact-details-section">
         <div class="row text-center text-md-left">
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
