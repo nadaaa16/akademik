@@ -70,9 +70,9 @@
                             <input
                                 type="NIS"
                                 class="form-control form-control-lg"
-                                placeholder="NIS"
-                                name="nis"
-                                id="nis" 
+                                placeholder="Password"
+                                name="password"
+                                id="password" 
                             />
                             <div class="input-group-append custom">
                                 <span class="input-group-text"

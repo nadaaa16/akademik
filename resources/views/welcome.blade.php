@@ -58,7 +58,7 @@
       </h6>
       <div>
         {{-- <button class="btn btn-opacity-light mr-1">Get started</button> --}}
-       <a href="halaman-login"> <button class="btn btn-opacity-success ml-1"><b>Login</b></button></a>
+       <a href="/halaman-login"> <button class="btn btn-opacity-success ml-1"><b>Login</b></button></a>
       </div>
       <br>
       <img src="back/vendors/images/Group171.svg" alt="" class="img-fluid">

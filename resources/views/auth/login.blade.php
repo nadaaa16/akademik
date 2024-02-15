@@ -1,4 +1,4 @@
-<form  action="{{ route('login-proses') }}" method="POST" style="width:350px">
+<form  action="{{ route('login-auth') }}" method="POST" style="width:350px">
     @csrf
     <div class="mb-5 text-center" >
         <h3>LOGIN</h3>
