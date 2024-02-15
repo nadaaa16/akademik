@@ -34,9 +34,10 @@ Route::get('/catatan-siswa', [adminController::class, "catatanSiswa"]);
 Route::get('/add-catatan', [adminController::class, "addCatatan"]);
 Route::view('/catatan-siswa','catatan-siswa');
 //siswa
-// Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
-// Route::get('/tambah-siswa', [SiswaController::class, "tambahSiswa"]);
-// Route::post('/siswa/store', [SiswaController::class, 'store']);
+Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
+Route::get('/tambah-siswa', [SiswaController::class, "tambahSiswa"]);
+Route::post('/siswa/store', [SiswaController::class, 'store']);
+Route::put('/siswa/update{$id}', [SiswaController::class, "update"])->name('update-data');
 
 //code pelanggaran
 Route::get('/code', [CodePelanggaranController::class, "code"]);
@@ -89,7 +90,12 @@ Route::get('/add-guru', [adminController::class, "addGuru"]);
 //dashboard admin (ini klo pake yang dashboad2 menampilkan semua yang ada di dashboad2)
 Route::get('/dashboard', [adminController::class, "dashboard"]);
 
-//ROLE SISWA
+//siswa
+// Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
+// Route::get('/tambah-siswa', [SiswaController::class, "tambahSiswa"]);
+// Route::post('/siswa/store', [SiswaController::class, 'store']);
+
+//siswaAsli controller masi pake yang admin
 Route::get('/dashboard-siswa', [adminController::class, "dashboardSiswa"]);
 Route::get('/catatan', [adminController::class, "catatan"]);
 //pelanggaran itu catatan belom di ganti

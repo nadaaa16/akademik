@@ -14,7 +14,7 @@
 				</div>
 				
 				<div class="card-box pb-10">
-					<div class="h5 pd-20 mb-0">Catatan Terbaru [nama]</div>
+					<div class="h5 pd-20 mb-0">Catatan Terbaru [$nama]</div>
 					<table class="data-table table nowrap">
 						<thead>
 							<tr>
