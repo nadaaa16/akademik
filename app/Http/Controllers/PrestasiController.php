@@ -29,7 +29,7 @@ class PrestasiController extends Controller
     {
         $dataSiswa = Pengguna::all();
         $prestasi = Prestasi::all();
-        return view('admin.catatan.add-prestasi', compact('prestasi', 'dataSiswa'));
+        return view('admin.catatan.prestasi-siswa-create', compact('prestasi', 'dataSiswa'));
     }
 
     /**
@@ -48,7 +48,7 @@ class PrestasiController extends Controller
             'foto' => 'required',
             'deskripsi' => 'required',
         ]);
-        
+
         $image = $request->file('foto');
         $imgName = time().rand().'.'.$image->extension();
         if(!file_exists(public_path('/fotoPrestasi'.$image->getClientOriginalName()))){
@@ -59,8 +59,6 @@ class PrestasiController extends Controller
             $uploaded = $image->getClientOriginalName();
         }
 
-        // $prestasi['bukti'] = request()->file('bukti')->store('bukti-img');
-
          Prestasi::create([
             'nama'=> $request->nama,
             'namaEkskul' => $request->namaEkskul,
@@ -68,35 +66,20 @@ class PrestasiController extends Controller
             'tingkat' => $request->tingkat,
             'foto' => $uploaded,
             'deskripsi' => $request->deskripsi,
-            // 'user_id' => Auth::user()->id,
-
         ]);
 
-        return redirect()->route('prestasi-siswa')->with('success', 'Berhasil menambahakan prestasi');
+        return redirect()->route('prestasi.siswa')->with('success', 'Berhasil menambahakan prestasi');
     }
-
-    public function delete($id)
-    {
-        $prestasi = Prestasi::findOrFail($id);
-        return view('admin.catatan.delete', compact('prestasi'));
-    }
-
-    public function confirmDelete(Request $request, $id)
-    {
-        $prestasi = Prestasi::findOrFail($id);
-        $prestasi->delete();
-        return redirect()->route('prestasi-siswa')->with('success', 'Data berhasil dihapus');
-    }
-
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Prestasi  $prestasi
      * @return \Illuminate\Http\Response
      */
-    public function show(Prestasi $prestasi)
+    public function show($id)
     {
-        //
+        $prestasi = Prestasi::findOrFail($id);
+        return view('admin.catatan.prestasi-siswa-show', compact('prestasi'));
     }
 
     /**
@@ -110,7 +93,7 @@ class PrestasiController extends Controller
         $data = Prestasi::find($id);
         $dataSiswa = Pengguna::all();
         $prestasi = Prestasi::all();
-        return view('admin.catatan.edit-prestasi', compact('data', 'prestasi', 'dataSiswa'));
+        return view('admin.catatan.prestasi-siswa-edit', compact('data', 'prestasi', 'dataSiswa'));
     }
 
     /**
@@ -134,15 +117,15 @@ class PrestasiController extends Controller
         if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
 
         $data['nama'] = $request->nama;
-        $data['namaEksul'] = $request->namaEkskul;
+        $data['namaEkskul'] = $request->namaEkskul;
         $data['namaLomba'] = $request->namaLomba;
         $data['tingkat'] = $request->tingkat;
         $data['foto'] = $request->foto;
-        $data['deskripsi'] = $request->deslripsi;
+        $data['deskripsi'] = $request->deskripsi;
 
         Prestasi::whereId($id)->update($data);
 
-        return redirect()->route('prestasi-siswa');
+        return redirect()->route('prestasi.siswa');
     }
 
     /**
@@ -151,8 +134,14 @@ class PrestasiController extends Controller
      * @param  \App\Models\Prestasi  $prestasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prestasi $prestasi)
+    public function destroy($id)
     {
-        //
+        $data = Prestasi::find($id);
+
+        if ($data) {
+            $data->delete();
+        }
+
+        return redirect()->route('prestasi.siswa');
     }
 }

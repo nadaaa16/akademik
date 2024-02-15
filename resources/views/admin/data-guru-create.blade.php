@@ -1,7 +1,7 @@
 @extends('back.layout.dashboard2-layout')
 @section('title', isset($pageTitle) ? $pageTitle : 'Tambah Guru')
 @section('content')
-    
+
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="mt-3 d-flex justify-content-center">
     <h2><i class="bi bi-trophy"></i>Tambah Guru</h2>
@@ -37,12 +37,11 @@
                             <option value="">Jenis Kelamin</option>
                             <option value="option1">Laki-laki</option>
                             <option value="option2">Prempuan</option>
-                            <option value="option3">XII</option>
                         </select>
                     </div>
             </div>
             <div class="xs-pd-20-10 pd-ltr-20">
-                <button class="btn btn-primary float-right" type="button">Tambah</button>
+                <button class="btn btn-primary float-right" type="button">Simpan</button>
             </div>
         </div>
 

@@ -89,7 +89,7 @@
 		<!-- End Google Tag Manager -->
 	</head>
 	<body>
-		
+
 
 		<div class="header">
 			<div class="header-left">
@@ -474,7 +474,7 @@
 			<div class="menu-block customscroll">
 				<div class="sidebar-menu">
 					<ul id="accordion-menu">
-						
+
 						<li>
 							<a href="/dashboard" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-house"></span
@@ -487,13 +487,13 @@
 								<span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="siswa">Data Siswa</a></li>
+								<li><a href="/data-siswa">Data Siswa</a></li>
 								<li><a href="/pelanggaran-siswa">Pelanggaran Siswa</a></li>
 								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
 								{{-- <li><a href="/data-siswa">Data Siswa</a></li> --}}
-								
+
 								{{-- <li><a href="/prestasi-siswa">Prestasi Siswa</a></li> --}}
-								<li><a href="/absensi">Absensi Siswa</a></li>
+								<li><a href="/absensi-siswa">Absensi Siswa</a></li>
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">
 										<span class="micon fa fa-plug"></span>
@@ -502,12 +502,12 @@
 									<ul class="submenu child">
 										{{-- <li><a href="/catatan-siswa">Catatan Siswa</a></li>
 										<li><a href="/add-catatan">Tambah Catatan Siswa</a></li> --}}
-										<li><a href="/view-code">Code Pelangaran</a></li>
-										
+										<li><a href="/code-pelanggaran">Code Pelangaran</a></li>
+
 									</ul>
 								</li>
 							</ul>
-						</li>						
+						</li>
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-person-check"></span>
@@ -1482,6 +1482,6 @@
 		<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 		<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 		<script src="/back/vendors/scripts/dashboard3.js"></script>
-		
+
 	</body>
 </html>

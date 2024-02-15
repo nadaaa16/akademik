@@ -1,7 +1,7 @@
 @extends('back.layout.dashboard2-layout')
 @section('title', isset($pageTitle) ? $pageTitle : 'Pelangaran Siswa')
 @section('content')
-    
+
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="mt-3 d-flex justify-content-center">
     <h2><i class="bi bi-trophy"></i>Pelangaran Siswa</h2>
@@ -9,7 +9,7 @@
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
     <button class="btn btn-primary float-right" type="button" onclick="window.location.href='pelanggaran-siswa-create'">
-        <i class="bi bi-plus-lg"></i>Pelangaran Siswa
+        <i class="bi bi-plus-lg">Pelangaran Siswa</i>
     </button>
 </div>
 
@@ -36,22 +36,22 @@
                                 </div>
                             </div>
                         </td>
-                        <td>{{$value->codePelanggaran}}</td>
+                        <td>{{$value->codePelanggaran}} {{$value->deskripsi}}</td>
                         <td>{{$value->rayon}}</td>
                         <td>{{$value->rombel}}</td>
                         <td>
                             <div class="table-actions">
-                                <a href="/view-pelanggaran/{{$value->id}}" data-color="#265ed7"
+                                <a href="/pelanggaran-siswa-edit/{{$value->id}}" data-color="#265ed7"
                                     ><i class="icon-copy dw dw-edit2"></i
                                 ></a>
-                                <form method="POST" action="/pelanggaran/{{$value->id}}" style="display: inline;">
+                                <form action="{{ route('pelanggaran.delete',['id' => $value->id] )}}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-delete" style="background: none; border: none;">
                                         <i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
                                     </button>
                                 </form>
-                                
+
                             </div>
                         </td>
                     </tr>
