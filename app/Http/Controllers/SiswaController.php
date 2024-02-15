@@ -36,12 +36,12 @@ class SiswaController extends Controller
     //     return view('admin.catatan.delete', compact('codePelanggaran'));
     // }
 
-    // public function confirmDelete(Request $request, $id)
-    // {
-    //     $codePelanggaran = CodePelanggaran::findOrFail($id);
-    //     $codePelanggaran->delete();
-    //     return redirect()->route('data-siswa')->with('success', 'Data berhasil dihapus');
-    // }
+    public function confirmDelete(Request $request, $id)
+    {
+        $siswa = Pengguna::findOrFail($id);
+        $siswa->delete();
+        return redirect()->route('data-siswa')->with('success', 'Data berhasil dihapus');
+    }
 
     public function dataSiswa(){
         return view('data-siswa');

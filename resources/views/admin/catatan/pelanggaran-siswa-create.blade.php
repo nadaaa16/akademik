@@ -15,19 +15,17 @@
     <div class="row">
         <div class="col">
             <label for="nama" class="form-label mt-4">Nama</label>
-            <select name="nama" id="nama" class="form-control" aria-label="Code Pelangaran">
-                {{-- <option value="">Pilih Code Pelangaran</option> --}}
+            <select name="nama" id="nama" class="form-control" aria-label="Nama">
                 @foreach ($dataSiswa as $value)
                     <option value="{{ $value->nama }}">{{ $value->nama }}</option>
                 @endforeach
             </select>
         </div>
         <div class="col">
-            <label for="codePelangaran" class="form-label mt-4">Code Pelangaran</label>
-            <select name="codePelangaran" id="codePelangaran" class="form-control" aria-label="Code Pelangaran">
-                {{-- <option value="">Pilih Code Pelangaran</option> --}}
+            <label for="codePelanggaran" class="form-label mt-4">Code Pelangaran</label>
+            <select name="codePelanggaran" id="codePelanggaran" class="form-control" aria-label="Code Pelangaran">
                 @foreach ($codePelanggaran as $value)
-                    <option value="{{ $value->code }}">{{ $value->code }} - {{ $value->deskripsi }}</option>
+                    <option value="{{ $value->code }} - {{ $value->deskripsi }}">{{ $value->code }} - {{ $value->deskripsi }}</option>
                 @endforeach
             </select>
         </div>   

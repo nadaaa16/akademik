@@ -43,12 +43,16 @@
                         <td>{{$value->jk}}</td>
                         <td>
                             <div class="table-actions">
-                                <a href="#" data-color="#265ed7"
+                                {{-- <a href="#" data-color="#265ed7"
                                     ><i class="icon-copy dw dw-edit2"></i
-                                ></a>
-                                <a href="#" data-color="#e95959"
-                                    ><i class="icon-copy dw dw-delete-3"></i
-                                ></a>
+                                ></a> --}}
+                                <form method="POST" action="/siswa/{{$value->id}}" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-delete" style="background: none; border: none;">
+                                        <i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>

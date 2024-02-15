@@ -13,9 +13,10 @@ class adminController extends Controller
     //dashboard
     public function dashboard()
     {
+        $dataSiswa = Pengguna::count();
         $totalPrestasi = Prestasi::count();
         $totalPelanggaran = PelanggaranAdmin::count();
-        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran'));
+        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran', 'dataSiswa'));
     }
 
     //code
@@ -129,8 +130,9 @@ class adminController extends Controller
     //data absensi
     public function absensi()
     {
+        $absn = Absensi::all();
         $absensi = Absensi::all();
-        return view('admin.absensi.absensi', compact('absensi'));
+        return view('admin.absensi.absensi', compact('absensi', 'absn'));
     }
 
     // public function detail_absensi($id)

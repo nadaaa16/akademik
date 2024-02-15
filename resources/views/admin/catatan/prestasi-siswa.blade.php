@@ -49,8 +49,8 @@
                                 <form method="POST" action="/prestasi/{{$value->id}}" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn-delete" data-color="red">
-                                        <i class="icon-copy dw dw-delete-3"></i>
+                                    <button type="submit" class="btn-delete" style="background: none; border: none;">
+                                        <i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
                                     </button>
                                 </form>
                             </div>

@@ -38,11 +38,14 @@
                                 </div>
                             </div>
                         </td>
-                        {{-- <td>12108633</td> --}}
                         <td>{{$value->rayon}}</td>
-                        <td>{{$value->rombel}}4</td>
+                        <td>{{$value->rombel}}</td>
                         <td>{{$value->keterangan}}</td>
-                        {{-- <td>{{asset('fotoPrestasi/'.$pem->foto)}}</td> --}}
+                        {{-- <td>
+                            @foreach ($absn as $absensi)
+                                <img src="{{ asset('fotoAbsensi/'.$absensi->foto) }}" alt="Foto" style="max-width: 100px; max-height: 100px;">
+                            @endforeach
+                        </td> --}}
                         <td>
                             <div class="table-actions">
                                 <a href="#" data-color="#265ed7"
@@ -51,13 +54,10 @@
                                 <form method="POST" action="/absensi/{{$value->id}}" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn-delete">
-                                        <i class="icon-copy dw dw-delete-3"></i>
+                                    <button type="submit" class="btn-delete" style="background: none; border: none;">
+                                        <i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
                                     </button>
                                 </form>
-                                {{-- <a href="#" data-color="#e95959"
-                                    ><i class="icon-copy dw dw-delete-3"></i
-                                ></a> --}}
                             </div>
                         </td>
                     </tr>
