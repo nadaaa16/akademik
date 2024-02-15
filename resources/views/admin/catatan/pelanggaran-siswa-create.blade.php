@@ -15,15 +15,17 @@
     <div class="row">
         <div class="col">
             <label for="nama" class="form-label mt-4">Nama</label>
-            <select name="nama" id="nama" class="form-control" aria-label="Nama">
+            <select name="nama" id="nama" class="form-control" aria-label="Code Pelangaran">
+                {{-- <option value="">Nama</option> --}}
                 @foreach ($dataSiswa as $value)
                     <option value="{{ $value->nama }}">{{ $value->nama }}</option>
                 @endforeach
             </select>
         </div>
         <div class="col">
-            <label for="codePelanggaran" class="form-label mt-4">Code Pelangaran</label>
-            <select name="codePelanggaran" id="codePelanggaran" class="form-control" aria-label="Code Pelangaran">
+            <label for="codePelangaran" class="form-label mt-4">Code Pelangaran</label>
+            <select name="codePelangaran" id="codePelangaran" class="form-control" aria-label="Code Pelangaran">
+                {{-- <option value="">Code Pelangaran</option> --}}
                 @foreach ($codePelanggaran as $value)
                     <option value="{{ $value->code }} - {{ $value->deskripsi }}">{{ $value->code }} - {{ $value->deskripsi }}</option>
                 @endforeach
@@ -35,16 +37,16 @@
     <div class="row">
         <div class="col">
             <label for="rayon" class="form-label mt-4">Rayon</label>
-            <input type="text" name="rayon" id="rayon" class="form-control" placeholder="rayon" aria-label="First name">
+            <input type="text" name="rayon" id="rayon" class="form-control" placeholder="Rayon">
         </div>
         <div class="col">
             <label for="rombel" class="form-label mt-4">Kelas / Rombel</label>
-            <input type="text" name="rombel" id="rombel" class="form-control" placeholder="rombel" aria-label="Last name">
+            <input type="text" name="rombel" id="rombel" class="form-control" placeholder="Kelas / Rombel">
         </div>
     </div>
 	<div class="mb-3">
 		<label for="formFileMultiple" class="form-label">Tambahkan Foto</label>
-		<input class="form-control" name= "img" type="file" id="formFileMultiple" multiple>
+		<input class="form-control" name="img" type="file" id="formFileMultiple" multiple>
 	</div>
     <div class="mb-3">
         <label for="catatan" class="form-label">Catatan</label>

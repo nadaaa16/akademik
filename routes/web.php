@@ -46,12 +46,14 @@ Route::get('/code/{id}/delete', [CodePelanggaranController::class, "delete"])->n
 Route::delete('/code/{id}', [CodePelanggaranController::class, "confirmDelete"])->name('confirm-delete-code');
 
 //prestasi
-Route::get('/prestasi-siswa', [adminController::class, "prestasiSiswa"])->name('prestasi-siswa');
-Route::get('/add-prestasi', [adminController::class, "addPrestasiSiswa"]);
+Route::get('/prestasi-siswa', [PrestasiController::class, "index"])->name('prestasi-siswa');
+Route::get('/add-prestasi', [PrestasiController::class, "create"]);
 Route::post('/prestasi/store', [PrestasiController::class, 'store'])->name('prestasi.store');
-Route::get('/prestasi', [adminController::class, 'viewPrestasi']);
+Route::get('/prestasi-edit/{id}', [PrestasiController::class, 'edit'])->name('prestasi.edit');
+Route::put('/prestasi-update/{id}', [PrestasiController::class, 'update'])->name('prestasi.update');
+Route::get('/prestasi', [PrestasiController::class, 'viewPrestasi']);
 Route::delete('/prestasi/{id}', [PrestasiController::class, "confirmDelete"])->name('confirm-delete');
-Route::get('/view-prestasi/{id}', [adminController::class, "detail_prestasi"]);
+Route::get('/view-prestasi/{id}', [PrestasiController::class, "detail_prestasi"]);
 
 //pelanggaran
 Route::get('/pelanggaran-siswa', [PelanggaranAdminController::class, 'index'])->name('pelanggaran-siswa');

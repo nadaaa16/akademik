@@ -70,11 +70,12 @@ class adminController extends Controller
     // }
 
     //prestasi
-    public function prestasiSiswa()
-    {
-        $prestasi = Prestasi::all();
-        return view('admin.catatan.prestasi-siswa', compact('prestasi'));
-    }
+    // public function prestasiSiswa()
+    // {
+        
+        // $prestasi = Prestasi::all();
+        // return view('admin.catatan.prestasi-siswa', compact('prestasi'));
+    // }
 
     public function detail_prestasi($id)
     {

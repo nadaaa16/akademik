@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengguna;
 use App\Models\Prestasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PrestasiController extends Controller
 {
@@ -14,7 +16,8 @@ class PrestasiController extends Controller
      */
     public function index()
     {
-        //
+        $prestasi = Prestasi::all();
+        return view('admin.catatan.prestasi-siswa', compact('prestasi'));
     }
 
     /**
@@ -24,7 +27,9 @@ class PrestasiController extends Controller
      */
     public function create()
     {
-        //
+        $dataSiswa = Pengguna::all();
+        $prestasi = Prestasi::all();
+        return view('admin.catatan.add-prestasi', compact('prestasi', 'dataSiswa'));
     }
 
     /**
@@ -100,9 +105,12 @@ class PrestasiController extends Controller
      * @param  \App\Models\Prestasi  $prestasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Prestasi $prestasi)
+    public function edit(Request $request, $id)
     {
-        //
+        $data = Prestasi::find($id);
+        $dataSiswa = Pengguna::all();
+        $prestasi = Prestasi::all();
+        return view('admin.catatan.edit-prestasi', compact('data', 'prestasi', 'dataSiswa'));
     }
 
     /**
@@ -112,9 +120,29 @@ class PrestasiController extends Controller
      * @param  \App\Models\Prestasi  $prestasi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prestasi $prestasi)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'nama' => 'required',
+            'namaEkskul' => 'required',
+            'namaLomba' => 'required',
+            'tingkat' => 'required',
+            'foto' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
+
+        $data['nama'] = $request->nama;
+        $data['namaEksul'] = $request->namaEkskul;
+        $data['namaLomba'] = $request->namaLomba;
+        $data['tingkat'] = $request->tingkat;
+        $data['foto'] = $request->foto;
+        $data['deskripsi'] = $request->deslripsi;
+
+        Prestasi::whereId($id)->update($data);
+
+        return redirect()->route('prestasi-siswa');
     }
 
     /**
