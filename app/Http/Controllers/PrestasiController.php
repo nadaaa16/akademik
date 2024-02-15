@@ -40,40 +40,38 @@ class PrestasiController extends Controller
      */
     public function store(Request $request)
     {
-        $prestasi = $request->validate([
+        $validatedData = $request->validate([
             'nama' => 'required',
             'namaEkskul' => 'required',
             'namaLomba' => 'required',
             'tingkat' => 'required',
-            'foto' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // menambahkan validasi untuk gambar
             'deskripsi' => 'required',
         ]);
-        
-        $image = $request->file('foto');
-        $imgName = time().rand().'.'.$image->extension();
-        if(!file_exists(public_path('/fotoPrestasi'.$image->getClientOriginalName()))){
+    
+        try {
+            $image = $request->file('foto');
+            $imgName = time().rand().'.'.$image->extension();
             $destinationPath = public_path('/fotoPrestasi');
             $image->move($destinationPath, $imgName);
             $uploaded = $imgName;
-        }else{
-            $uploaded = $image->getClientOriginalName();
+    
+            Prestasi::create([
+                'nama'=> $validatedData['nama'],
+                'namaEkskul' => $validatedData['namaEkskul'],
+                'namaLomba' => $validatedData['namaLomba'],
+                'tingkat' => $validatedData['tingkat'],
+                'foto' => $uploaded,
+                'deskripsi' => $validatedData['deskripsi'],
+            ]);
+    
+            return redirect()->route('prestasi-siswa')->with('success', 'Berhasil menambahkan prestasi');
+        } catch (\Exception $e) {
+            // Jika terjadi kesalahan, kembalikan ke halaman sebelumnya dengan pesan kesalahan
+            return back()->withInput()->withErrors(['error' => 'Gagal menambahkan prestasi. Silakan coba lagi.']);
         }
-
-        // $prestasi['bukti'] = request()->file('bukti')->store('bukti-img');
-
-         Prestasi::create([
-            'nama'=> $request->nama,
-            'namaEkskul' => $request->namaEkskul,
-            'namaLomba' => $request->namaLomba,
-            'tingkat' => $request->tingkat,
-            'foto' => $uploaded,
-            'deskripsi' => $request->deskripsi,
-            // 'user_id' => Auth::user()->id,
-
-        ]);
-
-        return redirect()->route('prestasi-siswa')->with('success', 'Berhasil menambahakan prestasi');
     }
+    
 
     public function delete($id)
     {
@@ -134,11 +132,11 @@ class PrestasiController extends Controller
         if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
 
         $data['nama'] = $request->nama;
-        $data['namaEksul'] = $request->namaEkskul;
+        $data['namaEkskul'] = $request->namaEkskul;
         $data['namaLomba'] = $request->namaLomba;
         $data['tingkat'] = $request->tingkat;
         $data['foto'] = $request->foto;
-        $data['deskripsi'] = $request->deslripsi;
+        $data['deskripsi'] = $request->deskripsi;
 
         Prestasi::whereId($id)->update($data);
 

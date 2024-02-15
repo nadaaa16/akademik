@@ -24,7 +24,7 @@
                         <th>Rayon</th>
                         <th>Rombel</th>
                         <th>Keterangan</th>
-                        {{-- <th>Bukti</th> --}}
+                        <th>Bukti</th>
                         <th class="datatable-nosort">Actions</th>
                     </tr>
                 </thead>
@@ -41,11 +41,15 @@
                         <td>{{$value->rayon}}</td>
                         <td>{{$value->rombel}}</td>
                         <td>{{$value->keterangan}}</td>
-                        {{-- <td>
-                            @foreach ($absn as $absensi)
-                                <img src="{{ asset('fotoAbsensi/'.$absensi->foto) }}" alt="Foto" style="max-width: 100px; max-height: 100px;">
-                            @endforeach
-                        </td> --}}
+                        <td>
+                            @if($value->img !='')
+                            <a href="#" data-toggle="modal" data-target="#absensiModal{{$value->id}}">
+                                <img src="{{asset('fotoAbsensi/'.$value->img)}}" alt="" width="70px">
+                            </a>
+                            @else
+                            <img src="{{asset('img/bg_1.jpg')}}" alt="" width="75px" >
+                            @endif
+                        </td>
                         <td>
                             <div class="table-actions">
                                 <a href="#" data-color="#265ed7"
@@ -61,6 +65,26 @@
                             </div>
                         </td>
                     </tr>
+
+                    <div class="modal fade" id="absensiModal{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="absensiModalLabel{{$value->id}}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="absensiModalLabel{{$value->id}}">{{$value->nama}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{asset('fotoAbsensi/'.$value->img)}}" class="img-fluid" alt="Foto Pelanggaran">
+                                    <p>Nama: {{$value->nama}}</p>
+                                    <p>Rayon: {{$value->rayon}}</p>
+                                    <p>Rombel: {{$value->rombel}}</p>
+                                    <p>Keterangan: {{$value->keterangan}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
                 </tbody>
             </table>

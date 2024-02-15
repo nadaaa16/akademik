@@ -31,11 +31,11 @@
                     <label for="keterangan" class="form-label mt-4">Keterangan</label>
                     <br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="keterangan" id="sakit" value="sakit">
+                        <input class="form-check-input" type="radio" name="keterangan" id="sakit" value="Sakit">
                         <label class="form-check-label" for="sakit">Sakit</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="keterangan" id="izin" value="izin">
+                        <input class="form-check-input" type="radio" name="keterangan" id="izin" value="Izin">
                         <label class="form-check-label" for="izin">Izin</label>
                       </div>
                     </div>

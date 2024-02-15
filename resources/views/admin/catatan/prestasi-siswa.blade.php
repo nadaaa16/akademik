@@ -23,7 +23,7 @@
                         <th>Jenis EksKul</th>
                         <th>Nama Lomba</th>
                         <th>Kelas</th>
-                        {{-- <th>Tanggal</th> --}}
+                        <th>Foto</th>
                         <th class="datatable-nosort">Actions</th>
                     </tr>
                 </thead>
@@ -40,7 +40,15 @@
                         <td>{{$value->namaEkskul}}</td>
                         <td>{{$value->namaLomba}}</td>
                         <td>{{$value->tingkat}}</td>
-                        {{-- <td>{{$value->code}}</td> --}}
+                        <td>
+                            @if($value->foto !='')
+                            <a href="#" data-toggle="modal" data-target="#prestasiModal{{$value->id}}">
+                                <img src="{{asset('fotoPrestasi/'.$value->foto)}}" alt="" width="70px">
+                            </a>
+                            @else
+                            <img src="{{asset('img/bg_1.jpg')}}" alt="" width="75px" >
+                            @endif
+                        </td>
                         <td>
                             <div class="table-actions">
                                 <a href="/prestasi-edit/{{$value->id}}" data-color="#265ed7"
@@ -56,6 +64,26 @@
                             </div>
                         </td>
                     </tr>
+
+                    <div class="modal fade" id="prestasiModal{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="prestasiModalLabel{{$value->id}}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="prestasiModalLabel{{$value->id}}">{{$value->namaLomba}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{asset('fotoPrestasi/'.$value->foto)}}" class="img-fluid" alt="Foto Pelanggaran">
+                                    <p>Nama: {{$value->nama}}</p>
+                                    <p>namaEkskul: {{$value->namaEkskul}}</p>
+                                    <p>tingkat: {{$value->tingkat}}</p>
+                                    <p>Catatan: {{$value->deskripsi}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
                 </tbody>
             </table>

@@ -61,14 +61,14 @@ Route::get('/pelanggaran-siswa-create', [PelanggaranAdminController::class, 'cre
 Route::post('/pelanggaran-siswa-store', [PelanggaranAdminController::class, 'store'])->name('pelanggaran-siswa-store');
 Route::get('/pelanggaran-siswa/{id}/show', [PelanggaranAdminController::class, 'show'])->name('pelanggaran-siswa-show');
 Route::put('/pelanggaran-siswa/{id}', [PelanggaranAdminController::class, "update"])->name('pelanggaran-siswa-update');
-Route::delete('/pelanggaran/{id}', [PelanggaranAdminController::class, "confirmDelete"])->name('confirm-delete');
+// Route::delete('/pelanggaran/{id}', [PelanggaranAdminController::class, "confirmDelete"])->name('confirm-delete');
 
 //absensi
 Route::get('/absensi', [adminController::class, "absensi"])->name('absensi');
 Route::get('/add-absensi', [adminController::class, "addAbsensi"]);
 Route::post('/absensi/store', [AbsensiController::class, 'store'])->name('absensi.store');
 // Route::get('/absensi', [adminController::class, 'viewabsensi']);
-Route::delete('/absensi/{id}', [AbsensiController::class, "confirmDelete"])->name('confirm-delete');
+// Route::delete('/absensi/{id}', [AbsensiController::class, "confirmDelete"])->name('confirm-delete');
 Route::get('/view-absensi/{id}', [adminController::class, "detail_absensi"]);
 
 //data siswa
@@ -76,7 +76,7 @@ Route::get('/siswa', [adminController::class, "dataSiswa"])->name('siswa');
 Route::get('/add-siswa', [adminController::class, "addSiswa"]);
 Route::post('/siswa/store', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/data-siswa', [adminController::class, 'dataSiswa'])->name('data-siswa');
-Route::delete('/siswa/{id}', [SiswaController::class, "confirmDelete"])->name('confirm-delete');
+// Route::delete('/siswa/{id}', [SiswaController::class, "confirmDelete"])->name('confirm-delete');
 Route::get('/view-absensi/{id}', [adminController::class, "detail_absensi"]);
 // Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
 // Route::get('/tambah-siswa', [SiswaController::class, "tambahSiswa"]);

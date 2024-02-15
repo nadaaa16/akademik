@@ -45,7 +45,7 @@
                             <div class="table-actions">
                                 <a href="" data-color="#265ed7"
                                     ><i class="icon-copy dw dw-edit2"></i
-                                ></a> --}}
+                                ></a> 
                                 <form method="POST" action="/siswa/{{$value->id}}" style="display: inline;">
                                     @csrf
                                     @method('DELETE')

@@ -23,8 +23,8 @@
             </select>
         </div>
         <div class="col">
-            <label for="codePelangaran" class="form-label mt-4">Code Pelangaran</label>
-            <select name="codePelangaran" id="codePelangaran" class="form-control" aria-label="Code Pelangaran">
+            <label for="codePelanggaran" class="form-label mt-4">Code Pelangaran</label>
+            <select name="codePelanggaran" id="codePelanggaran" class="form-control" aria-label="Code Pelangaran">
                 {{-- <option value="">Code Pelangaran</option> --}}
                 @foreach ($codePelanggaran as $value)
                     <option value="{{ $value->code }} - {{ $value->deskripsi }}">{{ $value->code }} - {{ $value->deskripsi }}</option>

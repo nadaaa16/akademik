@@ -12,7 +12,7 @@
       <div class="card-body">
       <h3 class="text-center">K 1.1 Menongkrong</h3>
         <div class="d-flex justify-content-center">
-            <img src="{{asset('fotoPrestasi/'.$pem->foto)}}" class="img-fluid" alt="Gambar" style="max-width: 200px; max-height: 200px;">
+            <img src="{{asset('fotoPelanggaran/'.$pem->foto)}}" class="img-fluid" alt="Gambar" style="max-width: 200px; max-height: 200px;">
           </div>
           
         <table class="table table-borderless">
