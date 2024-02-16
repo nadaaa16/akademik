@@ -88,9 +88,10 @@ class AbsensiController extends Controller
      * @param  \App\Models\Absensi  $absensi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Absensi $absensi)
+    public function edit($id)
     {
-        return view('admin.absensi.absensi-siswa-edit');
+        $data = Absensi::find($id);
+        return view('admin.absensi.absensi-siswa-edit', compact('data'));
     }
 
     /**

@@ -511,7 +511,7 @@
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-person-check"></span>
-								<span class="mtext"> Guru </span>
+								<span class="mtext">Guru </span>
 							</a>
 							<ul class="submenu">
 								<li><a href="/data-guru">Data Guru</a></li>

@@ -38,8 +38,8 @@ class SiswaController extends Controller
             'rayon' => $request->rayon,
             'jk' => $request->jk,
         ]);
-        return redirect()->route('data-siswa');
 
+        return redirect()->route('data.siswa');
     }
 
     public function edit($id)

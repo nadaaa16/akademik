@@ -40,12 +40,12 @@
                         </td>
                         {{-- <td>12108633</td> --}}
                         <td>{{$value->rayon}}</td>
-                        <td>{{$value->rombel}}4</td>
+                        <td>{{$value->rombel}}</td>
                         <td>{{$value->keterangan}}</td>
                         {{-- <td>{{asset('fotoPrestasi/'.$pem->foto)}}</td> --}}
                         <td>
                             <div class="table-actions">
-                                <a href="#" data-color="#265ed7"
+                                <a href="absensi-siswa-edit/{{$value->id}}" data-color="#265ed7"
                                     ><i class="icon-copy dw dw-edit2"></i
                                 ></a>
                                 <form action{{ route('absensi.delete',['id' => $value->id] )}}" method="POST" style="display: inline;">
