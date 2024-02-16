@@ -30,10 +30,10 @@
                 <div class="col">
                     <label for="keterangan" class="form-label mt-4">Keterangan</label>
                     <br>
-                    <div class="form-check form-check-inline">
+                    {{-- <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="keterangan" id="alfa" value="alfa">
                         <label class="form-check-label" for="alfa">Alfa</label>
-                      </div>
+                      </div> --}}
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="keterangan" id="sakit" value="sakit">
                         <label class="form-check-label" for="sakit">Sakit</label>

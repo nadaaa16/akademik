@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PelanggaranAdmin;
 use App\Models\Prestasi;
+use App\Models\Pengguna;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller

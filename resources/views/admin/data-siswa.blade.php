@@ -49,8 +49,8 @@
                                 <form action="{{ route('siswa.delete',['id' => $value->id] )}}" method="POST"  style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn-delete" data-color="red">
-                                        <i class="icon-copy dw dw-delete-3"></i>
+                                    <button type="submit" class="btn-delete" style="background: none; border: none;">
+                                        <i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
                                     </button>
                                 </form>
                                 {{-- <a href="/data-siswa-delete/{{$value->id}}" data-color="#e95959"

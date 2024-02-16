@@ -487,22 +487,17 @@
 								<span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="siswa">Data Siswa</a></li>
-								<li><a href="/pelanggaran-siswa">Pelanggaran Siswa</a></li>
-								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
-								{{-- <li><a href="/data-siswa">Data Siswa</a></li> --}}
-								
-								{{-- <li><a href="/prestasi-siswa">Prestasi Siswa</a></li> --}}
-								<li><a href="/absensi">Absensi Siswa</a></li>
+								<li><a href="/data-siswa" class="@if(request()->is('data-siswa')) active @endif">Data Siswa</a></li>
+								<li><a href="/pelanggaran-siswa" class="@if(request()->is('pelanggaran-siswa')) active @endif">Pelanggaran Siswa</a></li>
+								<li><a href="/prestasi-siswa" class="@if(request()->is('prestasi-siswa')) active @endif">Prestasi Siswa</a></li>
+								<li><a href="/absensi-siswa" class="@if(request()->is('absensi-siswa')) active @endif">Absensi Siswa</a></li>
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">
 										<span class="micon fa fa-plug"></span>
 										<span class="mtext">Code </span>
 									</a>
 									<ul class="submenu child">
-										{{-- <li><a href="/catatan-siswa">Catatan Siswa</a></li>
-										<li><a href="/add-catatan">Tambah Catatan Siswa</a></li> --}}
-										<li><a href="/view-code">Code Pelangaran</a></li>
+										<li><a href="/code-pelanggaran" class="@if(request()->is('code-pelanggaran') || request()->is('code-pelanggaran')) active @endif">Code Pelanggaran</a></li>
 										
 									</ul>
 								</li>

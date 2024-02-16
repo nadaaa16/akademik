@@ -7,6 +7,7 @@ use App\Http\Controllers\CodePelanggaranController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\PelanggaranController;
 
 /*
@@ -72,8 +73,8 @@ Route::post('/code-pelanggaran-store', [CodePelanggaranController::class, "store
 Route::delete('/code-pelanggaran-delete/{id}', [CodePelanggaranController::class, 'destroy'])->name('code.delete');
 
 //data guru
-Route::get('/data-guru', [AdminController::class, "dataGuru"]);
-Route::get('/data-guru-create', [AdminController::class, "addGuru"]);
+Route::get('/data-guru', [GuruController::class, 'index'])->name('data.guru');
+Route::get('/data-guru-create', [GuruController::class, 'create'])->name('guru.create');
 
 //dashboard admin (ini klo pake yang dashboad2 menampilkan semua yang ada di dashboard2)
 Route::get('/dashboard', [AdminController::class, "dashboard"]);
