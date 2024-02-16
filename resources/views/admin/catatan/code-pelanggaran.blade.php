@@ -8,8 +8,8 @@
 </div>
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='code'">
-        <i class="bi bi-plus-lg"></i>Tambah Code Pelangaran
+    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='code-pelanggaran-create'">
+        <i class="bi bi-plus-lg">Tambah Code Pelangaran</i>
     </button>
 </div>
 

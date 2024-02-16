@@ -89,7 +89,7 @@
 		<!-- End Google Tag Manager -->
 	</head>
 	<body>
-		
+
 
 		<div class="header">
 			<div class="header-left">
@@ -474,6 +474,7 @@
 			<div class="menu-block customscroll">
 				<div class="sidebar-menu">
 					<ul id="accordion-menu">
+						
 						<li>
 							<a href="/dashboard" class="dropdown-toggle no-arrow @if(request()->is('dashboard')) active @endif">
 								<span class="micon bi bi-house"></span>
@@ -486,21 +487,27 @@
 								<span class="mtext"> Siswa </span>
 							</a>
 							<ul class="submenu">
-								<li><a href="/siswa" class="@if(request()->is('siswa')) active @endif">Data Siswa</a></li>
-								<li><a href="/pelanggaran-siswa" class="@if(request()->is('pelanggaran-siswa')) active @endif">Pelanggaran Siswa</a></li>
-								<li><a href="/prestasi-siswa" class="@if(request()->is('prestasi-siswa')) active @endif">Prestasi Siswa</a></li>
-								<li><a href="/absensi" class="@if(request()->is('absensi')) active @endif">Absensi Siswa</a></li>
+								<li><a href="siswa">Data Siswa</a></li>
+								<li><a href="/pelanggaran-siswa">Pelanggaran Siswa</a></li>
+								<li><a href="/prestasi-siswa">Prestasi Siswa</a></li>
+								{{-- <li><a href="/data-siswa">Data Siswa</a></li> --}}
+								
+								{{-- <li><a href="/prestasi-siswa">Prestasi Siswa</a></li> --}}
+								<li><a href="/absensi">Absensi Siswa</a></li>
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">
 										<span class="micon fa fa-plug"></span>
 										<span class="mtext">Code </span>
 									</a>
 									<ul class="submenu child">
-										<li><a href="/view-code" class="@if(request()->is('view-code') || request()->is('code-pelanggaran')) active @endif">Code Pelanggaran</a></li>
+										{{-- <li><a href="/catatan-siswa">Catatan Siswa</a></li>
+										<li><a href="/add-catatan">Tambah Catatan Siswa</a></li> --}}
+										<li><a href="/view-code">Code Pelangaran</a></li>
+										
 									</ul>
 								</li>
 							</ul>
-						</li>                       
+						</li>						
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-person-check"></span>
@@ -528,25 +535,6 @@
 		<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 		<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 		<script src="/back/vendors/scripts/dashboard3.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-		@if ($message = Session::get('success'))
-		<script>
-			Swal.fire({
-				icon: "success",
-				title: "Berhasil",
-				text: "Berhasil menambahkan data",
-			});
-		</script>
-	@elseif ($errors->any())
-		<script>
-			Swal.fire({
-				icon: "error",
-				title: "Gagal",
-				text: "Gagal menambahkan data. Silakan coba lagi.",
-			});
-		</script>
-	@endif
-	
+		
 	</body>
 </html>
