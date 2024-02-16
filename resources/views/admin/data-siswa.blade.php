@@ -19,6 +19,7 @@
             <table class="data-table table nowrap">
                 <thead>
                     <tr>
+                        <td>No</td>
                         <th class="table-plus">Nama</th>
                         <th>NIS</th>
                         <th>Rayon</th>
@@ -30,6 +31,7 @@
                 <tbody>
                     @foreach ($dataSiswa as $value)
                     <tr>
+                        <td>{{ $loop->iteration }}</td>
                         <td class="table-plus">
                             <div class="name-avatar d-flex align-items-center">
                                 <div class="txt">

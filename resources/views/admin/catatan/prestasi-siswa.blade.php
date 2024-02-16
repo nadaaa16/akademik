@@ -19,6 +19,7 @@
             <table class="data-table table nowrap">
                 <thead>
                     <tr>
+                        <td>No</td>
                         <th class="table-plus">Nama</th>
                         <th>Jenis EksKul</th>
                         <th>Nama Lomba</th>
@@ -30,6 +31,7 @@
                 <tbody>
                     @foreach ($prestasi as $value)
                     <tr>
+                        <td>{{ $loop->iteration }}</td>
                         <td class="table-plus">
                             <div class="name-avatar d-flex align-items-center">
                                 <div class="txt">

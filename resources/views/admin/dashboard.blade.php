@@ -89,47 +89,46 @@
 					<table class="data-table table nowrap">
 						<thead>
 							<tr>
+								<th>No</th>
 								<th class="table-plus">Nama</th>
 								<th>NIS</th>
 								<th>Rayon</th>
 								<th>Kelas</th>
 								<th>Jenis Kelamin</th>
-								<th class="datatable-nosort">Actions</th>
+								{{-- <th class="datatable-nosort">Actions</th> --}}
 							</tr>
 						</thead>
 						<tbody>
+							@foreach ($dataSiswaAll as $value)
 							<tr>
+								<td>{{ $loop->iteration }}</td>
 								<td class="table-plus">
 									<div class="name-avatar d-flex align-items-center">
-										<div class="avatar mr-2 flex-shrink-0">
-											{{-- <img
-												src="/back/vendors/images/photo4.jpg"
-												class="border-radius-100 shadow"
-												width="40"
-												height="40"
-												alt=""
-											/> --}}
-										</div>
 										<div class="txt">
-											<div class="weight-600">Syahid</div>
+											<div class="weight-600">{{$value->nama}}</div>
 										</div>
 									</div>
 								</td>
-								<td>12108633</td>
-								<td>Cicurug 1</td>
-								<td>XII</td>
-								<td>Laki-laki</td>
-								<td>
+								<td>{{$value->nis}}</td>
+								<td>{{$value->rayon}}</td>
+								<td>{{$value->tingkat}}</td>
+								<td>{{$value->jk}}</td>
+								{{-- <td>
 									<div class="table-actions">
-										<a href="#" data-color="#265ed7"
+										<a href="/data-siswa-edit/{{$value->id}}" data-color="#265ed7"
 											><i class="icon-copy dw dw-edit2"></i
 										></a>
-										<a href="#" data-color="#e95959"
-											><i class="icon-copy dw dw-delete-3"></i
-										></a>
+										<form action="{{ route('siswa.delete',['id' => $value->id] )}}" method="POST"  style="display: inline;">
+											@csrf
+											@method('DELETE')
+											<button type="submit" class="btn-delete" style="background: none; border: none;">
+												<i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
+											</button>
+										</form>
 									</div>
-								</td>
+								</td> --}}
 							</tr>
+							@endforeach
 						</tbody>
 					</table>
 				</div>

@@ -19,6 +19,7 @@
             <table class="data-table table nowrap">
                 <thead>
                     <tr>
+                        <th>No</th>
                         <th class="table-plus">Kode</th>
                         <th>Deskripsi Pelangaran</th>
                         <th class="datatable-nosort">Actions</th>
@@ -27,6 +28,7 @@
                 <tbody>
                     @foreach ($codePelanggaran as $value)
                     <tr>
+                        <td>{{ $loop->iteration }}</td>
                         <td>{{$value->code}}</td>
                         <td>{{$value->deskripsi}}</td>
                         <td>

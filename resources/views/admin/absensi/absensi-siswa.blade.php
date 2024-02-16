@@ -19,8 +19,8 @@
             <table class="data-table table nowrap">
                 <thead>
                     <tr>
+                        <th>No</th>
                         <th class="table-plus">Nama</th>
-                        {{-- <th>NIS</th> --}}
                         <th>Rayon</th>
                         <th>Rombel</th>
                         <th>Keterangan</th>
@@ -31,6 +31,7 @@
                 <tbody>
                     @foreach ($absensi as $value)
                     <tr>
+                        <td>{{ $loop->iteration }}</td>
                         <td class="table-plus">
                             <div class="name-avatar d-flex align-items-center">
                                 <div class="txt">

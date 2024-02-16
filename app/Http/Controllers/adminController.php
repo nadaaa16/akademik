@@ -13,9 +13,10 @@ class AdminController extends Controller
     public function dashboard()
     {
         $dataSiswa = Pengguna::count();
+        $dataSiswaAll = Pengguna::all(); 
         $totalPrestasi = Prestasi::count();
         $totalPelanggaran = PelanggaranAdmin::count();
-        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran', 'dataSiswa'));
+        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran', 'dataSiswa', 'dataSiswaAll'));
     }
 
     //code
