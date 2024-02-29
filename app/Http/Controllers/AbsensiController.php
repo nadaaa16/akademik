@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Absensi;
+use App\Models\Pengguna;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -30,7 +31,8 @@ class AbsensiController extends Controller
      */
     public function create()
     {
-        return view('admin.absensi.absensi-siswa-create');
+        $dataSiswa = Pengguna::all();
+        return view('admin.absensi.absensi-siswa-create', compact('dataSiswa'));
     }
 
     /**

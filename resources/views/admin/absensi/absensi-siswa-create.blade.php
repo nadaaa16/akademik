@@ -12,10 +12,15 @@
             <h2 style="margin-top: 20px;">Tambah Absensi Siswa yang Tidak Hadir</h2>
             <form action="{{ route('absensi.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-            <div class="row">
-                <div class="col">
+                <div class="row">
+                  <div class="col">
                     <label for="nama" class="form-label mt-4">Nama</label>
-                  <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama">
+                    <select name="nama" id="nama" class="form-control" aria-label="Code Pelangaran">
+                        <option value="">Nama</option>
+                        @foreach ($dataSiswa as $value)
+                            <option value="{{ $value->nama }}">{{ $value->nama }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="col">
                     <label for="rayon" class="form-label mt-4">Rayon</label>

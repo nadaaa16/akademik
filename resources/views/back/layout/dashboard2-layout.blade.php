@@ -3,7 +3,7 @@
 	<head>
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
-		<title>@yield ('title') - Guru</title>
+		<title>@yield ('title') - Admin</title>
 
 		<!-- Site favicon -->
 		<link
