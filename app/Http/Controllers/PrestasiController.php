@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengguna;
 use App\Models\Prestasi;
+use App\Models\Rayon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,9 +28,16 @@ class PrestasiController extends Controller
      */
     public function create()
     {
+        $rayon = Rayon::distinct()->pluck('rayon');
         $dataSiswa = Pengguna::all();
-        $prestasi = Prestasi::all();
-        return view('admin.catatan.prestasi-siswa-create', compact('prestasi', 'dataSiswa'));
+        return view('admin.catatan.prestasi-siswa-create', compact('rayon', 'dataSiswa'));
+    }
+
+    public function getStudentsByRayon(Request $request)
+    {
+        $rayon = $request->rayon;
+        $namaSiswa = Pengguna::where('rayon', $rayon)->pluck('nama');
+        return response()->json($namaSiswa);
     }
 
     /**
@@ -41,11 +49,11 @@ class PrestasiController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'rayon' => 'required',
             'nama' => 'required',
             'namaEkskul' => 'required',
             'namaLomba' => 'required',
-            'tingkat' => 'required',
-            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // menambahkan validasi untuk gambar
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi' => 'required',
         ]);
 
@@ -60,10 +68,10 @@ class PrestasiController extends Controller
         }
 
          Prestasi::create([
+            'rayon' => $request->rayon,
             'nama'=> $request->nama,
             'namaEkskul' => $request->namaEkskul,
             'namaLomba' => $request->namaLomba,
-            'tingkat' => $request->tingkat,
             'foto' => $uploaded,
             'deskripsi' => $request->deskripsi,
         ]);
@@ -90,10 +98,11 @@ class PrestasiController extends Controller
      */
     public function edit(Request $request, $id)
     {
+        $rayon = Rayon::distinct()->pluck('rayon');
         $data = Prestasi::find($id);
         $dataSiswa = Pengguna::all();
         $prestasi = Prestasi::all();
-        return view('admin.catatan.prestasi-siswa-edit', compact('data', 'prestasi', 'dataSiswa'));
+        return view('admin.catatan.prestasi-siswa-edit', compact('data', 'prestasi', 'dataSiswa', 'rayon'));
     }
 
     /**
@@ -106,20 +115,20 @@ class PrestasiController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(),[
+            'rayon' => 'required',
             'nama' => 'required',
             'namaEkskul' => 'required',
             'namaLomba' => 'required',
-            'tingkat' => 'required',
             'foto' => 'required',
             'deskripsi' => 'required',
         ]);
 
         if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
 
+        $data['rayon'] = $request->rayon;
         $data['nama'] = $request->nama;
         $data['namaEkskul'] = $request->namaEkskul;
         $data['namaLomba'] = $request->namaLomba;
-        $data['tingkat'] = $request->tingkat;
         $data['foto'] = $request->foto;
         $data['deskripsi'] = $request->deskripsi;
 

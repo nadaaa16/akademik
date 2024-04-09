@@ -14,19 +14,24 @@
                 @csrf
                 <div class="row">
                   <div class="col">
-                    <label for="nama" class="form-label mt-4">Nama</label>
-                    <select name="nama" id="nama" class="form-control" aria-label="Code Pelangaran">
-                        <option value="">Nama</option>
-                        @foreach ($dataSiswa as $value)
-                            <option value="{{ $value->nama }}">{{ $value->nama }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col">
-                    <label for="rayon" class="form-label mt-4">Rayon</label>
-                  <input type="text" name="rayon" id="rayon" class="form-control" placeholder="Rayon">
-                </div>
-            </div>
+                      <div class="form-group">
+                          <label for="rayon" class="form-label mt-4">Rayon</label>
+                          <select class="form-control" id="rayon" name="rayon">
+                              @foreach($rayon as $r)
+                                  <option value="{{ $r }}">{{ $r }}</option>
+                              @endforeach
+                          </select>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="form-group">
+                          <label for="nama" class="form-label mt-4">Nama Siswa</label>
+                          <select class="form-control" id="nama" name="nama">
+                              <!-- Nama siswa akan dimuat secara dinamis -->
+                          </select>
+                      </div>
+                  </div>
+              </div>
             <div class="row">
                 <div class="col">
                     <label for="rombel" class="form-label mt-4">Rombel</label>
@@ -58,6 +63,29 @@
             </div>
         </div>
     </form>
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#rayon').on('change', function() {
+            var rayon = $(this).val();
+            $.ajax({
+                url: '{{ route("prestasi.getStudentsByRayon") }}',
+                type: 'GET',
+                data: {
+                    rayon: rayon
+                },
+                success: function(data) {
+                    $('#nama').empty();
+                    $.each(data, function(index, nama) {
+                        $('#nama').append('<option value="' + nama + '">' + nama + '</option>');
+                    });
+                }
+            });
+        });
+    });
+</script>
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

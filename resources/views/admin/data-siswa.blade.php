@@ -2,16 +2,16 @@
 @section('title', isset($pageTitle) ? $pageTitle : 'Data Siswa')
 @section('content')
 
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<div class="mt-3 d-flex justify-content-center">
-    <h2><i class="bi bi-trophy"></i>Data Siswa</h2>
-</div>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <div class="mt-3 d-flex justify-content-center">
+        <h2><i class="bi bi-trophy"></i>Data Siswa</h2>
+    </div>
 
-<div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='data-siswa-create'">
-        <i class="bi bi-plus-lg">Tambah Siswa</i>
-    </button>
-</div>
+    <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
+        <button class="btn btn-primary float-right" type="button" onclick="window.location.href='data-siswa-create'">
+            <i class="bi bi-plus-lg">Tambah Siswa</i>
+        </button>
+    </div>
 
 <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20">
@@ -58,16 +58,16 @@
                                 {{-- <a href="/data-siswa-delete/{{$value->id}}" data-color="#e95959"
                                     ><i class="icon-copy dw dw-delete-3"></i
                                 ></a> --}}
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @endsection

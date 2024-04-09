@@ -11,50 +11,88 @@
 <div class="main-container">
     <h2 style="margin-top: 20px;">Tambahkan Prestasi Kepada Siswa</h2>
     <form action="{{ route('prestasi.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
+    @csrf
     <div class="row">
         <div class="col">
-            <label for="nama" class="form-label mt-4">Nama</label>
-            <select name="nama" id="nama" class="form-control" aria-label="Code Pelangaran">
-                <option value="">Nama</option>
-                @foreach ($dataSiswa as $value)
-                    <option value="{{ $value->nama }}">{{ $value->nama }}</option>
-                @endforeach
-            </select>
+            <div class="form-group">
+                <label for="rayon" class="form-label mt-4">Rayon</label>
+                <select class="form-control" id="rayon" name="rayon">
+                    @foreach($rayon as $r)
+                        <option value="{{ $r }}">{{ $r }}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
         <div class="col">
-            <label for="nama" class="form-label mt-4">Nama Ekskul</label>
-            <input type="text" name="namaEkskul" id="namaEkskul" class="form-control" placeholder="Nama Ekskul" aria-label="First name">
+            <div class="form-group">
+                <label for="nama" class="form-label mt-4">Nama Siswa</label>
+                <select class="form-control" id="nama" name="nama">
+                    <!-- Nama siswa akan dimuat secara dinamis -->
+                </select>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <label for="namaLomba" class="form-label mt-4">Nama Lomba</label>
-            <input type="text" name="namaLomba" id="namaLomba" class="form-control" placeholder="Nama Lomba" aria-label="First name">
+            <div class="form-group">
+                <label for="namaEkskul" class="form-label mt-4">Nama Ekstrakurikuler</label>
+                <input type="text" class="form-control" id="namaEkskul" name="namaEkskul">
+            </div>
         </div>
         <div class="col">
-            <label for="tingkat" class="form-label mt-4">Tingkat</label>
-            <select name="tingkat" id="tingkat" class="form-control" aria-label="Code Pelangaran">
-                <option value="">Tingkat</option>
-                <option value="X">X</option>
-                <option value="XI">XI</option>
-                <option value="XII">XII</option>
-            </select>
+            <div class="form-group">
+                <label for="namaLomba" class="form-label mt-4">Nama Lomba</label>
+                <input type="text" class="form-control" id="namaLomba" name="namaLomba">
+            </div>
         </div>
     </div>
-	<div class="mb-3">
-		<label for="formFileMultiple" class="form-label">Tambahkan Foto</label>
-		<input class="form-control" name= "foto" type="file" id="formFileMultiple" multiple>
-	</div>
-    <div class="mb-3">
-        <label for="deskripsi" class="form-label">Catatan</label>
-        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="foto" class="form-label mt-4">Foto</label>
+                <input type="file" class="form-control" id="foto" name="foto">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="deskripsi" class="form-label mt-4">Deskripsi</label>
+                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+            </div>
+        </div>
     </div>
-    <div class="xs-pd-20-10 pd-ltr-20">
-        <button class="btn btn-primary float-right" type="submit">Tambah</button>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <div class="xs-pd-20-10 pd-ltr-20">
+                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#rayon').on('change', function() {
+            var rayon = $(this).val();
+            $.ajax({
+                url: '{{ route("prestasi.getStudentsByRayon") }}',
+                type: 'GET',
+                data: {
+                    rayon: rayon
+                },
+                success: function(data) {
+                    $('#nama').empty();
+                    $.each(data, function(index, nama) {
+                        $('#nama').append('<option value="' + nama + '">' + nama + '</option>');
+                    });
+                }
+            });
+        });
+    });
+</script>
+
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

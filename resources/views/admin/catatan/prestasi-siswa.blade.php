@@ -23,7 +23,7 @@
                         <th class="table-plus">Nama</th>
                         <th>Jenis EksKul</th>
                         <th>Nama Lomba</th>
-                        <th>Kelas</th>
+                        <th>Rayon</th>
                         <th>Foto</th>
                         <th class="datatable-nosort">Actions</th>
                     </tr>
@@ -41,7 +41,7 @@
                         </td>
                         <td>{{$value->namaEkskul}}</td>
                         <td>{{$value->namaLomba}}</td>
-                        <td>{{$value->tingkat}}</td>
+                        <td>{{$value->rayon}}</td>
                         <td>
                             @if($value->foto !='')
                             <a href="#" data-toggle="modal" data-target="#prestasiModal{{$value->id}}">

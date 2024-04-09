@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rayon extends Model
+class Guru extends Model
 {
     use HasFactory;
-
-    protected $fillable=[
-        'rayon'
+    protected $fillable =[
+        'nama' , 'nik' , 'pembimbingRayon', 'mapel', 'jk'
     ];
-
 }

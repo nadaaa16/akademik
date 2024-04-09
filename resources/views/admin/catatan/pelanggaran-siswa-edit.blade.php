@@ -13,16 +13,30 @@
     <form action="{{ route('pelanggaran.update',['id' =>$data->id]) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="rayon" class="form-label mt-4">Rayon</label>
+                    <select class="form-control" id="rayon" name="rayon">
+                        @foreach($rayon as $r)
+                            <option value="{{ $r }}" @if($data->rayon == $r) selected @endif>{{ $r }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="nama" class="form-label mt-4">Nama Siswa</label>
+                    <select class="form-control" id="nama" name="nama">
+                        @foreach($dataSiswa as $s)
+                            <option value="{{ $s->nama }}" @if($data->nama == $s->nama) selected @endif>{{ $s->nama }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+        </div>        
+    {{-- </div> --}}
     <div class="row">
-        <div class="col">
-            <label for="nama" class="form-label mt-4">Nama</label>
-            <select name="nama" id="nama" class="form-control" aria-label="Code Pelangaran">
-                <option value="">Nama</option>
-                @foreach ($dataSiswa as $value)
-                    <option value="{{ $value->nama }}">{{ $value->nama }}</option>
-                @endforeach
-            </select>
-        </div>
         <div class="col">
             <label for="codePelanggaran" class="form-label mt-4">Code Pelangaran</label>
             <select name="codePelanggaran" id="codePelanggaran" class="form-control" value="{{ $data->codePelanggaran}}">
@@ -31,14 +45,6 @@
                     <option value="{{ $value->code }}">{{ $value->code }} - {{ $value->deskripsi }}</option>
                 @endforeach
             </select>
-        </div>
-    </div>
-
-    {{-- </div> --}}
-    <div class="row">
-        <div class="col">
-            <label for="rayon" class="form-label mt-4">Rayon</label>
-            <input type="text" name="rayon" id="rayon" class="form-control" placeholder="Rayon" value="{{ $data->rayon}}">
         </div>
         <div class="col">
             <label for="rombel" class="form-label mt-4">Kelas / Rombel</label>
@@ -58,6 +64,29 @@
     </div>
 </div>
 </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#rayon').on('change', function() {
+            var rayon = $(this).val();
+            $.ajax({
+                url: '{{ route("prestasi.getStudentsByRayon") }}',
+                type: 'GET',
+                data: {
+                    rayon: rayon
+                },
+                success: function(data) {
+                    $('#nama').empty();
+                    $.each(data, function(index, nama) {
+                        $('#nama').append('<option value="' + nama + '">' + nama + '</option>');
+                    });
+                }
+            });
+        });
+    });
+</script>
+
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

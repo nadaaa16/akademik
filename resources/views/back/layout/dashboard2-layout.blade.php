@@ -494,11 +494,13 @@
 								<li class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle">
 										<span class="micon fa fa-plug"></span>
-										<span class="mtext">Code </span>
+										<span class="mtext">Data </span>
 									</a>
 									<ul class="submenu child">
 										<li><a href="/code-pelanggaran" class="@if(request()->is('code-pelanggaran') || request()->is('code-pelanggaran')) active @endif">Code Pelanggaran</a></li>
-										
+									</ul>
+									<ul class="submenu child">
+										<li><a href="/index" class="@if(request()->is('rayon') || request()->is('rayon')) active @endif">Rayon</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -506,7 +508,7 @@
 						<li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-person-check"></span>
-								<span class="mtext"> Guru </span>
+								<span class="mtext">Guru </span>
 							</a>
 							<ul class="submenu">
 								<li><a href="/data-guru" class="@if(request()->is('data-guru')) active @endif">Data Guru</a></li>

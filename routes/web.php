@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SiswaController;
-use App\Http\Controllers\CodePelanggaranController;
-use App\Http\Controllers\PrestasiController;
-use App\Http\Controllers\AbsensiController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RayonController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\PelanggaranController;
+use App\Http\Controllers\CodePelanggaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,10 +53,11 @@ Route::delete('/pelanggaran-siswa-delete/{id}', [PelanggaranController::class, '
 Route::get('/prestasi-siswa', [PrestasiController::class, "index"])->name('prestasi.siswa');
 Route::get('/prestasi-siswa-create', [PrestasiController::class, "create"])->name('prestasi.create');
 Route::post('/prestasi-siswa-store', [PrestasiController::class, 'store'])->name('prestasi.store');
-Route::get('/prestasi-siswa-show/{id}', [PrestasiController::class, "detail_prestasi"]);
+Route::get('/prestasi-siswa-show/{id}', [PrestasiController::class, 'show']);
 Route::get('/prestasi-siswa-edit/{id}', [PrestasiController::class, 'edit'])->name('prestasi.edit');
 Route::put('/prestasi-siswa-update/{id}', [PrestasiController::class, 'update'])->name('prestasi.update');
 Route::delete('/prestasi-siswa-delete/{id}', [PrestasiController::class, "destroy"])->name('prestasi.delete');
+Route::get('prestasi/getStudentsByRayon', [PrestasiController::class, 'getStudentsByRayon'])->name('prestasi.getStudentsByRayon');
 
 //absensi
 Route::get('/absensi-siswa', [AbsensiController::class, 'index'])->name('absensi.siswa');
@@ -68,9 +70,15 @@ Route::delete('/absensi-siswa-delete/{id}', [AbsensiController::class, "destroy"
 
 //code pelanggaran
 Route::get('/code-pelanggaran', [CodePelanggaranController::class, 'index'])->name('code.pelanggaran');
-Route::get('/code-pelanggaran-create', [CodePelanggaranController::class, "create"])->name('code.pelanggaran.create');
-Route::post('/code-pelanggaran-store', [CodePelanggaranController::class, "store"])->name('code.pelanggaran.store');
+Route::get('/code-pelanggaran-create', [CodePelanggaranController::class, 'create'])->name('code.pelanggaran.create');
+Route::post('/code-pelanggaran-store', [CodePelanggaranController::class, 'store'])->name('code.pelanggaran.store');
 Route::delete('/code-pelanggaran-delete/{id}', [CodePelanggaranController::class, 'destroy'])->name('code.delete');
+
+//rayon
+Route::get('/index', [RayonController::class, 'index'])->name('rayon');
+Route::get('/rayon-create', [RayonController::class, 'create'])->name('rayon.create');
+Route::post('/rayon-store', [RayonController::class, 'store'])->name('rayon.store');
+Route::delete('/rayon-delete/{id}', [RayonController::class, 'destroy'])->name('rayon.delete');
 
 //data guru
 Route::get('/data-guru', [GuruController::class, 'index'])->name('data.guru');
@@ -82,6 +90,7 @@ Route::get('/dashboard', [AdminController::class, "dashboard"]);
 //ROLE SISWA
 Route::get('/dashboard-siswa', [AdminController::class, "dashboardSiswa"]);
 Route::get('/catatan', [AdminController::class, "catatan"]);
+
 //pelanggaran itu catatan belom di ganti
 Route::get('/view-pelanggaran', [AdminController::class, "detailPelanggaran"]);
 Route::get('/prestasi', [AdminController::class, "prestasi"]);

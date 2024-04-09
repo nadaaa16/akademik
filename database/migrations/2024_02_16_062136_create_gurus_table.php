@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRayonTable extends Migration
+class CreateGurusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateRayonTable extends Migration
      */
     public function up()
     {
-        Schema::create('rayons', function (Blueprint $table) {
+        Schema::create('gurus', function (Blueprint $table) {
             $table->id();
-            $table->string('rayon');
+            $table->string('nama');
+            $table->bigInteger('nik');
+            $table->string('pembimbingRayon');
+            $table->string('mapel');
+            $table->enum('jk', ['laki-laki', 'perempuan']);
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateRayonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rayon');
+        Schema::dropIfExists('gurus');
     }
 }

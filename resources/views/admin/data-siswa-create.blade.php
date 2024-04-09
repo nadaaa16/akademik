@@ -33,7 +33,12 @@
                 </div>
                 <div class="col">
                     <label for="rayon" class="form-label mt-4">Rayon</label>
-                  <input type="text" name="rayon" id="rayon" class="form-control" placeholder="Rayon" aria-label="First name">
+                    <select name="rayon" id="rayon" class="form-control" aria-label="Rayon">
+                        <option value="">Rayon</option>
+                        @foreach ($rayon as $value)
+                            <option value="{{ $value->rayon }}">{{ $value->rayon }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="col">
                     <label for="jk" class="form-label mt-4">Jenis Kelamin</label>

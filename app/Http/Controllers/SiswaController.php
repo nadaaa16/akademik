@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengguna;
+use App\Models\Rayon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -18,7 +19,8 @@ class SiswaController extends Controller
     public function create()
     {
         $dataSiswa = Pengguna::all();
-        return view('admin.data-siswa-create', compact('dataSiswa'));
+        $rayon = Rayon::all();
+        return view('admin.data-siswa-create', compact('dataSiswa', 'rayon'));
     }
 
     public function store(Request $request)
@@ -28,7 +30,7 @@ class SiswaController extends Controller
             'nis' => 'required|integer',
             'tingkat' => 'required',
             'rayon' => 'required',
-            'jk' => 'required|in:laki-laki,perempuan', // Sesuaikan dengan nilai yang digunakan dalam ENUM
+            'jk' => 'required|in:laki-laki,perempuan',
         ]);
 
         Pengguna::create([
@@ -39,7 +41,6 @@ class SiswaController extends Controller
             'jk' => $request->jk,
         ]);
         return redirect()->route('data.siswa');
-
     }
 
     public function edit($id)

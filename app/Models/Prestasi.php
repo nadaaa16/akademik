@@ -9,6 +9,6 @@ class Prestasi extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'nama' , 'namaEkskul', 'namaLomba', 'tingkat', 'foto', 'deskripsi'
+        'rayon', 'nama' , 'namaEkskul', 'namaLomba', 'foto', 'deskripsi'
     ];
 }

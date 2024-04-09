@@ -10,23 +10,23 @@
 <div class="mobile-menu-overlay"></div>
 		<div class="main-container">
             <h2 style="margin-top: 20px;">Edit Absensi Siswa yang Tidak Hadir</h2>
-            <form action="{{ route('absensi.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('absensi.update', ['id' => $data->id]) }}" method="POST">
                 @csrf
                 @method('PUT')
             <div class="row">
                 <div class="col">
                     <label for="nama" class="form-label mt-4">Nama</label>
-                  <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama">
+                  <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama" value="{{ $data->nama }}">
                 </div>
                 <div class="col">
                     <label for="rayon" class="form-label mt-4">Rayon</label>
-                  <input type="text" name="rayon" id="rayon" class="form-control" placeholder="Rayon">
+                  <input type="text" name="rayon" id="rayon" class="form-control" placeholder="Rayon" value="{{ $data->rayon }}">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="rombel" class="form-label mt-4">Rombel</label>
-                  <input type="text" name="rombel" id="rombel" class="form-control" placeholder="Rombel">
+                  <input type="text" name="rombel" id="rombel" class="form-control" placeholder="Rombel" value="{{ $data->rombel }}">
                 </div>
                 <div class="col">
                     <label for="keterangan" class="form-label mt-4">Keterangan</label>
@@ -36,11 +36,11 @@
                         <label class="form-check-label" for="alfa">Alfa</label>
                       </div> --}}
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="keterangan" id="sakit" value="sakit">
+                        <input class="form-check-input" type="radio" name="keterangan" id="sakit" value="sakit" @if ($data->keterangan == "sakit") selected @endif>
                         <label class="form-check-label" for="sakit">Sakit</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="keterangan" id="izin" value="izin">
+                        <input class="form-check-input" type="radio" name="keterangan" id="izin" value="izin"  @if ($data->keterangan == "izin") selected @endif>
                         <label class="form-check-label" for="izin">Izin</label>
                       </div>
                     </div>

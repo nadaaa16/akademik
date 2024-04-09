@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                         </td>
-                        <td>{{$value->codePelanggaran}} {{$value->deskripsi}}</td>
+                        <td>{{$value->codePelanggaran}}</td>
                         <td>{{$value->rayon}}</td>
                         <td>{{$value->rombel}}</td>
                         <td>

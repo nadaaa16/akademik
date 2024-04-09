@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rayon;
 use App\Models\Absensi;
 use App\Models\Pengguna;
 use Illuminate\Http\Request;
@@ -31,8 +32,16 @@ class AbsensiController extends Controller
      */
     public function create()
     {
+        $rayon = Rayon::distinct()->pluck('rayon');
         $dataSiswa = Pengguna::all();
-        return view('admin.absensi.absensi-siswa-create', compact('dataSiswa'));
+        return view('admin.absensi.absensi-siswa-create', compact('dataSiswa', 'rayon'));
+    }
+
+    public function getStudentsByRayon(Request $request)
+    {
+        $rayon = $request->rayon;
+        $namaSiswa = Pengguna::where('rayon', $rayon)->pluck('nama');
+        return response()->json($namaSiswa);
     }
 
     /**
@@ -90,9 +99,11 @@ class AbsensiController extends Controller
      * @param  \App\Models\Absensi  $absensi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Absensi $absensi)
+    public function edit($id)
     {
-        return view('admin.absensi.absensi-siswa-edit');
+        $rayon = Rayon::distinct()->pluck('rayon');
+        $data = Absensi::find($id);
+        return view('admin.absensi.absensi-siswa-edit', compact('data', 'rayon'));
     }
 
     /**
