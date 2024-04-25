@@ -2,45 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Auth\Events\Logout;
-use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function index(){
+    public function auth(){
         return view('halaman-login');
     }
-
-    public function auth(Request $request){
+    
+    public function login(Request $request)
+    {
         $request->validate([
             'nama' => 'required',
-            'password' => 'required',
-        ], [
-            // 'nama.exists' => 'nama ini belum tersedia',
-            'nama' => 'nama harus diisi',
-            'password' => 'nis harus diisi'
+            'password' => 'required'
         ]);
-
-        return redirect('/dashboard');
-
-        // $user = $request->only('nama','password');
-        // if(Auth::attempt($user)){
-        //     if(Auth::user()->role == 'siswa'){
-        //         return redirect('/dashboard-siswa')->with('successLogin', 'Anda berhasil login!!!');
-        //     } else if (Auth::user()->role == 'guru'){
-        //         return redirect('/dashboard');
-                
-        //     }
+    
+        $credentials = $request->only('nama', 'password');
+    
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('dashboard');
+        } else {
+            return redirect()->route('login')->with('failed', 'Nama atau password salah');
         }
+    }
     
 
-    public function logout(){
+    public function logout(Request $request)
+    {
         Auth::logout();
-        return redirect('/');
-    }
 
-    // public function register(){
-    //     return view('component.registrasi');
-    // }
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
+}

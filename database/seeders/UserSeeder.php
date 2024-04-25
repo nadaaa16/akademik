@@ -15,18 +15,40 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('users')->insert(
-            [
-            'nama'=>'abay',
-            'password'=>Hash::make('1212'),
-            ],
-            ['nama'=>'yaba',
-            'password'=>Hash::make('111'),
-             ], 
-             [
-             'nama'=>'abay',
-             'password'=>Hash::make('1212'),
-            ],
-        );
+        // for ($i = 0; $i < 10; $i++) {
+        //     $username = 'user' . $i;
+        //     // Mengecek apakah nama pengguna sudah ada, jika ya, tambahkan nomor iterasi lebih lanjut
+        //     while (DB::table('users')->where('nama', $username)->exists()) {
+        //         $i++;
+        //         $username = 'user' . $i;
+        //     }
+    
+        //     DB::table('users')->insert([
+        //         'nama' => $username,
+        //         'password' => Hash::make('password123'),
+        //     ]);
+            $userData = [
+                // [
+                //     'name' => 'Admin',
+                //     'email' => 'admin3@gmail.com',
+                //     'role' => 'admin',
+                //     'password' => bcrypt('12108602')
+                // ],
+                // [
+                //     'name' => 'Kasir',
+                //     'email' => 'kasir2@gmail.com',
+                //     'role' => 'petugas',
+                //     'password' => bcrypt('1234')
+                // ],
+                [
+                    'name' => 'abay',
+                    'role' => 'admin',
+                    'password' => bcrypt('12346')
+                    
+                ],
+            ];
+        }
     }
-}
+    
+
+

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CodePelanggaranTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CodePelanggaranTable extends Migration
      */
     public function up()
     {
-        Schema::create('code_pelanggarans', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
-            $table->string('deskripsi');
+            $table->string('nama');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CodePelanggaranTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('code_pelanggaran');
+        Schema::dropIfExists('roles');
     }
 }
