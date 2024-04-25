@@ -518,6 +518,16 @@
 								{{-- <li><a href="ui-modals.html">Absensi Guru</a></li> --}}
 							</ul>
 						</li>
+						<li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-person-check"></span>
+								<span class="mtext"> User </span>
+							</a>
+							<ul class="submenu">
+								<li><a href="{{route('user')}}">tambah user</a></li>
+								{{-- <li><a href="ui-modals.html">Absensi Guru</a></li> --}}
+							</ul>
+						</li>
 						{{-- <li class="dropdown">
 							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-pie-chart"></span

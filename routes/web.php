@@ -8,6 +8,8 @@ use App\Http\Controllers\CodePelanggaranController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\PelanggaranAdminController;
 use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\UserController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +27,12 @@ Route::get('/', function () {return view('welcome');});
 Route::get('/token', [AbsensiController::class, 'createtoken']);
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'regis']);
-Route::get('/halaman-login', [AuthController::class, 'index'])->name('login');
-Route::post('/halaman-login/auth', [AuthController::class, 'auth'])->name('login.auth');
-// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/login', [AuthController::class, 'auth'])->name('login.form');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+
+
 
 //admin
 Route::get('/catatan-siswa', [adminController::class, "catatanSiswa"]);
@@ -58,9 +63,9 @@ Route::get('/view-prestasi/{id}', [adminController::class, "detail_prestasi"]);
 Route::get('/pelanggaran-siswa', [PelanggaranAdminController::class, 'index'])->name('pelanggaran-siswa');
 Route::get('/pelanggaran-siswa-create', [PelanggaranAdminController::class, 'create'])->name('pelanggaran-siswa-create');
 Route::post('/pelanggaran-siswa-store', [PelanggaranAdminController::class, 'store'])->name('pelanggaran-siswa-store');
-Route::get('/pelanggaran-siswa/{id}/show', [PelanggaranAdminController::class, 'show'])->name('pelanggaran-siswa-show');
+Route::get('/pelanggaran/{id}', [PelanggaranAdminController::class, 'show'])->name('pelanggaran-show');
 Route::put('/pelanggaran-siswa/{id}', [PelanggaranAdminController::class, "update"])->name('pelanggaran-siswa-update');
-Route::delete('/pelanggaran/{id}', [PelanggaranAdminController::class, "confirmDelete"])->name('confirm-delete');
+Route::delete('/confirm-delete/{id}', [PelanggaranAdminController::class, "confirmDelete"])->name('confirm-delete-pelanggaran');
 
 //absensi
 Route::get('/absensi', [adminController::class, "absensi"])->name('absensi');
@@ -75,18 +80,18 @@ Route::get('/siswa', [adminController::class, "dataSiswa"])->name('siswa');
 Route::get('/add-siswa', [adminController::class, "addSiswa"]);
 Route::post('/siswa/store', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/data-siswa', [adminController::class, 'dataSiswa'])->name('data-siswa');
-Route::delete('/siswa/{id}', [SiswaController::class, "confirmDelete"])->name('confirm-delete');
-Route::get('/view-absensi/{id}', [adminController::class, "detail_absensi"]);
+Route::delete('/confirm-delete-absensi/{id}', [AbsensiController::class, "confirmDelete"])->name('confirm-delete-absensi');
+Route::get('/absensi/{id}', [adminController::class, 'detail_absensi'])->name('absensi-detail');
 // Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
 // Route::get('/tambah-siswa', [SiswaController::class, "tambahSiswa"]);
 // Route::post('/siswa/store', [SiswaController::class, 'store']);
 
 // Route::get('/data-siswa', [adminController::class, "dataSiswa"]);
 Route::get('/add-siswa', [adminController::class, "addSiswa"]);
-Route::get('/data-guru', [adminController::class, "dataGuru"]);
+Route::get('/data-guru', [adminController::class, "dataGuru"])->name('data-guru');
 Route::get('/add-guru', [adminController::class, "addGuru"]);
 //dashboard admin (ini klo pake yang dashboad2 menampilkan semua yang ada di dashboad2)
-Route::get('/dashboard', [adminController::class, "dashboard"]);
+Route::get('/dashboard', [adminController::class, "dashboard"])->name('dashboard');
 
 //siswa
 // Route::get('/siswa', [SiswaController::class, "siswa"])->name('siswa');
@@ -99,3 +104,10 @@ Route::get('/catatan', [adminController::class, "catatan"]);
 //pelanggaran itu catatan belom di ganti
 Route::get('/view-pelanggaran', [adminController::class, "detailPelanggaran"]);
 Route::get('/prestasi', [adminController::class, "prestasi"]);
+
+Route::get('/user', [UserController::class, 'user'])->name('user');
+Route::get('/tambah-user', [UserController::class, 'tambahUser'])->name('tambah-user');
+Route::post('/tambah-user', [UserController::class, 'simpanUser'])->name('simpan-user');
+Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
+Route::patch('/update/{id}', [UserController::class, 'update'])->name('update');
+Route::get('/hapus/{id}', [UserController::class, 'hapus'])->name('hapus');
