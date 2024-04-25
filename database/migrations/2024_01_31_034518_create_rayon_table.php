@@ -15,9 +15,7 @@ class CreateRayonTable extends Migration
     {
         Schema::create('rayons', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_siswa');
-            $table->integer('angkatan');
-            $table->string('jurusan');
+            $table->string('rayon');
             $table->timestamps();
         });
     }

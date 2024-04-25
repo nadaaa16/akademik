@@ -15,10 +15,10 @@ class CreatePrestasisTable extends Migration
     {
         Schema::create('prestasis', function (Blueprint $table) {
             $table->id();
+            $table->string('rayon');
             $table->string('nama');
             $table->string('namaEkskul');
             $table->string('namaLomba');
-            $table->string('tingkat');
             $table->string('foto');
             $table->string('deskripsi');
             $table->timestamps();

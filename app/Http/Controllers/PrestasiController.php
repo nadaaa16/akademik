@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengguna;
 use App\Models\Prestasi;
+use App\Models\Rayon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PrestasiController extends Controller
 {
@@ -14,7 +17,8 @@ class PrestasiController extends Controller
      */
     public function index()
     {
-        //
+        $prestasi = Prestasi::all();
+        return view('admin.catatan.prestasi-siswa', compact('prestasi'));
     }
 
     /**
@@ -24,7 +28,16 @@ class PrestasiController extends Controller
      */
     public function create()
     {
-        //
+        $rayon = Rayon::distinct()->pluck('rayon');
+        $dataSiswa = Pengguna::all();
+        return view('admin.catatan.prestasi-siswa-create', compact('rayon', 'dataSiswa'));
+    }
+
+    public function getStudentsByRayon(Request $request)
+    {
+        $rayon = $request->rayon;
+        $namaSiswa = Pengguna::where('rayon', $rayon)->pluck('nama');
+        return response()->json($namaSiswa);
     }
 
     /**
@@ -35,15 +48,15 @@ class PrestasiController extends Controller
      */
     public function store(Request $request)
     {
-        $prestasi = $request->validate([
+        $validatedData = $request->validate([
+            'rayon' => 'required',
             'nama' => 'required',
             'namaEkskul' => 'required',
             'namaLomba' => 'required',
-            'tingkat' => 'required',
-            'foto' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi' => 'required',
         ]);
-        
+
         $image = $request->file('foto');
         $imgName = time().rand().'.'.$image->extension();
         if(!file_exists(public_path('/fotoPrestasi'.$image->getClientOriginalName()))){
@@ -54,44 +67,27 @@ class PrestasiController extends Controller
             $uploaded = $image->getClientOriginalName();
         }
 
-        // $prestasi['bukti'] = request()->file('bukti')->store('bukti-img');
-
          Prestasi::create([
+            'rayon' => $request->rayon,
             'nama'=> $request->nama,
             'namaEkskul' => $request->namaEkskul,
             'namaLomba' => $request->namaLomba,
-            'tingkat' => $request->tingkat,
             'foto' => $uploaded,
             'deskripsi' => $request->deskripsi,
-            // 'user_id' => Auth::user()->id,
-
         ]);
 
-        return redirect()->route('prestasi-siswa')->with('success', 'Berhasil menambahakan prestasi');
+        return redirect()->route('prestasi.siswa')->with('success', 'Berhasil menambahakan prestasi');
     }
-
-    public function delete($id)
-    {
-        $prestasi = Prestasi::findOrFail($id);
-        return view('admin.catatan.delete', compact('prestasi'));
-    }
-
-    public function confirmDelete(Request $request, $id)
-    {
-        $prestasi = Prestasi::findOrFail($id);
-        $prestasi->delete();
-        return redirect()->route('prestasi-siswa')->with('success', 'Data berhasil dihapus');
-    }
-
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Prestasi  $prestasi
      * @return \Illuminate\Http\Response
      */
-    public function show(Prestasi $prestasi)
+    public function show($id)
     {
-        //
+        $prestasi = Prestasi::findOrFail($id);
+        return view('admin.catatan.prestasi-siswa-show', compact('prestasi'));
     }
 
     /**
@@ -100,9 +96,13 @@ class PrestasiController extends Controller
      * @param  \App\Models\Prestasi  $prestasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Prestasi $prestasi)
+    public function edit(Request $request, $id)
     {
-        //
+        $rayon = Rayon::distinct()->pluck('rayon');
+        $data = Prestasi::find($id);
+        $dataSiswa = Pengguna::all();
+        $prestasi = Prestasi::all();
+        return view('admin.catatan.prestasi-siswa-edit', compact('data', 'prestasi', 'dataSiswa', 'rayon'));
     }
 
     /**
@@ -112,9 +112,29 @@ class PrestasiController extends Controller
      * @param  \App\Models\Prestasi  $prestasi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prestasi $prestasi)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'rayon' => 'required',
+            'nama' => 'required',
+            'namaEkskul' => 'required',
+            'namaLomba' => 'required',
+            'foto' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
+
+        $data['rayon'] = $request->rayon;
+        $data['nama'] = $request->nama;
+        $data['namaEkskul'] = $request->namaEkskul;
+        $data['namaLomba'] = $request->namaLomba;
+        $data['foto'] = $request->foto;
+        $data['deskripsi'] = $request->deskripsi;
+
+        Prestasi::whereId($id)->update($data);
+
+        return redirect()->route('prestasi.siswa');
     }
 
     /**
@@ -123,8 +143,14 @@ class PrestasiController extends Controller
      * @param  \App\Models\Prestasi  $prestasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prestasi $prestasi)
+    public function destroy($id)
     {
-        //
+        $data = Prestasi::find($id);
+
+        if ($data) {
+            $data->delete();
+        }
+
+        return redirect()->route('prestasi.siswa');
     }
 }

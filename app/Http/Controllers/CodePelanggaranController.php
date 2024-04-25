@@ -6,13 +6,18 @@ use Illuminate\Http\Request;
 
 class CodePelanggaranController extends Controller
 {
-    // public function index()
-    // {
-    //     $codes = $data->json('data');
-    //     return view('index')->with('codes' , $codes);
-    // }
-    
-    public function storeCodePelanggaran(Request $request)
+    public function index()
+    {
+        $codePelanggaran = CodePelanggaran::all();
+        return view('admin.catatan.code-pelanggaran', compact('codePelanggaran'));
+    }
+
+    public function create()
+    {
+        return view('admin.catatan.code-pelanggaran-create');
+    }
+
+    public function store(Request $request)
     {
         $request->validate([
             'code' => 'required',
@@ -24,29 +29,18 @@ class CodePelanggaranController extends Controller
             'code' => $request->code,
             'deskripsi'=> $request->deskripsi,
         ]);
-        // $data = [
-        //     'code' => $request->code, // Memastikan bahwa 'code' tidak boleh kosong
-        //     'deskripsi' => $request->deskripsi,
-        // ];
-        // CodePelanggaran::create($data);
-        return redirect()->route('view-code');
-        
+        return redirect()->route('code.pelanggaran');
+
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
-        $codePelanggaran = CodePelanggaran::findOrFail($id);
-        return view('admin.catatan.delete', compact('codePelanggaran'));
-    }
+        $data = CodePelanggaran::find($id);
 
-    public function confirmDelete(Request $request, $id)
-    {
-        $codePelanggaran = CodePelanggaran::findOrFail($id);
-        $codePelanggaran->delete();
-        return redirect()->route('view-code')->with('success', 'Data berhasil dihapus');
-    }
+        if ($data) {
+            $data->delete();
+        }
 
-    public function code(){
-        return view('admin.catatan.add-code');
+        return redirect()->route('code.pelanggaran');
     }
 }

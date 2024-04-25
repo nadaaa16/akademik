@@ -1,56 +1,56 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\CodePelanggaran;
-use App\Models\Prestasi;
+
 use App\Models\PelanggaranAdmin;
-use App\Models\Absensi;
+use App\Models\Prestasi;
 use App\Models\Pengguna;
 use Illuminate\Http\Request;
 
-class adminController extends Controller
+class AdminController extends Controller
 {
     //dashboard
     public function dashboard()
     {
         $dataSiswa = Pengguna::count();
+        $dataSiswaAll = Pengguna::all(); 
         $totalPrestasi = Prestasi::count();
         $totalPelanggaran = PelanggaranAdmin::count();
-        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran', 'dataSiswa'));
+        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran', 'dataSiswa', 'dataSiswaAll'));
     }
 
     //code
-    public function viewCode()
-    {
-        // $data=CodePelanggaran::All();
-        // dd($data);
-        $codePelanggaran = CodePelanggaran::all();
-        return view('admin.catatan.view-code', compact('codePelanggaran'));
-    }
+    // public function viewCode()
+    // {
+    //     // $data=CodePelanggaran::All();
+    //     // dd($data);
+    //     $codePelanggaran = CodePelanggaran::all();
+    //     return view('admin.catatan.view-code', compact('codePelanggaran'));
+    // }
 
-    
-    public function addCode()
-    {
-        return view('admin.add-code');
-    }
+
+    // public function addCode()
+    // {
+    //     return view('admin.add-code');
+    // }
 
     //pelanggaran
-    public function pelanggaranSiswa()
-    {
-        $pelanggaran = PelanggaranAdmin::all();
-        return view('admin.catatan.pelanggaran-siswa', compact('pelanggaran'));
-    }
+    // public function pelanggaranSiswa()
+    // {
+    //     $pelanggaran = PelanggaranAdmin::all();
+    //     return view('admin.catatan.pelanggaran-siswa', compact('pelanggaran'));
+    // }
 
-    public function detail_pelanggaran($id)
-    {
-        $pel = PelanggaranAdmin::findOrFail($id);
-        return view('admin.catatan.view-pelanggaran', compact('pel'));
-    }
+    // public function detail_pelanggaran($id)
+    // {
+    //     $pel = PelanggaranAdmin::findOrFail($id);
+    //     return view('admin.catatan.view-pelanggaran', compact('pel'));
+    // }
 
-    public function addPelanggaranSiswa()
-    {
-        return view('admin.catatan.pelanggaran-siswa-create');
-    }
+    // public function addPelanggaranSiswa()
+    // {
+    //     return view('admin.catatan.pelanggaran-siswa-create');
+    // }
 
     // public function addPelanggaranSiswa()
     // {
@@ -70,29 +70,30 @@ class adminController extends Controller
     // }
 
     //prestasi
-    public function prestasiSiswa()
-    {
-        $prestasi = Prestasi::all();
-        return view('admin.catatan.prestasi-siswa', compact('prestasi'));
-    }
+    // public function prestasiSiswa()
+    // {
 
-    public function detail_prestasi($id)
-    {
-        $pem = Prestasi::findOrFail($id);
-        return view('admin.catatan.view-prestasi', compact('pem'));
-    }
+        // $prestasi = Prestasi::all();
+        // return view('admin.catatan.prestasi-siswa', compact('prestasi'));
+    // }
 
-    public function addPrestasiSiswa()
-    {
-        return view('admin.catatan.add-prestasi');
-    }
+    // public function detail_prestasi($id)
+    // {
+    //     $pem = Prestasi::findOrFail($id);
+    //     return view('admin.catatan.view-prestasi', compact('pem'));
+    // }
+
+    // public function addPrestasiSiswa()
+    // {
+    //     return view('admin.catatan.add-prestasi');
+    // }
 
     //data siswa
-    public function dataSiswa()
-    {
-        $dataSiswa = Pengguna::all();
-        return view('admin.data-siswa', compact('dataSiswa'));
-    }
+    // public function dataSiswa()
+    // {
+    //     $dataSiswa = Pengguna::all();
+    //     return view('admin.data-siswa', compact('dataSiswa'));
+    // }
 
     // public function detail_siswa($id)
     // {
@@ -100,10 +101,7 @@ class adminController extends Controller
     //     return view('admin.catatan.view-pelanggaran', compact('pel'));
     // }
 
-    public function addSiswa()
-    {
-        return view('admin.add-siswa');
-    }
+
 
     // //data siswa (user)
     // public function dataSiswa()
@@ -117,23 +115,22 @@ class adminController extends Controller
     // }
 
     //data guru (user)
-    public function dataGuru()
-    {
-        return view('admin.data-guru');
-    }
+    // public function dataGuru()
+    // {
+    //     return view('admin.data-guru');
+    // }
 
-    public function addGuru()
-    {
-        return view('admin.add-guru');
-    }
+    // public function addGuru()
+    // {
+    //     return view('admin.add-guru');
+    // }
 
     //data absensi
-    public function absensi()
-    {
-        $absn = Absensi::all();
-        $absensi = Absensi::all();
-        return view('admin.absensi.absensi', compact('absensi', 'absn'));
-    }
+    // public function absensi()
+    // {
+    //     $absensi = Absensi::all();
+    //     return view('admin.absensi.absensi', compact('absensi'));
+    // }
 
     // public function detail_absensi($id)
     // {
@@ -141,10 +138,10 @@ class adminController extends Controller
     //     return view('admin.absensi.view-absensi', compact('absen'));
     // }
 
-    public function addAbsensi()
-    {
-        return view('admin.absensi.add-absensi');
-    }
+    // public function addAbsensi()
+    // {
+    //     return view('admin.absensi.add-absensi');
+    // }
 
     // public function absensi()
     // {
@@ -174,4 +171,6 @@ class adminController extends Controller
     {
         return view('siswaAsli.prestasi');
     }
+
+
 }
