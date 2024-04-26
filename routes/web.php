@@ -34,9 +34,6 @@ Route::post('/register', [AuthController::class, 'regis']);
 Route::get('/login', [AuthController::class, 'auth'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-
-
-
 //admin
 Route::get('/catatan-siswa', [adminController::class, "catatanSiswa"]);
 Route::get('/add-catatan', [adminController::class, "addCatatan"]);
