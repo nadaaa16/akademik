@@ -20,25 +20,28 @@ class AuthController extends Controller
             'nama' => 'required',
             'password' => 'required'
         ]);
-    
-        $credentials = $request->only('nama', 'password');
-    
-        if (Auth::attempt($credentials)) {
-            return redirect()->route('dashboard');
+
+        $data = [
+            'nama' => $request->nama,
+            'password' => $request->password,
+        ];
+        if (Auth::attempt($data)) {
+            $user = Auth::user();
+            if ($user->role === 'admin') {
+                return redirect('/dashboard');
+            } elseif ($user->role === 'siswa') {
+                return redirect('/dashboard');
+            }   
         } else {
-            return redirect()->route('login')->with('failed', 'Nama atau password salah');
+            return redirect()->route('siswa')->with('failed', 'nama atau password salah');
         }
     }
     
 
-    public function logout(Request $request)
+    public function logout()
     {
         Auth::logout();
 
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return redirect('/login');
+        return redirect()->route('login')->with('message', 'You have been logged out.');
     }
 }

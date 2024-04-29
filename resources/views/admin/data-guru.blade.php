@@ -8,8 +8,8 @@
 </div>
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='data-guru-create'">
-        <i class="bi bi-plus-lg">Tambah Guru</i>
+    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='{{ route('guru-create') }}'">
+        <i class="bi bi-plus-lg">Tambah Guru</i>    
     </button>
 </div>
 

@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nama')->nullable(); 
-            $table->enum('role',['admin','petugas']);
+            $table->enum('role',['admin','siswa'])->default('siswa'); // Menambahkan 'siswa' ke dalam enum role dan memberi default value 'siswa'
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

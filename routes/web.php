@@ -33,6 +33,8 @@ Route::post('/register', [AuthController::class, 'regis']);
 
 Route::get('/login', [AuthController::class, 'auth'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->withoutMiddleware(['auth']);
+
 
 //admin
 Route::get('/catatan-siswa', [adminController::class, "catatanSiswa"]);
@@ -54,7 +56,7 @@ Route::delete('/code/{id}', [CodePelanggaranController::class, "confirmDelete"])
 //prestasi
 Route::get('/prestasi-siswa', [adminController::class, "prestasiSiswa"])->name('prestasi-siswa');
 Route::get('/add-prestasi', [adminController::class, "addPrestasiSiswa"]);
-Route::post('/prestasi/store', [PrestasiController::class, 'store'])->name('prestasi.store');
+Route::post('/prestasi-siswa-store', [PrestasiController::class, 'store'])->name('prestasi.store.siswa');
 Route::get('/prestasi', [adminController::class, 'viewPrestasi']);
 Route::delete('/prestasi/{id}', [PrestasiController::class, "confirmDelete"])->name('confirm-delete');
 Route::get('/view-prestasi/{id}', [adminController::class, "detail_prestasi"]);
@@ -63,22 +65,22 @@ Route::get('/view-prestasi/{id}', [adminController::class, "detail_prestasi"]);
 Route::get('/pelanggaran-siswa', [PelanggaranController::class, 'index'])->name('pelanggaran-siswa');
 Route::get('/pelanggaran-siswa-create', [PelanggaranController::class, 'create'])->name('pelanggaran-siswa-create');
 Route::post('/pelanggaran-siswa-store', [PelanggaranController::class, 'store'])->name('pelanggaran-siswa-store');
-Route::get('/pelanggaran/{id}', [PelanggaranController::class, 'show'])->name('pelanggaran-show');
+// Route::get('/absensi/{id}', [AbsensiController::class, 'show'])->name('absensi.detail');
 Route::put('/pelanggaran-siswa/{id}', [PelanggaranController::class, "update"])->name('pelanggaran-siswa-update');
 Route::delete('/confirm-delete/{id}', [PelanggaranController::class, "confirmDelete"])->name('confirm-delete-pelanggaran');
 
 //absensi
 Route::get('/absensi', [adminController::class, "absensi"])->name('absensi');
 Route::get('/add-absensi', [adminController::class, "addAbsensi"]);
-Route::post('/absensi/store', [AbsensiController::class, 'store'])->name('absensi.store');
+Route::post('/absensi/store', [AbsensiController::class, 'store'])->name('absensi.store.siswa');
 // Route::get('/absensi', [adminController::class, 'viewabsensi']);
-Route::delete('/absensi/{id}', [AbsensiController::class, "confirmDelete"])->name('confirm-delete');
+Route::delete('/absensi/{id}', [AbsensiController::class, "confirmDelete"])->name('confirm-delete-absen');
 Route::get('/view-absensi/{id}', [adminController::class, "detail_absensi"]);
 
 //data siswa
 Route::get('/siswa', [adminController::class, "dataSiswa"])->name('siswa');
 Route::get('/add-siswa', [adminController::class, "addSiswa"]);
-Route::post('/siswa/store', [SiswaController::class, 'store'])->name('siswa.store');
+Route::post('/data-siswa-store', [SiswaController::class, 'store'])->name('siswa.store.data');
 Route::get('/data-siswa', [adminController::class, 'dataSiswa'])->name('data-siswa');
 Route::delete('/confirm-delete-absensi/{id}', [AbsensiController::class, "confirmDelete"])->name('confirm-delete-absensi');
 Route::get('/absensi/{id}', [adminController::class, 'detail_absensi'])->name('absensi-detail');
@@ -87,11 +89,14 @@ Route::get('/absensi/{id}', [adminController::class, 'detail_absensi'])->name('a
 // Route::post('/siswa/store', [SiswaController::class, 'store']);
 
 // Route::get('/data-siswa', [adminController::class, "dataSiswa"]);
-Route::get('/add-siswa', [adminController::class, "addSiswa"]);
-Route::get('/data-guru', [adminController::class, "dataGuru"])->name('data-guru');
-Route::get('/add-guru', [adminController::class, "addGuru"]);
+
+// Route::get('/add-siswa', [adminController::class, "addSiswa"]);
+// Route::get('/data-guru', [adminController::class, "dataGuru"])->name('data-guru');
+// Route::post('/add-guru', [adminController::class, "addGuru"]);
+
 //dashboard admin (ini klo pake yang dashboad2 menampilkan semua yang ada di dashboad2)
-Route::get('/dashboard', [adminController::class, "dashboard"])->name('dashboard');
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
 
 
 //data siswa
@@ -105,11 +110,11 @@ Route::delete('/data-siswa-delete/{id}', [SiswaController::class, 'destroy'])->n
 //pelanggaran
 Route::get('/pelanggaran-siswa', [PelanggaranController::class, 'index'])->name('pelanggaran.siswa');
 Route::get('/pelanggaran-siswa-create', [PelanggaranController::class, 'create'])->name('pelanggaran.create');
-Route::post('/pelanggaran-siswa-store', [PelanggaranController::class, 'store'])->name('pelanggaran.store');
+Route::post('/store-pelanggaran-siswa', [PelanggaranController::class, 'store'])->name('pelanggaran.siswa.store');
 Route::get('/pelanggaran-siswa/show/{id}', [PelanggaranController::class, 'show'])->name('pelanggaran.show');
 Route::get('/pelanggaran-siswa-edit/{id}', [PelanggaranController::class, 'edit'])->name('pelanggaran.edit');
 Route::put('/pelanggaran-siswa-update/{id}', [PelanggaranController::class, 'update'])->name('pelanggaran.update');
-Route::delete('/pelanggaran-siswa-delete/{id}', [PelanggaranController::class, 'destroy'])->name('pelanggaran.delete');
+Route::delete('/delete-pelanggaran-siswa/{id}', [PelanggaranController::class, 'destroy'])->name('pelanggaran.delete');
 
 //prestasi
 Route::get('/prestasi-siswa', [PrestasiController::class, "index"])->name('prestasi.siswa');
@@ -122,13 +127,13 @@ Route::delete('/prestasi-siswa-delete/{id}', [PrestasiController::class, "destro
 Route::get('prestasi/getStudentsByRayon', [PrestasiController::class, 'getStudentsByRayon'])->name('prestasi.getStudentsByRayon');
 
 //absensi
-Route::get('/absensi-siswa', [AbsensiController::class, 'index'])->name('absensi.siswa');
-Route::get('/absensi-siswa-create', [AbsensiController::class, 'create'])->name('absensi.create');
-Route::post('/absensi-siswa-store', [AbsensiController::class, 'store'])->name('absensi.store');
-Route::get('/absensi-siswa-show/{id}', [AbsensiController::class, "show"])->name('absensi.show');
-Route::get('/absensi-siswa-edit/{id}', [AbsensiController::class, 'edit'])->name('absensi.edit');
-Route::put('/absensi-siswa-update/{id}', [AbsensiController::class, 'update'])->name('absensi.update');
-Route::delete('/absensi-siswa-delete/{id}', [AbsensiController::class, "destroy"])->name('absensi.delete');
+Route::get('/absensi', [AbsensiController::class, 'index'])->name('absensi.index');
+Route::get('/absensi-create', [AbsensiController::class, 'create'])->name('absensi.create');
+Route::post('/store-absensi', [AbsensiController::class, 'store'])->name('absensi.store');
+Route::get('/absensi/show/{id}', [AbsensiController::class, 'show'])->name('absensi.show');
+Route::get('/absensi-edit/{id}', [AbsensiController::class, 'edit'])->name('absensi.edit');
+Route::put('/absensi-update/{id}', [AbsensiController::class, 'update'])->name('absensi.update');
+Route::delete('/delete-absensi/{id}', [AbsensiController::class, 'destroy'])->name('absensi.delete');
 
 //code pelanggaran
 Route::get('/code-pelanggaran', [CodePelanggaranController::class, 'index'])->name('code.pelanggaran');
@@ -142,9 +147,9 @@ Route::get('/rayon-create', [RayonController::class, 'create'])->name('rayon.cre
 Route::post('/rayon-store', [RayonController::class, 'store'])->name('rayon.store');
 Route::delete('/rayon-delete/{id}', [RayonController::class, 'destroy'])->name('rayon.delete');
 
-//data guru
+// //data guru
 Route::get('/data-guru', [GuruController::class, 'index'])->name('data.guru');
-Route::get('/data-guru-create', [GuruController::class, 'create'])->name('guru.create');
+Route::get('/guru-create', [GuruController::class, 'create'])->name('guru-create');
 
 //dashboard admin (ini klo pake yang dashboad2 menampilkan semua yang ada di dashboard2)
 Route::get('/dashboard', [AdminController::class, "dashboard"]);
@@ -163,3 +168,4 @@ Route::post('/tambah-user', [UserController::class, 'simpanUser'])->name('simpan
 Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
 Route::patch('/update/{id}', [UserController::class, 'update'])->name('update');
 Route::get('/hapus/{id}', [UserController::class, 'hapus'])->name('hapus');
+
