@@ -150,6 +150,10 @@ Route::delete('/rayon-delete/{id}', [RayonController::class, 'destroy'])->name('
 // //data guru
 Route::get('/data-guru', [GuruController::class, 'index'])->name('data.guru');
 Route::get('/guru-create', [GuruController::class, 'create'])->name('guru-create');
+Route::post('/guru-create', [GuruController::class, 'store'])->name('guru-store');
+Route::delete('/guru-delete/{id}', [GuruController::class, 'destroy'])->name('guru-delete');
+ // Menambahkan rute POST untuk menyimpan data guru
+
 
 //dashboard admin (ini klo pake yang dashboad2 menampilkan semua yang ada di dashboard2)
 Route::get('/dashboard', [AdminController::class, "dashboard"]);

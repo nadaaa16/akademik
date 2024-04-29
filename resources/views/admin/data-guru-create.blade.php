@@ -10,7 +10,7 @@
     <div class="mobile-menu-overlay"></div>
     <div class="main-container">
         <h2 style="margin-top: 20px;">Tambahkan Guru</h2>
-        <form action="{{ route('data.guru') }}" method="POST">
+        <form action="{{ route('guru-store')}}" method="POST">
             @csrf
             <div class="row">
                 <div class="col">
