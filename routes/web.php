@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\CodePelanggaranController;
+use App\Models\Guru;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
@@ -151,6 +152,8 @@ Route::delete('/rayon-delete/{id}', [RayonController::class, 'destroy'])->name('
 Route::get('/data-guru', [GuruController::class, 'index'])->name('data.guru');
 Route::get('/guru-create', [GuruController::class, 'create'])->name('guru-create');
 Route::post('/guru-create', [GuruController::class, 'store'])->name('guru-store');
+Route::get('/guru-edit/{id}', [GuruController::class, 'edit'])->name('guru-edit');
+Route::put('/guru-update/{id}', [GuruController::class, 'update'])->name('guru-update');
 Route::delete('/guru-delete/{id}', [GuruController::class, 'destroy'])->name('guru-delete');
  // Menambahkan rute POST untuk menyimpan data guru
 

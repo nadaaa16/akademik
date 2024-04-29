@@ -10,7 +10,7 @@
     <div class="mobile-menu-overlay"></div>
     <div class="main-container">
         <h2 style="margin-top: 20px;">Edit Guru</h2>
-        <form action="{{ route('guru.update', ['id' => $data->id]) }}" method="POST">
+        <form action="{{ route('guru-update', ['id' => $data->id]) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="row">

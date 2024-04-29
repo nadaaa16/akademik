@@ -43,7 +43,7 @@
                         <td>{{$value->jk}}</td>
                         <td>
                             <div class="table-actions">
-                                <a href="/data-guru-edit/{{ $value->id }}" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+                                <a href="{{ route('guru-edit', ['id' => $value->id]) }}" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
                             <form action="{{ route('guru-delete', ['id' => $value->id]) }}" method="POST"
                                 style="display: inline;">
                                 @csrf
