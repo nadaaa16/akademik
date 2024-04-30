@@ -23,8 +23,7 @@
                         <th>Jenis EksKul</th>
                         <th>Nama Lomba</th>
                         <th>Pecapaian</th>
-                        <th>Tanggal</th>
-                        <th class="datatable-nosort">Actions</th>
+                        {{-- <th>Tanggal</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -37,19 +36,10 @@
                             </div>
                         </td>
                         <td>Futsal</td>
-                        <td>Futsal Championship 2023</td>
+                        <td>Futsal 2023</td>
                         <td>Juara 3</td>
-                        <td>2 Januari 2024</td>
-                        <td>
-                            <div class="table-actions">
-                                <a href="#" data-color="#265ed7"
-                                    ><i class="icon-copy dw dw-edit2"></i
-                                ></a>
-                                <a href="#" data-color="#e95959"
-                                    ><i class="icon-copy dw dw-delete-3"></i
-                                ></a>
-                            </div>
-                        </td>
+                        {{-- <td>2 Januari 2024</td> --}}
+                     
                     </tr>
                 </tbody>
             </table>

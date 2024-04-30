@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guru;
 use App\Models\PelanggaranAdmin;
 use App\Models\Prestasi;
 use App\Models\Pengguna;
@@ -16,7 +17,8 @@ class AdminController extends Controller
         $dataSiswaAll = Pengguna::all(); 
         $totalPrestasi = Prestasi::count();
         $totalPelanggaran = PelanggaranAdmin::count();
-        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran', 'dataSiswa', 'dataSiswaAll'));
+        $totalGuru = Guru::count();
+        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran', 'dataSiswa', 'dataSiswaAll','totalGuru'));
     }
 
     //code

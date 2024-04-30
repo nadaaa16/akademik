@@ -1,4 +1,4 @@
-@extends('back.layout.dashboard-layout')
+@extends('back.layout.dashboard2-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Pelanggaran Siswa')
 @section('content')
     
@@ -35,7 +35,7 @@
                         <td>{{$user->nama}}</td>
                         <td>{{$user->role}}</td>
                         <td>
-                            <a href="{{ route('edit', ['id' => $user->id]) }}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="{{ route('edit', ['id' => $user->id]) }}" class="btn btn-warning"> Edit</a>
                             <a href="{{ route('hapus', $user->id) }}" class="btn btn-danger"><i
                                     class="fas fa-trash-alt"></i> Hapus</a>
                         </td>

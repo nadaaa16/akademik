@@ -29,7 +29,8 @@ class PrestasiController extends Controller
     public function create()
     {
         $rayon = Rayon::distinct()->pluck('rayon');
-        $dataSiswa = Pengguna::all();
+    
+        $dataSiswa = Pengguna::distinct()->pluck('nama');
         return view('admin.catatan.prestasi-siswa-create', compact('rayon', 'dataSiswa'));
     }
 

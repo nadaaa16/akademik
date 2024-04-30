@@ -27,8 +27,9 @@
             <div class="form-group">
                 <label for="nama" class="form-label mt-4">Nama Siswa</label>
                 <select class="form-control" id="nama" name="nama">
-                    <!-- Nama siswa akan dimuat secara dinamis -->
-                </select>
+                    @foreach($dataSiswa as $r)
+                    <option value="{{ $r }}">{{ $r }}</option>
+                @endforeach                </select>
             </div>
         </div>
     </div>

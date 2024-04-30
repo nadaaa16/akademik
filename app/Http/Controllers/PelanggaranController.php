@@ -21,9 +21,10 @@ class PelanggaranController extends Controller
     public function create()
     {
         $rayon = Rayon::distinct()->pluck('rayon');
+        $namaSiswa = Pengguna::distinct()->pluck('nama');
         $dataSiswa = Pengguna::all();
         $codePelanggaran = CodePelanggaran::all();
-        return view('admin.catatan.pelanggaran-siswa-create', compact('codePelanggaran', 'dataSiswa', 'rayon'));
+        return view('admin.catatan.pelanggaran-siswa-create', compact('codePelanggaran', 'dataSiswa', 'rayon','namaSiswa'));
     }
 
     public function getStudentsByRayon(Request $request)
