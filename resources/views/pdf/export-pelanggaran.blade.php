@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pelangaran</title>
+    <title>Pelanggaran</title>
     <style>
         table {
             width: 100%;
@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <h2>Daftar Peminjaman</h2>
+    <h2>Daftar Pelanggaran</h2>
     <table>
         <thead>
             <tr>

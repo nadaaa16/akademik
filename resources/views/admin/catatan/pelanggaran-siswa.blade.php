@@ -9,16 +9,17 @@
 
 
 
-<div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='pelanggaran-siswa-create'">
-        <i class="bi bi-plus-lg">Pelangaran Siswa</i>
+<div class="button-container xs-pd-20-10 pd-ltr-20" style="margin-top: 20px; display: flex; justify-content: flex-end;">
+    <button class="btn btn-primary" type="button" onclick="window.location.href='pelanggaran-siswa-create'" style="color: white;">
+        <i class="bi bi-plus-lg"></i> Pelanggaran Siswa
+    </button>
+    
+    <button class="btn btn-primary" type="button" style="margin-left: 10px; color: white;">
+        <a href="{{ route('pelanggaran.exportPdf') }}" style="color: inherit;">Export PDF</a>
     </button>
 </div>
-<div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button">
-        <a href="{{ route('pelanggaran.exportPdf') }}">Export Pelangaran Siswa</i>
-    </button>
-</div>
+
+
 <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20">
         <div class="card-box pb-10">
