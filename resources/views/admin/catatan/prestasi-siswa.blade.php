@@ -7,9 +7,13 @@
     <h2><i class="bi bi-trophy"></i>Prestasi Siswa</h2>
 </div>
 
-<div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
+<div class="button-container xs-pd-20-10 pd-ltr-20" style="margin-top: 20px; display: flex; justify-content: flex-end;">
     <button class="btn btn-primary float-right" type="button" onclick="window.location.href='prestasi-siswa-create'">
         <i class="bi bi-plus-lg">Tambah Prestasi Siswa</i>
+    </button>
+
+    <button class="btn btn-primary" type="button" style="margin-left: 10px; color: white;">
+        <a href="{{ route('pelanggaran.exportPdf') }}" style="color: inherit;">Export PDF</a>
     </button>
 </div>
 

@@ -154,4 +154,11 @@ class PrestasiController extends Controller
 
         return redirect()->route('prestasi.siswa');
     }
+
+    public function exportPdf()
+    {
+        $prestasi = Prestasi::all();
+        $pdf = Pdf::loadView('pdf.export-prestasi', ['prestasi' => $prestasi]);
+        return $pdf->download('prestasi.pdf');
+    }
 }

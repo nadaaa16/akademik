@@ -127,6 +127,8 @@ Route::get('/prestasi-siswa-edit/{id}', [PrestasiController::class, 'edit'])->na
 Route::put('/prestasi-siswa-update/{id}', [PrestasiController::class, 'update'])->name('prestasi.update');
 Route::delete('/prestasi-siswa-delete/{id}', [PrestasiController::class, "destroy"])->name('prestasi.delete');
 Route::get('prestasi/getStudentsByRayon', [PrestasiController::class, 'getStudentsByRayon'])->name('prestasi.getStudentsByRayon');
+Route::get('prestasi-exportPdf', [PrestasiController::class, 'exportPdf'])->name('prestasi.exportPdf');
+
 
 //absensi
 Route::get('/absensi', [AbsensiController::class, 'index'])->name('absensi.index');
