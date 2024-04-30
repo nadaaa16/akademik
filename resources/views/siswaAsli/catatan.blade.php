@@ -22,9 +22,7 @@
                         <th class="table-plus">Nama</th>
                         <th>Code Pelangaran</th>
                         <th>Rayon</th>
-                        <th>Foto</th>
-                        <th>Deskripsi</th>
-                        <th class="datatable-nosort">Actions</th>
+                        <th>Tingkatan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,18 +36,7 @@
                         </td>
                         <td>K 1.5 - Nongkrong</td>
                         <td>Cicurug 1</td>
-                        <th>Foto</th>
-                        <td>Deskripsi</td>
-                        <td>
-                            <div class="table-actions">
-                                <a href="/view-pelanggaran" data-color="#265ed7"
-                                    ><i class="icon-copy dw dw-edit2"></i
-                                ></a>
-                                <a href="#" data-color="#e95959"
-                                    ><i class="icon-copy dw dw-delete-3"></i
-                                ></a>
-                            </div>
-                        </td>
+                        <td>X</td>
                     </tr>
                 </tbody>
             </table>

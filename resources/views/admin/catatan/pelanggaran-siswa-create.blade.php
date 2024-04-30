@@ -10,7 +10,7 @@
 <div class="mobile-menu-overlay"></div>
 <div class="main-container">
     <h2 style="margin-top: 20px;">Tambahkan Pelanggaran Kepada Siswa</h2>
-    <form action="{{ route('pelanggaran.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('pelanggaran.siswa.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
     <div class="row">
         <div class="col">
@@ -27,8 +27,9 @@
             <div class="form-group">
                 <label for="nama" class="form-label mt-4">Nama Siswa</label>
                 <select class="form-control" id="nama" name="nama">
-                    <!-- Nama siswa akan dimuat secara dinamis -->
-                </select>
+                    @foreach($namaSiswa as $r)
+                    <option value="{{ $r }}">{{ $r }}</option>
+                @endforeach                </select>
             </div>
         </div>
     </div>

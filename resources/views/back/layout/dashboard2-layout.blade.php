@@ -257,16 +257,16 @@
 							data-toggle="dropdown"
 						>
 							<span class="user-icon">
-								<img src="/back/vendors/images/photo1.jpg" alt="" />
+								{{-- <img src="/back/vendors/images/photo1.jpg" alt="" /> --}}
 							</span>
 							<span class="user-name"></span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
 						>
-							<a class="dropdown-item" href="profile.html"
+							{{-- <a class="dropdown-item" href="profile.html"
 								><i class="dw dw-user1"></i> Profile</a
-							>
+							> --}}
 							{{-- <a class="dropdown-item" href="profile.html"
 								><i class="dw dw-settings2"></i> Setting</a
 							>
@@ -515,6 +515,12 @@
 							<ul class="submenu">
 								<li><a href="/data-guru" class="@if(request()->is('data-guru')) active @endif">Data Guru</a></li>
 							</ul>
+						</li>
+						<li>
+							<a href="/user" class="dropdown-toggle no-arrow @if(request()->is('user')) active @endif">
+								<span class="micon bi bi-person-fill"></span>
+								<span class="mtext">User</span>
+							</a>
 						</li>
 						@else
 						<li>

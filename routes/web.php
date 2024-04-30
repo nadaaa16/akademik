@@ -79,7 +79,7 @@ Route::delete('/absensi/{id}', [AbsensiController::class, "confirmDelete"])->nam
 Route::get('/view-absensi/{id}', [adminController::class, "detail_absensi"]);
 
 //data siswa
-Route::get('/siswa', [adminController::class, "dataSiswa"])->name('siswa');
+Route::get('/siswa', [adminController::class, 'dataSiswa'])->name('siswa');
 Route::get('/add-siswa', [adminController::class, "addSiswa"]);
 Route::post('/data-siswa-store', [SiswaController::class, 'store'])->name('siswa.store.data');
 Route::get('/data-siswa', [adminController::class, 'dataSiswa'])->name('data-siswa');
