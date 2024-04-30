@@ -116,6 +116,7 @@ Route::get('/pelanggaran-siswa/show/{id}', [PelanggaranController::class, 'show'
 Route::get('/pelanggaran-siswa-edit/{id}', [PelanggaranController::class, 'edit'])->name('pelanggaran.edit');
 Route::put('/pelanggaran-siswa-update/{id}', [PelanggaranController::class, 'update'])->name('pelanggaran.update');
 Route::delete('/delete-pelanggaran-siswa/{id}', [PelanggaranController::class, 'destroy'])->name('pelanggaran.delete');
+Route::get('pelanggaran-exportPdf', [PelanggaranController::class, 'exportPdf'])->name('pelanggaran.exportPdf');
 
 //prestasi
 Route::get('/prestasi-siswa', [PrestasiController::class, "index"])->name('prestasi.siswa');

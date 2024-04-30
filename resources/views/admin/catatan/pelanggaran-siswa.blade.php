@@ -7,12 +7,18 @@
     <h2><i class="bi bi-trophy"></i>Pelangaran Siswa</h2>
 </div>
 
+
+
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
     <button class="btn btn-primary float-right" type="button" onclick="window.location.href='pelanggaran-siswa-create'">
         <i class="bi bi-plus-lg">Pelangaran Siswa</i>
     </button>
 </div>
-
+<div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
+    <button class="btn btn-primary float-right" type="button">
+        <a href="{{ route('pelanggaran.exportPdf') }}">Export Pelangaran Siswa</i>
+    </button>
+</div>
 <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20">
         <div class="card-box pb-10">

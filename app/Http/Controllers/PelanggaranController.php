@@ -6,6 +6,7 @@ use App\Models\PelanggaranAdmin;
 use App\Models\CodePelanggaran;
 use App\Models\Pengguna;
 use App\Models\Rayon;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -120,5 +121,12 @@ class PelanggaranController extends Controller
         }
 
         return redirect()->route('pelanggaran.siswa');
+    }
+
+    public function exportPdf()
+    {
+        $pelanggaran = PelanggaranAdmin::all();
+        $pdf = Pdf::loadView('pdf.export-pelanggaran', ['pelanggaran' => $pelanggaran]);
+        return $pdf->download('pelanggaran.pdf');
     }
 }
